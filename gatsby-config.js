@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Starter TypeScript`,
+		title: `Library of Open Source Hardware`,
 		description: `TypeScript version of the default Gatsby starter`,
 		author: `@jongwooo`
 	},

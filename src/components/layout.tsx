@@ -11,9 +11,24 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
+import Footer from "./footer"
 import "./layout.css";
 
 const Layout: React.FC = ({ children }) => {
+	const headerLinks = [{
+		to: "/",
+		title: "Explore OSH Data"
+	}, {
+		to: "/submission",
+		title: "Submit OSH Data"
+	}, {
+		to: "/ecosystem",
+		title: "Ecosystem"
+	}, {
+		to: "/get-involved",
+		title: "Get involved"
+	}
+	]
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -26,7 +41,7 @@ const Layout: React.FC = ({ children }) => {
 
 	return (
 		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
+			<Header siteTitle={data.site.siteMetadata.title} headerLinks={headerLinks} />
 			<div
 				style={{
 					margin: `0 auto`,
@@ -35,11 +50,7 @@ const Layout: React.FC = ({ children }) => {
 				}}
 			>
 				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>
-				</footer>
+				<Footer />
 			</div>
 		</>
 	);

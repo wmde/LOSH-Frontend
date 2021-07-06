@@ -1,47 +1,40 @@
 /* eslint-disable no-unused-vars */
 import * as React from "react";
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
+import { Layout } from 'antd'
 
 interface HeaderProps {
 	siteTitle: string;
+	headerLinks: Array<{
+		to: string;
+		title: string;
+	}>
 }
 
-const Header = ({ siteTitle }: HeaderProps) => (
-	<header
-		style={{
-			background: `rebeccapurple`,
-			marginBottom: `1.45rem`
-		}}
-	>
-		<div
+const Header = ({ siteTitle, headerLinks }: HeaderProps) => (
+	<Layout.Header>
+		<Link
+			to="/"
 			style={{
-				margin: `0 auto`,
-				maxWidth: 960,
-				padding: `1.45rem 1.0875rem`
+				color: `white`,
+				textDecoration: `none`
 			}}
 		>
-			<h1 style={{ margin: 0 }}>
-				<Link
-					to="/"
-					style={{
-						color: `white`,
-						textDecoration: `none`
-					}}
-				>
-					{siteTitle}
-				</Link>
-			</h1>
-		</div>
-	</header>
+			{siteTitle}
+		</Link>
+		{headerLinks.map(link =>
+			<Link key={link.title}
+				to={link.to}
+				style={{
+					color: `white`,
+					textDecoration: `none`
+				}}
+			>
+				{link.title}
+			</Link>
+		)}
+
+	</Layout.Header>
 );
-
-Header.propTypes = {
-	siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-	siteTitle: ``
-};
 
 export default Header;
