@@ -54,7 +54,7 @@ const SubmissionPage = () => (
 		</Typography.Text>
 		<Typography.Title level={3}> Submission Guidline</Typography.Title>
 		{submissionPageCards.map(card => (
-			<SubmissionCard submissionPageCard={card} key={card.number} />
+			<SubmissionCard submissionPageCard={card} key={card.title} />
 		))}
 
 		<Typography.Title level={3}> Something Else</Typography.Title>
