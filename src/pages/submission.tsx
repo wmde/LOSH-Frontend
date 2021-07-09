@@ -1,7 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Typography, Row, Col, Card } from "antd";
-import { number, string } from "prop-types";
 
 const submissionPageCards = [
 	{
