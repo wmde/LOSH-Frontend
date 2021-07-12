@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript",
+  "name": "losh-frontend",
   "private": true,
-  "description": "TypeScript version of the default Gatsby starter",
+  "description": "Library of Open Source Hardware frontend package",
   "version": "0.1.0",
-  "author": "Jongwoo Han <han980817@gmail.com>",
+  "author": "Adam Hammad <mail@adamham.dev>",
   "dependencies": {
     "eslint-loader": "^3.0.4",
     "gatsby": "^2.20.24",
@@ -32,6 +32,7 @@
     "babel-jest": "^25.3.0",
     "babel-preset-gatsby": "^0.3.1",
     "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.24.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
@@ -40,15 +41,16 @@
     "typescript": "^3.7.5"
   },
   "keywords": [
+    "losh",
+    "open source",
+    "hardware",
     "gatsby",
-    "starter",
     "typescript",
     "eslint",
     "jest",
-    "netlify",
     "prettier"
   ],
-  "license": "MIT",
+  "license": "GPLv3",
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
@@ -62,6 +64,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jongwooo/gatsby-starter-typescript"
+    "url": "https://github.com/wmde/LOSH-Frontend"
   }
 }
