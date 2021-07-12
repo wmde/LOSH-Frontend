@@ -7,7 +7,8 @@ module.exports = {
 	},
 	extends: [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended"
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:react/recommended"
 	],
 	globals: {
 		Atomics: "readonly",
@@ -21,6 +22,6 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: "module"
 	},
-	plugins: ["plugin:react/recommended", "@typescript-eslint",],
+	plugins: ["@typescript-eslint", "react"],
 	rules: {}
 };
