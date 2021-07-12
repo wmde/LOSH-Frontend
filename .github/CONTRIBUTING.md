@@ -16,8 +16,8 @@ $ git clone [YOUR_REPOSITORY_URL]
 $ cd gatsby-starter-typescript
 
 # Install npm packages and start this project.
-$ npm install
-$ npm start
+$ yarn
+$ yarn start
 
 # (Working...)
 
@@ -25,8 +25,8 @@ $ git commit [...]
 $ git push origin [YOUR_REPOSITORY]
 
 # Before enroll pull-request.
-$ npm run format
-$ npm run lint
+$ yarn format
+$ yarn lint
 
 # Enroll pull-request!
 # in https://github.com/jongwooo/gatsby-starter-typescript

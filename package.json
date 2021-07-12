@@ -58,7 +58,7 @@
     "format": "prettier --check \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "jest"
   },

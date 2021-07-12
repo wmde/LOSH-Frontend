@@ -14,15 +14,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm ci
+        run: yarn
       - name: Lint
-        run: npm run lint
+        run: yarn lint
       - name: Format
-        run: npm run format
+        run: yarn format
       - name: Unit test
-        run: npm test
-      - name: Run npm build
-        run: npm run build
+        run: yarn test
+      - name: Run build
+        run: yarn build
       - name: Default deploy
         uses: netlify/actions/cli@master
         env:
