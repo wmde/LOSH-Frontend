@@ -74,7 +74,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["yarn lint:fix"],
+    "*.{js,jsx,ts,tsx}": ["yarn lint:fix", "prettier --write"],
     "*.scss": ["prettier --write", "stylelint --fix"],
     "{*.{json,md}}": ["prettier --write"]
   },

@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { Typography, Row, Col, Card } from "antd";
 
-const gridStyle = {
+const gridStyle: React.CSSProperties = {
 	width: "50%",
 	textAlign: "center"
 };
