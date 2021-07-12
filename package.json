@@ -31,12 +31,16 @@
     "@typescript-eslint/parser": "^2.22.0",
     "babel-jest": "^25.3.0",
     "babel-preset-gatsby": "^0.3.1",
+    "cross-env": "^7.0.3",
     "eslint": "^7.30.0",
     "eslint-plugin-react": "^7.24.0",
     "gatsby-plugin-eslint": "^2.0.8",
+    "husky": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^1.19.1",
+    "pretty-quick": "^3.1.1",
     "react-test-renderer": "^16.13.1",
     "typescript": "^3.7.5"
   },
@@ -55,12 +59,23 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
+    "precommit": "lint-staged",
     "format": "prettier --check \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": ["lint-staged"]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["yarn lint:fix"],
+    "*.scss": ["prettier --write", "stylelint --fix"],
+    "{*.{json,md}}": ["prettier --write"]
   },
   "repository": {
     "type": "git",
