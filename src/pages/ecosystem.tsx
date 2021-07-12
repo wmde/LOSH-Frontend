@@ -50,7 +50,7 @@ const EcosystemPage = () => (
 				<Card title="OPEN!NEXT Project">
 					{openNextCards.map(({ cardTitle, cardContent }) => {
 						return (
-							<Card.Grid hoverable={false} style={gridStyle}>
+							<Card.Grid hoverable={false} style={gridStyle} key={cardTitle}>
 								<Card type="inner" title={cardTitle}>
 									{cardContent}
 								</Card>
@@ -63,7 +63,7 @@ const EcosystemPage = () => (
 				<Card title="Open Hardware Ecosystem">
 					{openHardwareCards.map(({ cardTitle, cardContent }) => {
 						return (
-							<Card.Grid hoverable={false} style={gridStyle}>
+							<Card.Grid hoverable={false} style={gridStyle} key={cardTitle}>
 								<Card type="inner" title={cardTitle}>
 									{cardContent}
 								</Card>
