@@ -1,17 +1,80 @@
-/* eslint-disable no-unused-vars */
 import * as React from "react";
-import { Link } from "gatsby";
-
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import { Link } from "gatsby";
+import { Typography, Row, Col, Card, List } from "antd";
+
+const getInvolvedPageCards = [
+	{
+		title: "For Makers",
+		links: [
+			{
+				url: "/",
+				content: "OSH data submission guideline"
+			},
+			{
+				url: "/",
+				content: "Optimize stored OSH data"
+			}
+		]
+	},
+	{
+		title: "For Developers",
+		links: [
+			{
+				url: "/",
+				content: "Improve the LOSH experience"
+			},
+			{
+				url: "/",
+				content: "Fix bugs in the LOSH app"
+			}
+		]
+	}
+];
+
+interface GetInvolvedPageCard {
+	title: string;
+	links: Array<{
+		url: string;
+		content: string;
+	}>;
+}
+
+interface GetInvolvedPageCardProps {
+	card: GetInvolvedPageCard;
+}
+
+const GetInvolvedCard = ({
+	card: { title, links }
+}: GetInvolvedPageCardProps) => (
+	<Col>
+		<Card title={title}>
+			<Typography.Text>
+				Learn how you can help grow the open source hardware ecosystem
+			</Typography.Text>
+			<List
+				bordered={false}
+				dataSource={links}
+				renderItem={link => (
+					<List.Item>
+						<Link to={link.url}>{link.content}</Link>
+					</List.Item>
+				)}
+			/>
+		</Card>
+	</Col>
+);
 
 const GetInvolvedPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+	<Layout>
+		<Typography.Title>Get Involved</Typography.Title>
+		<Typography.Text>Lorem Ipsum dolor sit amet</Typography.Text>
+		<Row>
+			{getInvolvedPageCards.map(card => {
+				return <GetInvolvedCard card={card} key={card.title} />;
+			})}
+		</Row>
+	</Layout>
 );
 
 export default GetInvolvedPage;
