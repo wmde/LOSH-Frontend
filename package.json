@@ -32,6 +32,7 @@
     "babel-jest": "^25.3.0",
     "babel-preset-gatsby": "^0.3.1",
     "cross-env": "^7.0.3",
+    "cypress": "^7.7.0",
     "eslint": "^7.30.0",
     "eslint-plugin-react": "^7.24.0",
     "gatsby-plugin-eslint": "^2.0.8",
@@ -42,6 +43,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^3.1.1",
     "react-test-renderer": "^16.13.1",
+    "start-server-and-test": "^1.12.6",
     "typescript": "^3.7.5"
   },
   "keywords": [
@@ -66,17 +68,30 @@
     "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "test": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "husky": {
     "hooks": {
-      "pre-commit": ["lint-staged"]
+      "pre-commit": [
+        "lint-staged"
+      ]
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["yarn lint:fix", "prettier --write"],
-    "*.scss": ["prettier --write", "stylelint --fix"],
-    "{*.{json,md}}": ["prettier --write"]
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "{*.{json,md}}": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
