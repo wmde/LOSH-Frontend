@@ -19,8 +19,8 @@ jobs:
         run: yarn lint
       - name: Format
         run: yarn format
-      - name: Unit test
-        run: yarn test
+      # - name: Unit test
+      #   run: yarn test
       - name: Run build
         run: yarn build
       - name: Default deploy
