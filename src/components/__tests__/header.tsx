@@ -1,14 +1,31 @@
+/* eslint-disable react/display-name */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 // /* eslint-disable no-unused-vars */
-// import * as React from "react";
-// import * as renderer from "react-test-renderer";
+import * as React from "react";
+import ShallowRenderer from "react-test-renderer/shallow"; // ES6
+import Header from "../header";
 
-// import Header from "../header";
+const renderer = ShallowRenderer.createRenderer();
 
-// describe("Header", () => {
-// 	it("renders correctly", () => {
-// 		const tree = renderer
-// 			.create(<Header siteTitle="Default Starter" />)
-// 			.toJSON();
-// 		expect(tree).toMatchSnapshot();
-// 	});
-// });
+jest.mock("antd", () => {
+	return {
+		Layout: {
+			Header: () => null
+		},
+		Row: () => null,
+		Col: () => null,
+		Menu: () => null,
+		Typography: {
+			Text: () => null
+		}
+	};
+});
+
+describe("Header", () => {
+	it("renders correctly", () => {
+		const tree = renderer.render(
+			<Header headerLinks={[]} siteTitle="Library of Open Source Hardware" />
+		);
+		expect(tree).toMatchSnapshot();
+	});
+});
