@@ -8,6 +8,7 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended"
 	],
 	globals: {
@@ -23,5 +24,10 @@ module.exports = {
 		sourceType: "module"
 	},
 	plugins: ["@typescript-eslint", "react"],
+	settings: {
+		react: {
+			version: "detect"
+		}
+	},
 	rules: {}
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
 	siteMetadata: {
 		title: `Library of Open Source Hardware`,
