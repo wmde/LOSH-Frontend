@@ -9,7 +9,7 @@ interface HeaderProps {
 	}>;
 }
 
-const Header = ({ siteTitle, headerLinks }: HeaderProps) => (
+const Header = ({ siteTitle, headerLinks }: HeaderProps): JSX.Element => (
 	<AntdLayout.Header>
 		<Row justify="space-between" align="middle">
 			<Col>

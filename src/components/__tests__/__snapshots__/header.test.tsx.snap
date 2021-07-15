@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<Header>
+  <Row
+    align="middle"
+    justify="space-between"
+  >
+    <Col>
+      <mockConstructor
+        to="/"
+      >
+        <Text
+          strong={true}
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          Library of Open Source Hardware
+        </Text>
+      </mockConstructor>
+    </Col>
+    <Col>
+      <Menu
+        mode="horizontal"
+      >
+        <Unknown>
+          <mockConstructor
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }
+            to="/"
+          >
+            <Text>
+              Explore OSH Data
+            </Text>
+          </mockConstructor>
+        </Unknown>
+        <Unknown>
+          <mockConstructor
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }
+            to="/submission"
+          >
+            <Text>
+              Submit OSH Data
+            </Text>
+          </mockConstructor>
+        </Unknown>
+        <Unknown>
+          <mockConstructor
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }
+            to="/ecosystem"
+          >
+            <Text>
+              Ecosystem
+            </Text>
+          </mockConstructor>
+        </Unknown>
+        <Unknown>
+          <mockConstructor
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }
+            to="/get-involved"
+          >
+            <Text>
+              Get involved
+            </Text>
+          </mockConstructor>
+        </Unknown>
+      </Menu>
+    </Col>
+  </Row>
+</Header>
+`;

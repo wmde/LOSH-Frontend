@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<Footer>
+  <Row
+    align="middle"
+    gutter={
+      Array [
+        34,
+        0,
+      ]
+    }
+    justify="center"
+  >
+    <mockConstructor
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/"
+    >
+      <Text>
+        (c) OPEN!NEXT
+      </Text>
+    </mockConstructor>
+    <mockConstructor
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/about"
+    >
+      <Text>
+        About the Project
+      </Text>
+    </mockConstructor>
+    <mockConstructor
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/disclaimer"
+    >
+      <Text>
+        Legal Disclaimer
+      </Text>
+    </mockConstructor>
+    <mockConstructor
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/issue"
+    >
+      <Text>
+        Submit an issue
+      </Text>
+    </mockConstructor>
+  </Row>
+</Footer>
+`;
