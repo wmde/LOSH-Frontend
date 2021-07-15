@@ -3,7 +3,43 @@ module.exports = {
 	siteMetadata: {
 		title: `Library of Open Source Hardware`,
 		description: `TypeScript version of the default Gatsby starter`,
-		author: `@jongwooo`
+		author: `@jongwooo`,
+		headerLinks: [
+			{
+				to: "/",
+				title: "Explore OSH Data"
+			},
+			{
+				to: "/submission",
+				title: "Submit OSH Data"
+			},
+			{
+				to: "/ecosystem",
+				title: "Ecosystem"
+			},
+			{
+				to: "/get-involved",
+				title: "Get involved"
+			}
+		],
+		footerLinks: [
+			{
+				to: "/",
+				title: "(c) OPEN!NEXT"
+			},
+			{
+				to: "/about",
+				title: "About the Project"
+			},
+			{
+				to: "/disclaimer",
+				title: "Legal Disclaimer"
+			},
+			{
+				to: "/issue",
+				title: "Submit an issue"
+			}
+		]
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,

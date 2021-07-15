@@ -9,7 +9,7 @@ interface FooterProps {
 	}>;
 }
 
-const Footer = ({ footerLinks }: FooterProps) => (
+const Footer = ({ footerLinks }: FooterProps): JSX.Element => (
 	<AntdLayout.Footer>
 		<Row justify="center" align="middle" gutter={[34, 0]}>
 			{footerLinks.map(link => (

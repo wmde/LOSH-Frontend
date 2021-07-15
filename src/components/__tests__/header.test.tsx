@@ -1,22 +1,23 @@
-/* eslint-disable react/display-name */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-// /* eslint-disable no-unused-vars */
 import * as React from "react";
 import ShallowRenderer from "react-test-renderer/shallow"; // ES6
 import Header from "../header";
+import site from "../../../gatsby-config";
 
 const renderer = ShallowRenderer.createRenderer();
 
 jest.mock("antd", () => {
+	const Menu = (): null => null;
+	Menu.Item = (): null => null;
+
 	return {
 		Layout: {
-			Header: () => null
+			Header: (): null => null
 		},
-		Row: () => null,
-		Col: () => null,
-		Menu: () => null,
+		Row: (): null => null,
+		Col: (): null => null,
+		Menu,
 		Typography: {
-			Text: () => null
+			Text: (): null => null
 		}
 	};
 });
@@ -24,7 +25,10 @@ jest.mock("antd", () => {
 describe("Header", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<Header headerLinks={[]} siteTitle="Library of Open Source Hardware" />
+			<Header
+				headerLinks={site.siteMetadata.headerLinks}
+				siteTitle="Library of Open Source Hardware"
+			/>
 		);
 		expect(tree).toMatchSnapshot();
 	});

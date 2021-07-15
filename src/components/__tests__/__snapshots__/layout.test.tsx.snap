@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders correctly 1`] = `
+<React.Fragment>
+  <Header
+    headerLinks={
+      Array [
+        Object {
+          "title": "Explore OSH Data",
+          "to": "/",
+        },
+        Object {
+          "title": "Submit OSH Data",
+          "to": "/submission",
+        },
+        Object {
+          "title": "Ecosystem",
+          "to": "/ecosystem",
+        },
+        Object {
+          "title": "Get involved",
+          "to": "/get-involved",
+        },
+      ]
+    }
+    siteTitle="Library of Open Source Hardware"
+  />
+  <Content />
+  <Footer
+    footerLinks={
+      Array [
+        Object {
+          "title": "(c) OPEN!NEXT",
+          "to": "/",
+        },
+        Object {
+          "title": "About the Project",
+          "to": "/about",
+        },
+        Object {
+          "title": "Legal Disclaimer",
+          "to": "/disclaimer",
+        },
+        Object {
+          "title": "Submit an issue",
+          "to": "/issue",
+        },
+      ]
+    }
+  />
+</React.Fragment>
+`;
