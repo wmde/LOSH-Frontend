@@ -28,16 +28,15 @@ const Layout: React.FC = ({ children }: Props) => {
 	`);
 
 	return (
-		<>
+		<AntdLayout>
 			<Header
 				siteTitle={data.site.siteMetadata.title}
 				headerLinks={data.site.siteMetadata.headerLinks}
 			/>
-
 			<AntdLayout.Content>{children}</AntdLayout.Content>
 
 			<Footer footerLinks={data.site.siteMetadata.footerLinks} />
-		</>
+		</AntdLayout>
 	);
 };
 

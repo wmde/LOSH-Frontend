@@ -176,6 +176,8 @@ const HardwareTable = ({
 	<AntTable<HardwareData>
 		columns={columns}
 		dataSource={dataSource}
+		size="middle"
+		pagination={{ position: ["bottomLeft"] }}
 		rowKey={(r: HardwareData): number => r.tsdcId}
 	/>
 );
