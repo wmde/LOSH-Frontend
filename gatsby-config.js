@@ -54,6 +54,39 @@ module.exports = {
 				path: `${__dirname}/src/images`
 			}
 		},
+		{
+			resolve: "gatsby-plugin-web-font-loader",
+			options: {
+				google: {
+					families: ["Source Code Pro", "Source Sans Pro"]
+				}
+			}
+		},
+		{
+			resolve: "gatsby-plugin-antd",
+			options: {
+				style: true
+			}
+		},
+		{
+			resolve: "gatsby-plugin-less",
+			options: {
+				lessOptions: {
+					modifyVars: {
+						"font-family": "Source Sans Pro",
+						// "font-family": "Source Code Pro",
+						"body-background": "#ededed",
+						"layout-header-background": "#ededed",
+						"layout-body-background": "#ededed",
+						"layout-footer-background": "#ededed",
+						"component-background": "#ededed",
+						"primary-color": "#97C5F1",
+						"link-color": "#5087BC"
+					},
+					javascriptEnabled: true
+				}
+			}
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
