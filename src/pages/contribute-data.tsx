@@ -1,6 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Typography, Row, Col, Card } from "antd";
+import SEO from "../components/seo";
 
 const submissionPageCards = [
 	{
@@ -44,14 +45,15 @@ const SubmissionCard = ({
 	</Row>
 );
 
-const SubmissionPage = () => (
+const ContributeDataPage = () => (
 	<Layout>
-		<Typography.Title>Submit OSH Data</Typography.Title>
+		<SEO title="Contribute Data" />
+		<Typography.Title>Contribute Data</Typography.Title>
 		<Typography.Text>
-			2 We will guide you in a step-by-step guide through the process of
+			We will guide you in a step-by-step guide through the process of
 			submitting OSH Data. Please consult...
 		</Typography.Text>
-		<Typography.Title level={3}> Submission Guidline</Typography.Title>
+		<Typography.Title level={3}> Submission Guideline</Typography.Title>
 		{submissionPageCards.map(card => (
 			<SubmissionCard submissionPageCard={card} key={card.title} />
 		))}
@@ -60,4 +62,4 @@ const SubmissionPage = () => (
 	</Layout>
 );
 
-export default SubmissionPage;
+export default ContributeDataPage;

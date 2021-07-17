@@ -1,0 +1,7 @@
+.filter {
+    margin: 1rem 0;
+}
+.filter .ant-btn:hover, .filter .ant-btn:focus {
+    color: black;
+    border-color: black;
+}

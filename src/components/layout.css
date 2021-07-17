@@ -1,0 +1,7 @@
+h1, h2, h3, h4, h5, a, button, input {
+    font-family: 'Source Code Pro';
+}
+
+main.ant-layout-content {
+    padding: 0 50px;
+}

@@ -7,11 +7,11 @@ module.exports = {
 		headerLinks: [
 			{
 				to: "/",
-				title: "Explore OSH Data"
+				title: "Explore Data"
 			},
 			{
-				to: "/submission",
-				title: "Submit OSH Data"
+				to: "/contribute-data",
+				title: "Contribute Data"
 			},
 			{
 				to: "/ecosystem",
@@ -46,7 +46,6 @@ module.exports = {
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-ts-checker`,
 		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-antd`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -74,14 +73,15 @@ module.exports = {
 				lessOptions: {
 					modifyVars: {
 						"font-family": "Source Sans Pro",
-						// "font-family": "Source Code Pro",
 						"body-background": "#ededed",
 						"layout-header-background": "#ededed",
 						"layout-body-background": "#ededed",
 						"layout-footer-background": "#ededed",
 						"component-background": "#ededed",
-						"primary-color": "#97C5F1",
-						"link-color": "#5087BC"
+						"primary-color": "#46749F",
+						"link-color": "#5087BC",
+						'input-bg': '#FFFFFF',
+						'btn-default-bg': '#FFFFFF',
 					},
 					javascriptEnabled: true
 				}
@@ -92,8 +92,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
+				name: `Library of Open Source Hardware`,
+				short_name: `LOSH`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,

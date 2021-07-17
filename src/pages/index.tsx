@@ -1,7 +1,10 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { Table as AntTable, Typography } from "antd";
+import { Table as AntTable, Typography, Input, Row, Space } from "antd";
 import { ColumnsType } from "antd/es/table";
+import '../styles/search-box.css';
+import Filter from "../components/filter";
+import SEO from "../components/seo";
 
 interface HardwareData {
 	name: string;
@@ -184,7 +187,18 @@ const HardwareTable = ({
 
 const IndexPage: React.FC = () => (
 	<Layout>
-		<Typography.Title>Explore OSH Data</Typography.Title>
+		<SEO title="Explore Data" />
+		<Typography.Title>Explore Data</Typography.Title>
+		<Row className="search-box">
+			<label htmlFor="search">Search</label>
+			<Input.Search
+				id="search"
+				placeholder="input search text"
+				onSearch={() => {}}
+				style={{ maxWidth: 400 }}
+			/>
+		</Row>
+		<Filter />
 		<HardwareTable dataSource={tableData} columns={tableHeaders} />
 	</Layout>
 );

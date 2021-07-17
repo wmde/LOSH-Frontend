@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
 import { Typography, Row, Col, Card, List } from "antd";
+import SEO from "../components/seo";
 
 const getInvolvedPageCards = [
 	{
@@ -67,6 +68,7 @@ const GetInvolvedCard = ({
 
 const GetInvolvedPage = () => (
 	<Layout>
+		<SEO title="Get Involved" />
 		<Typography.Title>Get Involved</Typography.Title>
 		<Typography.Text>Lorem Ipsum dolor sit amet</Typography.Text>
 		<Row>
