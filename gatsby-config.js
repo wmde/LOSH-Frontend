@@ -54,6 +54,14 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `markdown-pages`,
+				path: `${__dirname}/src/markdown-pages`
+			}
+		},
+		`gatsby-transformer-remark`,
+		{
 			resolve: "gatsby-plugin-web-font-loader",
 			options: {
 				google: {
@@ -80,8 +88,8 @@ module.exports = {
 						"component-background": "#ededed",
 						"primary-color": "#46749F",
 						"link-color": "#5087BC",
-						'input-bg': '#FFFFFF',
-						'btn-default-bg': '#FFFFFF',
+						"input-bg": "#FFFFFF",
+						"btn-default-bg": "#FFFFFF"
 					},
 					javascriptEnabled: true
 				}

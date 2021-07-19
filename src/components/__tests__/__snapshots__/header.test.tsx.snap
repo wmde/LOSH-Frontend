@@ -3,64 +3,63 @@
 exports[`Header renders correctly 1`] = `
 <Header>
   <Row
-    align="middle"
     justify="space-between"
   >
-    <Col>
+    <Col
+      lg={12}
+      md={12}
+      sm={20}
+      xl={12}
+      xs={20}
+    >
       <mockConstructor
+        className="logo"
         to="/"
       >
-        <Text
-          strong={true}
-          style={
-            Object {
-              "color": "white",
-            }
-          }
+        <SvgComponent />
+        <div
+          className="logo__text"
         >
-          Library of Open Source Hardware
-        </Text>
+          <span>
+            Library of 
+          </span>
+          <br />
+          <span>
+            Open Source Hardware
+          </span>
+        </div>
       </mockConstructor>
     </Col>
-    <Col>
+    <Col
+      lg={12}
+      md={12}
+      sm={4}
+      xl={12}
+      xs={4}
+    >
       <Menu
         mode="horizontal"
       >
         <Unknown>
           <mockConstructor
-            style={
-              Object {
-                "textDecoration": "none",
-              }
-            }
             to="/"
           >
             <Text>
-              Explore OSH Data
+              Explore Data
             </Text>
           </mockConstructor>
         </Unknown>
         <Unknown>
           <mockConstructor
-            style={
-              Object {
-                "textDecoration": "none",
-              }
-            }
-            to="/submission"
+            to="/contribute-data"
           >
             <Text>
-              Submit OSH Data
+              Contribute Data
             </Text>
           </mockConstructor>
         </Unknown>
         <Unknown>
           <mockConstructor
-            style={
-              Object {
-                "textDecoration": "none",
-              }
-            }
             to="/ecosystem"
           >
             <Text>
@@ -70,11 +69,6 @@ exports[`Header renders correctly 1`] = `
         </Unknown>
         <Unknown>
           <mockConstructor
-            style={
-              Object {
-                "textDecoration": "none",
-              }
-            }
             to="/get-involved"
           >
             <Text>
