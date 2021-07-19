@@ -1,6 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Typography, Row, Col, Card } from "antd";
+import SEO from "../components/seo";
 
 const gridStyle: React.CSSProperties = {
 	width: "50%",
@@ -74,6 +75,7 @@ const EcosystemCardGrid = ({ cardSet }: EcosystemCardGridProps) => (
 );
 const EcosystemPage = () => (
 	<Layout>
+		<SEO title="Ecosystem" />
 		<Typography.Title>Ecosystem</Typography.Title>
 		<Typography.Text>Lorem Ipsum dolor sit amet</Typography.Text>
 		<Row>

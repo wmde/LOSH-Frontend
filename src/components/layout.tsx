@@ -5,6 +5,8 @@ import { Layout as AntdLayout } from "antd";
 import Header from "./header";
 import Footer from "./footer";
 
+import './layout.css';
+
 interface Props {
 	children?: React.ReactNode;
 }
@@ -28,16 +30,15 @@ const Layout: React.FC = ({ children }: Props) => {
 	`);
 
 	return (
-		<>
+		<AntdLayout style={{ maxWidth: 1440, margin: 'auto'}}>
 			<Header
 				siteTitle={data.site.siteMetadata.title}
 				headerLinks={data.site.siteMetadata.headerLinks}
 			/>
-
 			<AntdLayout.Content>{children}</AntdLayout.Content>
 
 			<Footer footerLinks={data.site.siteMetadata.footerLinks} />
-		</>
+		</AntdLayout>
 	);
 };
 

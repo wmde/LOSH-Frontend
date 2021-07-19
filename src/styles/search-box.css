@@ -1,0 +1,8 @@
+.search-box {
+    align-items: center;
+}
+.search-box label {
+    margin-right: 1rem;
+    font-weight: bold;
+    font-family: 'Source Code Pro';
+}

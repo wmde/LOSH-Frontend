@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { Layout as AntdLayout, Row, Typography } from "antd";
+import { Layout as AntdLayout, Row, Typography, Col } from "antd";
 
 interface FooterProps {
 	footerLinks: Array<{
@@ -11,13 +11,14 @@ interface FooterProps {
 
 const Footer = ({ footerLinks }: FooterProps): JSX.Element => (
 	<AntdLayout.Footer>
-		<Row justify="center" align="middle" gutter={[34, 0]}>
+		<Row align="middle" gutter={[34, 4]}>
 			{footerLinks.map(link => (
 				<Link
 					key={link.title}
 					to={link.to}
 					style={{
-						textDecoration: `none`
+						textDecoration: `none`,
+						paddingRight: '1rem'
 					}}
 				>
 					<Typography.Text>{link.title}</Typography.Text>
