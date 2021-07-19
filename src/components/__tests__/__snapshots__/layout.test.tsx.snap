@@ -1,17 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout renders correctly 1`] = `
-<React.Fragment>
+<UNDEFINED
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 1440,
+    }
+  }
+>
   <Header
     headerLinks={
       Array [
         Object {
-          "title": "Explore OSH Data",
+          "title": "Explore Data",
           "to": "/",
         },
         Object {
-          "title": "Submit OSH Data",
-          "to": "/submission",
+          "title": "Contribute Data",
+          "to": "/contribute-data",
         },
         Object {
           "title": "Ecosystem",
@@ -48,5 +55,5 @@ exports[`Layout renders correctly 1`] = `
       ]
     }
   />
-</React.Fragment>
+</UNDEFINED>
 `;

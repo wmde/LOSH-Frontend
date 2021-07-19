@@ -36,5 +36,5 @@
 
 .ant-layout-header .ant-menu {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
