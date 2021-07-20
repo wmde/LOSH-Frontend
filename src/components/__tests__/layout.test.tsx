@@ -1,16 +1,17 @@
-import * as React from "react";
-import ShallowRenderer from "react-test-renderer/shallow"; // ES6
-import Layout from "../layout";
 import site from "../../../gatsby-config";
+// ES6
+import Layout from "../layout";
 import { useStaticQuery } from "gatsby";
+import * as React from "react";
+import ShallowRenderer from "react-test-renderer/shallow";
 
 const renderer = ShallowRenderer.createRenderer();
 
 jest.mock("antd", () => {
 	return {
 		Layout: {
-			Content: (): null => null
-		}
+			Content: (): null => null,
+		},
 	};
 });
 
@@ -24,10 +25,9 @@ jest.mock("../footer", () => {
 });
 
 beforeEach(() => {
-	// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 	//@ts-ignore
 	useStaticQuery.mockImplementationOnce(() => ({
-		site
+		site,
 	}));
 });
 

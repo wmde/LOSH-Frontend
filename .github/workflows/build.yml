@@ -1,8 +1,8 @@
-name: Deploy to Netlify
+name: Build and Test
 on: [push]
 jobs:
   deploy_source:
-    name: Build and Deploy to Netlify
+    name: Build and Test
     strategy:
       matrix:
         node-version: [12.x]
@@ -19,15 +19,7 @@ jobs:
         run: yarn lint
       - name: Format
         run: yarn format
-      # - name: Unit test
-      #   run: yarn test
+      - name: Unit test
+        run: yarn test
       - name: Run build
         run: yarn build
-      - name: Default deploy
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=public --prod
-          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
