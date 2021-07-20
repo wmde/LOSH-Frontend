@@ -1,6 +1,6 @@
 import * as React from "react"
 
-function SvgComponent() {
+function SvgComponent(): JSX.Element {
   return (
     <svg
       width={71}

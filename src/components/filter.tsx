@@ -3,7 +3,7 @@ import { Menu, Dropdown, Button, message, Space } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import '../styles/filter.css';
 
-function handleMenuClick(e: any) {
+function handleMenuClick(e: any): void {
 	message.info("Click on menu item.");
 	console.log("click", e);
 }
@@ -22,7 +22,7 @@ const menu = (
 	</Menu>
 );
 
-function Filter() {
+function Filter(): JSX.Element {
 	return (
 		<Space wrap className="filter">
 			<Dropdown overlay={menu} trigger={['click']}>

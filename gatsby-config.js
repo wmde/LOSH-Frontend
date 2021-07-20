@@ -89,7 +89,8 @@ module.exports = {
 						"primary-color": "#46749F",
 						"link-color": "#5087BC",
 						"input-bg": "#FFFFFF",
-						"btn-default-bg": "#FFFFFF"
+						"btn-default-bg": "#FFFFFF",
+						'dropdown-menu-bg': "#FFFFFF"
 					},
 					javascriptEnabled: true
 				}

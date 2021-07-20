@@ -1,7 +1,7 @@
 .ant-layout-header {
     line-height: unset;
     height: unset;
-    padding: 18px 50px;
+    padding: 18px 1rem;
 }
 
 .ant-layout-header a.logo {
@@ -34,7 +34,8 @@
     border-width: 3px;
 }
 
-.ant-layout-header .ant-menu {
+.ant-layout-header .menu-col {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }

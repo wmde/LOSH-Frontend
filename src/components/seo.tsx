@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
@@ -7,7 +6,6 @@
  */
 
 import * as React from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -20,11 +18,11 @@ interface SEOMeta {
 interface SEOProps {
 	description?: string;
 	lang?: string;
-	meta: SEOMeta[];
+	meta?: SEOMeta[];
 	title: string;
 }
 
-const SEO = ({ description, lang, meta, title }: SEOProps) => {
+const SEO = ({ description, lang, meta = [], title }: SEOProps): JSX.Element => {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -84,19 +82,6 @@ const SEO = ({ description, lang, meta, title }: SEOProps) => {
 			].concat(meta)}
 		/>
 	);
-};
-
-SEO.defaultProps = {
-	lang: `en`,
-	meta: [],
-	description: ``
-};
-
-SEO.propTypes = {
-	description: PropTypes.string,
-	lang: PropTypes.string,
-	meta: PropTypes.arrayOf(PropTypes.object),
-	title: PropTypes.string.isRequired
 };
 
 export default SEO;

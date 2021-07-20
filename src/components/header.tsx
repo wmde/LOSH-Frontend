@@ -1,50 +1,100 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { Row, Col, Layout as AntdLayout, Menu, Typography } from "antd";
+import {
+	Row,
+	Col,
+	Layout as AntdLayout,
+	Menu,
+	Typography,
+	Dropdown,
+	Button,
+	Grid
+} from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import OpenNextLogo from "../images/opennextlogo";
 
 import "./header.css";
 
 interface HeaderProps {
-	siteTitle: string;
 	headerLinks: Array<{
 		to: string;
 		title: string;
 	}>;
 }
 
-const Header = ({ siteTitle, headerLinks }: HeaderProps): JSX.Element => (
-	<AntdLayout.Header>
-		<Row justify="space-between">
-			<Col xl={12} lg={12} md={12} sm={20} xs={20}>
-				<Link className="logo" to="/">
-					<OpenNextLogo />
-					<div className="logo__text">
-						<span>Library of </span>
-						<br></br>
-						<span>Open Source Hardware</span>
-					</div>
+interface MainMenuProps {
+	links: Array<{
+		to: string;
+		title: string;
+	}>;
+	mode?: "horizontal" | undefined;
+}
+
+const MainMenu = ({ links, mode }: MainMenuProps) => (
+	<Menu mode={mode}>
+		{links.map(link => (
+			<Menu.Item key={link.title}>
+				<Link to={link.to}>
+					<Typography.Text>{link.title}</Typography.Text>
 				</Link>
-			</Col>
-			<Col
-				xl={12}
-				lg={12}
-				md={12}
-				sm={4}
-				xs={4}
-			>
-				<Menu mode="horizontal">
-					{headerLinks.map(link => (
-						<Menu.Item key={link.title}>
-							<Link to={link.to}>
-								<Typography.Text>{link.title}</Typography.Text>
-							</Link>
-						</Menu.Item>
-					))}
-				</Menu>
-			</Col>
-		</Row>
-	</AntdLayout.Header>
+			</Menu.Item>
+		))}
+	</Menu>
 );
+
+interface MobileMenuProps {
+	links: Array<{
+		to: string;
+		title: string;
+	}>;
+}
+
+const MobileMenu = ({ links }: MobileMenuProps) => {
+	
+	const menu = MainMenu({ links });
+	
+	return (
+	<Dropdown overlay={menu} trigger={["click"]}>
+		<Button>
+			<MenuOutlined />
+		</Button>
+	</Dropdown>
+)};
+
+const Header = ({ headerLinks }: HeaderProps): JSX.Element => {
+	const { lg } = Grid.useBreakpoint();
+
+	return (
+		<AntdLayout.Header>
+			<Row justify="space-between">
+				<Col xl={12} lg={12} md={12} sm={18} xs={18}>
+					<Link className="logo" to="/">
+						<OpenNextLogo />
+						<div className="logo__text">
+							<span>Library of </span>
+							<br></br>
+							<span>Open Source Hardware</span>
+						</div>
+					</Link>
+				</Col>
+				<Col xl={12} lg={12} md={12} sm={6} xs={6} className="menu-col">
+					{lg ? (
+						<Menu mode="horizontal">
+							{headerLinks.map(link => (
+								<Menu.Item key={link.title}>
+									<Link to={link.to}>
+										<Typography.Text>{link.title}</Typography.Text>
+									</Link>
+								</Menu.Item>
+							))}
+						</Menu>
+					) : (
+						<MobileMenu links={headerLinks} />
+					)}
+				</Col>
+			</Row>
+		</AntdLayout.Header>
+	);
+};
 
 export default Header;

@@ -29,5 +29,7 @@ module.exports = {
 			version: "detect"
 		}
 	},
-	rules: {}
+	rules: {
+		"react/display-name": "off"
+	}
 };
