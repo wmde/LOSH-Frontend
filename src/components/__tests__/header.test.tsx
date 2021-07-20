@@ -19,16 +19,16 @@ jest.mock("antd", () => {
 		Typography: {
 			Text: (): null => null,
 		},
+		Grid: {
+			useBreakpoint: (): null => null,
+		},
 	};
 });
 
 describe("Header", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<Header
-				headerLinks={site.siteMetadata.headerLinks}
-				siteTitle="Library of Open Source Hardware"
-			/>
+			<Header headerLinks={site.siteMetadata.headerLinks} />
 		);
 		expect(tree).toMatchSnapshot();
 	});

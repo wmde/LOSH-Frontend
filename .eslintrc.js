@@ -5,17 +5,11 @@ module.exports = {
 		es6: true,
 		jest: true,
 	},
-	extends: [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:react/recommended",
-	],
+	extends: ["eslint:recommended", "plugin:react/recommended"],
 	globals: {
 		Atomics: "readonly",
 		SharedArrayBuffer: "readonly",
 	},
-	parser: "@typescript-eslint/parser",
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true,
@@ -23,7 +17,21 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: "module",
 	},
-	plugins: ["@typescript-eslint", "react"],
+	plugins: ["react"],
+	overrides: [
+		{
+			files: ["**/*.ts?(x)"],
+			parser: "@typescript-eslint/parser",
+			extends: [
+				"plugin:@typescript-eslint/eslint-recommended",
+				"plugin:@typescript-eslint/recommended",
+			],
+			rules: {
+				"@typescript-eslint/ban-ts-comment": "off",
+			},
+			plugins: ["@typescript-eslint"],
+		},
+	],
 	settings: {
 		react: {
 			version: "detect",
@@ -31,6 +39,5 @@ module.exports = {
 	},
 	rules: {
 		"react/display-name": "off",
-		"@typescript-eslint/ban-ts-comment": "off",
 	},
 };
