@@ -8,7 +8,7 @@ import {
 	Typography,
 	Dropdown,
 	Button,
-	Grid
+	Grid,
 } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import OpenNextLogo from "../images/opennextlogo";
@@ -32,7 +32,7 @@ interface MainMenuProps {
 
 const MainMenu = ({ links, mode }: MainMenuProps) => (
 	<Menu mode={mode}>
-		{links.map(link => (
+		{links.map((link) => (
 			<Menu.Item key={link.title}>
 				<Link to={link.to}>
 					<Typography.Text>{link.title}</Typography.Text>
@@ -50,16 +50,16 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ links }: MobileMenuProps) => {
-	
 	const menu = MainMenu({ links });
-	
+
 	return (
-	<Dropdown overlay={menu} trigger={["click"]}>
-		<Button>
-			<MenuOutlined />
-		</Button>
-	</Dropdown>
-)};
+		<Dropdown overlay={menu} trigger={["click"]}>
+			<Button>
+				<MenuOutlined />
+			</Button>
+		</Dropdown>
+	);
+};
 
 const Header = ({ headerLinks }: HeaderProps): JSX.Element => {
 	const { lg } = Grid.useBreakpoint();
@@ -80,7 +80,7 @@ const Header = ({ headerLinks }: HeaderProps): JSX.Element => {
 				<Col xl={12} lg={12} md={12} sm={6} xs={6} className="menu-col">
 					{lg ? (
 						<Menu mode="horizontal">
-							{headerLinks.map(link => (
+							{headerLinks.map((link) => (
 								<Menu.Item key={link.title}>
 									<Link to={link.to}>
 										<Typography.Text>{link.title}</Typography.Text>

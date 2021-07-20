@@ -1,41 +1,41 @@
 .ant-layout-header {
-    line-height: unset;
-    height: unset;
-    padding: 18px 1rem;
+	line-height: unset;
+	height: unset;
+	padding: 18px 1rem;
 }
 
 .ant-layout-header a.logo {
-    display: flex;
-    color: black;
+	display: flex;
+	color: black;
 }
 
 .ant-layout-header a.logo span {
-    background-color: #F6FB6A;
-    display: inline-block;
-    margin-bottom: 3px;
-    padding: 0 5px;
+	background-color: #f6fb6a;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 0 5px;
 }
 
 .ant-layout-header a.logo .logo__text {
-    margin-left: 1rem;
+	margin-left: 1rem;
 }
 
 .ant-layout-header .ant-menu-horizontal .ant-menu-item::after {
-    margin-top: 15px;
-    top: 15px;
-    border-width: 3px;
+	margin-top: 15px;
+	top: 15px;
+	border-width: 3px;
 }
 
 .ant-layout-header .ant-menu-horizontal {
-    border-bottom: 0;
+	border-bottom: 0;
 }
 
 .ant-layout-header .ant-menu-horizontal .ant-menu-item:hover::after {
-    border-width: 3px;
+	border-width: 3px;
 }
 
 .ant-layout-header .menu-col {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }

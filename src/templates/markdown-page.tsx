@@ -13,15 +13,15 @@ const processor = unified().use(rehypeReact, {
 		h2: (props: any) => <Typography.Title level={2} {...props} />,
 		h3: (props: any) => <Typography.Title level={3} {...props} />,
 		h4: (props: any) => <Typography.Title level={4} {...props} />,
-		h5: (props: any) => <Typography.Title level={5} {...props} />
-	}
+		h5: (props: any) => <Typography.Title level={5} {...props} />,
+	},
 });
 export const renderAst = (ast: any): JSX.Element => {
-	return (processor.stringify(ast) as unknown) as JSX.Element;
+	return processor.stringify(ast) as unknown as JSX.Element;
 };
 
 interface TemplateProps {
-	data: any
+	data: any;
 }
 
 export default function Template({ data }: TemplateProps) {
@@ -37,7 +37,7 @@ export default function Template({ data }: TemplateProps) {
 	);
 }
 export const pageQuery = graphql`
-	query($id: String!) {
+	query ($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			html
 			htmlAst

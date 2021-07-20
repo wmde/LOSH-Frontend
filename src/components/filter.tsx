@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Menu, Dropdown, Button, message, Space } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
-import '../styles/filter.css';
+import "../styles/filter.css";
 
 function handleMenuClick(e: any): void {
 	message.info("Click on menu item.");
@@ -25,32 +25,32 @@ const menu = (
 function Filter(): JSX.Element {
 	return (
 		<Space wrap className="filter">
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>
-			<Dropdown overlay={menu} trigger={['click']}>
+			<Dropdown overlay={menu} trigger={["click"]}>
 				<Button>
 					Actions <DownOutlined />
 				</Button>

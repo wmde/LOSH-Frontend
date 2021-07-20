@@ -12,13 +12,13 @@ interface FooterProps {
 const Footer = ({ footerLinks }: FooterProps): JSX.Element => (
 	<AntdLayout.Footer>
 		<Row align="middle" gutter={[34, 4]}>
-			{footerLinks.map(link => (
+			{footerLinks.map((link) => (
 				<Link
 					key={link.title}
 					to={link.to}
 					style={{
 						textDecoration: `none`,
-						paddingRight: '1rem'
+						paddingRight: "1rem",
 					}}
 				>
 					<Typography.Text>{link.title}</Typography.Text>

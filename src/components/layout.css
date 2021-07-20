@@ -1,7 +1,14 @@
-h1, h2, h3, h4, h5, a, button, input {
-    font-family: 'Source Code Pro';
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+button,
+input {
+	font-family: "Source Code Pro";
 }
 
 .ant-dropdown-menu {
-    font-family: 'Source Code Pro';
+	font-family: "Source Code Pro";
 }

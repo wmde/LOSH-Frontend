@@ -8,12 +8,12 @@ const renderer = ShallowRenderer.createRenderer();
 jest.mock("antd", () => {
 	return {
 		Layout: {
-			Footer: (): null => null
+			Footer: (): null => null,
 		},
 		Row: (): null => null,
 		Typography: {
-			Text: (): null => null
-		}
+			Text: (): null => null,
+		},
 	};
 });
 

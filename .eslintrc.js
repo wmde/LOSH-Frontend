@@ -3,34 +3,34 @@ module.exports = {
 		browser: true,
 		node: true,
 		es6: true,
-		jest: true
+		jest: true,
 	},
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
 	],
 	globals: {
 		Atomics: "readonly",
-		SharedArrayBuffer: "readonly"
+		SharedArrayBuffer: "readonly",
 	},
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
 		ecmaFeatures: {
-			jsx: true
+			jsx: true,
 		},
 		ecmaVersion: 2018,
-		sourceType: "module"
+		sourceType: "module",
 	},
 	plugins: ["@typescript-eslint", "react"],
 	settings: {
 		react: {
-			version: "detect"
-		}
+			version: "detect",
+		},
 	},
 	rules: {
 		"react/display-name": "off",
-		"@typescript-eslint/ban-ts-comment": "off"
-	}
+		"@typescript-eslint/ban-ts-comment": "off",
+	},
 };

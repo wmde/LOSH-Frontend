@@ -31,7 +31,7 @@ const Layout: React.FC = ({ children }: Props) => {
 
 	const { md } = Grid.useBreakpoint();
 
-	const pagePadding = md ? '0 4rem' : '0 1rem';
+	const pagePadding = md ? "0 4rem" : "0 1rem";
 
 	return (
 		<AntdLayout style={{ maxWidth: 1440, margin: "auto" }}>

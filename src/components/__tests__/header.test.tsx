@@ -11,14 +11,14 @@ jest.mock("antd", () => {
 
 	return {
 		Layout: {
-			Header: (): null => null
+			Header: (): null => null,
 		},
 		Row: (): null => null,
 		Col: (): null => null,
 		Menu,
 		Typography: {
-			Text: (): null => null
-		}
+			Text: (): null => null,
+		},
 	};
 });
 

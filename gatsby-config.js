@@ -7,39 +7,39 @@ module.exports = {
 		headerLinks: [
 			{
 				to: "/",
-				title: "Explore Data"
+				title: "Explore Data",
 			},
 			{
 				to: "/contribute-data",
-				title: "Contribute Data"
+				title: "Contribute Data",
 			},
 			{
 				to: "/ecosystem",
-				title: "Ecosystem"
+				title: "Ecosystem",
 			},
 			{
 				to: "/get-involved",
-				title: "Get involved"
-			}
+				title: "Get involved",
+			},
 		],
 		footerLinks: [
 			{
 				to: "/",
-				title: "(c) OPEN!NEXT"
+				title: "(c) OPEN!NEXT",
 			},
 			{
 				to: "/about",
-				title: "About the Project"
+				title: "About the Project",
 			},
 			{
 				to: "/disclaimer",
-				title: "Legal Disclaimer"
+				title: "Legal Disclaimer",
 			},
 			{
 				to: "/issue",
-				title: "Submit an issue"
-			}
-		]
+				title: "Submit an issue",
+			},
+		],
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,
@@ -50,30 +50,30 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`
-			}
+				path: `${__dirname}/src/images`,
+			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `markdown-pages`,
-				path: `${__dirname}/src/markdown-pages`
-			}
+				path: `${__dirname}/src/markdown-pages`,
+			},
 		},
 		`gatsby-transformer-remark`,
 		{
 			resolve: "gatsby-plugin-web-font-loader",
 			options: {
 				google: {
-					families: ["Source Code Pro", "Source Sans Pro"]
-				}
-			}
+					families: ["Source Code Pro", "Source Sans Pro"],
+				},
+			},
 		},
 		{
 			resolve: "gatsby-plugin-antd",
 			options: {
-				style: true
-			}
+				style: true,
+			},
 		},
 		{
 			resolve: "gatsby-plugin-less",
@@ -90,11 +90,11 @@ module.exports = {
 						"link-color": "#5087BC",
 						"input-bg": "#FFFFFF",
 						"btn-default-bg": "#FFFFFF",
-						'dropdown-menu-bg': "#FFFFFF"
+						"dropdown-menu-bg": "#FFFFFF",
 					},
-					javascriptEnabled: true
-				}
-			}
+					javascriptEnabled: true,
+				},
+			},
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
@@ -107,11 +107,11 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
-			}
-		}
+				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+			},
+		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,
-	]
+	],
 };
