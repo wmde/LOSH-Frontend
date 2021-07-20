@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter renders correctly 1`] = `
+<Space
+  className="filter"
+  wrap={true}
+>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+  <Dropdown
+    overlay={
+      <Menu
+        onClick={[Function]}
+      >
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          1st menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          2nd menu item
+        </Unknown>
+        <Unknown
+          icon={<UserOutlined />}
+        >
+          3rd menu item
+        </Unknown>
+      </Menu>
+    }
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Actions 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
+</Space>
+`;
