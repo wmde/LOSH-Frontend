@@ -31,16 +31,27 @@ const Layout: React.FC = ({ children }: Props) => {
 
 	const { md } = Grid.useBreakpoint();
 
-	const pagePadding = md ? "0 4rem" : "0 1rem";
+	const paddingValue = md ? "4rem" : "1rem";
+
+	const pagePadding = {
+		paddingLeft: paddingValue,
+		paddingRight: paddingValue,
+	};
 
 	return (
 		<AntdLayout style={{ maxWidth: 1440, margin: "auto" }}>
-			<Header headerLinks={data.site.siteMetadata.headerLinks} />
-			<AntdLayout.Content style={{ padding: pagePadding }}>
+			<Header
+				headerLinks={data.site.siteMetadata.headerLinks}
+				pagePadding={pagePadding}
+			/>
+			<AntdLayout.Content style={{ ...pagePadding }}>
 				{children}
 			</AntdLayout.Content>
 
-			<Footer footerLinks={data.site.siteMetadata.footerLinks} />
+			<Footer
+				footerLinks={data.site.siteMetadata.footerLinks}
+				pagePadding={pagePadding}
+			/>
 		</AntdLayout>
 	);
 };

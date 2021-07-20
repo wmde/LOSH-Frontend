@@ -17,10 +17,18 @@ jest.mock("antd", () => {
 	};
 });
 
+const pagePadding = {
+	paddingLeft: "1rem",
+	paddingRight: "1rem",
+};
+
 describe("Footer", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<Footer footerLinks={site.siteMetadata.footerLinks} />
+			<Footer
+				footerLinks={site.siteMetadata.footerLinks}
+				pagePadding={pagePadding}
+			/>
 		);
 		expect(tree).toMatchSnapshot();
 	});

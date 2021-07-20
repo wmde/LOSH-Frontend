@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
 	siteMetadata: {
 		title: `Library of Open Source Hardware`,
@@ -65,7 +64,10 @@ module.exports = {
 			resolve: "gatsby-plugin-web-font-loader",
 			options: {
 				google: {
-					families: ["Source Code Pro", "Source Sans Pro"],
+					families: [
+						"Source Code Pro:400,500,600,900",
+						"Source Sans Pro:400,500,600,900",
+					],
 				},
 			},
 		},
@@ -80,7 +82,7 @@ module.exports = {
 			options: {
 				lessOptions: {
 					modifyVars: {
-						"font-family": "Source Sans Pro",
+						"font-family": "'Source Sans Pro', Helvetica",
 						"body-background": "#ededed",
 						"layout-header-background": "#ededed",
 						"layout-body-background": "#ededed",

@@ -1,17 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<Header>
+<Header
+  style={
+    Object {
+      "paddingLeft": "1rem",
+      "paddingRight": "1rem",
+    }
+  }
+>
   <Row
     justify="space-between"
   >
-    <Col
-      lg={12}
-      md={12}
-      sm={18}
-      xl={12}
-      xs={18}
-    >
+    <Col>
       <mockConstructor
         className="logo"
         to="/"
@@ -32,11 +33,6 @@ exports[`Header renders correctly 1`] = `
     </Col>
     <Col
       className="menu-col"
-      lg={12}
-      md={12}
-      sm={6}
-      xl={12}
-      xs={6}
     >
       <MobileMenu
         links={

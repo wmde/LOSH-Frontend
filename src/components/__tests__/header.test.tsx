@@ -25,10 +25,18 @@ jest.mock("antd", () => {
 	};
 });
 
+const pagePadding = {
+	paddingLeft: "1rem",
+	paddingRight: "1rem",
+};
+
 describe("Header", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<Header headerLinks={site.siteMetadata.headerLinks} />
+			<Header
+				headerLinks={site.siteMetadata.headerLinks}
+				pagePadding={pagePadding}
+			/>
 		);
 		expect(tree).toMatchSnapshot();
 	});

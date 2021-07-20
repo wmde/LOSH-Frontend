@@ -20,6 +20,10 @@ interface HeaderProps {
 		to: string;
 		title: string;
 	}>;
+	pagePadding: {
+		paddingLeft: string;
+		paddingRight: string;
+	};
 }
 
 interface MainMenuProps {
@@ -61,13 +65,13 @@ const MobileMenu = ({ links }: MobileMenuProps) => {
 	);
 };
 
-const Header = ({ headerLinks }: HeaderProps): JSX.Element => {
+const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
 	const { lg } = Grid.useBreakpoint();
 
 	return (
-		<AntdLayout.Header>
+		<AntdLayout.Header style={{ ...pagePadding }}>
 			<Row justify="space-between">
-				<Col xl={12} lg={12} md={12} sm={18} xs={18}>
+				<Col>
 					<Link className="logo" to="/">
 						<OpenNextLogo />
 						<div className="logo__text">
@@ -77,7 +81,7 @@ const Header = ({ headerLinks }: HeaderProps): JSX.Element => {
 						</div>
 					</Link>
 				</Col>
-				<Col xl={12} lg={12} md={12} sm={6} xs={6} className="menu-col">
+				<Col className="menu-col">
 					{lg ? (
 						<Menu mode="horizontal">
 							{headerLinks.map((link) => (

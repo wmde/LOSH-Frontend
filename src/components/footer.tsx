@@ -7,11 +7,15 @@ interface FooterProps {
 		to: string;
 		title: string;
 	}>;
+	pagePadding: {
+		paddingLeft: string;
+		paddingRight: string;
+	};
 }
 
-const Footer = ({ footerLinks }: FooterProps): JSX.Element => (
-	<AntdLayout.Footer>
-		<Row align="middle" gutter={[34, 4]}>
+const Footer = ({ footerLinks, pagePadding }: FooterProps): JSX.Element => (
+	<AntdLayout.Footer style={{ ...pagePadding }}>
+		<Row align="middle">
 			{footerLinks.map((link) => (
 				<Link
 					key={link.title}

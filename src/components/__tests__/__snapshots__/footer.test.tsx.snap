@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer renders correctly 1`] = `
-<Footer>
+<Footer
+  style={
+    Object {
+      "paddingLeft": "1rem",
+      "paddingRight": "1rem",
+    }
+  }
+>
   <Row
     align="middle"
-    gutter={
-      Array [
-        34,
-        4,
-      ]
-    }
   >
     <mockConstructor
       style={
