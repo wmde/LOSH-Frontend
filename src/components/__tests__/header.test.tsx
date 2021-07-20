@@ -20,7 +20,7 @@ jest.mock("antd", () => {
 			Text: (): null => null,
 		},
 		Grid: {
-			useBreakpoint: (): null => null,
+			useBreakpoint: (): unknown => ({}),
 		},
 	};
 });

@@ -8,12 +8,13 @@ import ShallowRenderer from "react-test-renderer/shallow";
 const renderer = ShallowRenderer.createRenderer();
 
 jest.mock("antd", () => {
+	const Layout = (): null => null;
+	Layout.Content = (): null => null;
+
 	return {
-		Layout: {
-			Content: (): null => null,
-		},
+		Layout,
 		Grid: {
-			useBreakpoint: (): null => null,
+			useBreakpoint: (): unknown => ({}),
 		},
 	};
 });
