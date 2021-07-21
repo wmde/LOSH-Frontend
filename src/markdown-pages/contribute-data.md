@@ -6,8 +6,6 @@ title: "Contribute specifications"
 Our library of Open Source Hardware data thrives on participation. We want to make it as easy as possible for your open source hardware specifications to be collected and shared.
 Here’s a step-by-step guide to getting your hardware specifications included in our library:
 
-## How to submit your specification
-
 ### **1. Download the Template**
 
 [Download template file](somelink)
