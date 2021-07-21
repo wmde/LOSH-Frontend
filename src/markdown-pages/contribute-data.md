@@ -10,22 +10,21 @@ Here’s a step-by-step guide to getting your hardware specifications included i
 
 [Download template file](somelink)
 
-Click on “Download template file” button to retrieve your copy of the template. It will save the file in your designated downloads folder
+Click on “Download template file” button to download your copy of the template. It will save the file in your downloads folder
 
 ### 2. Add your data
 
-With a simple text editor, open the downloaded template and adjust it to match your specifications. Make sure it has the proper file type/ending (yourfile.osh) and follows the [specifications](somelink) of XYZ files.
+With a text editor, open the downloaded template and adjust it to match your hardware’s specifications. Make sure it has the proper file ending (yourfile.**osh**) and follows the [specifications](somelink) of osh files.
 
 ### 3. Upload your data to a repository
 
-- Create an account with [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com)
-- OR sign in to your existing [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com) account
+- Create an account with [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com) OR sign in to your existing [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com) account
 - Add your specification file to an existing repository or create a new repository
-- Commit and push your changes of the file to the remote repository.
+- Commit and push your changes of the file to the remote repository on gitlab or github.
 
 ### 4. Wait for your specifications to be picked up
 
-Our crawler service will periodically sift through repositories with the requisite file name and structure and pick up your specifications at the next opportunity.
+Our crawler service will periodically go  through repositories with osh-files and pick up your specifications.
 
 ### 5. Update your specifications
 
