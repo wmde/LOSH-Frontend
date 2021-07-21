@@ -31,4 +31,4 @@ Our crawler service will periodically sift through repositories with the requisi
 
 ### **5. Update your specifications**
 
-Update your specifications with new changes.
+If you need to make changes to your specs, edit the file in your repository and push the changes. The crawler will pick up the changes. 
