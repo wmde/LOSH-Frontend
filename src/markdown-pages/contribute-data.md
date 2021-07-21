@@ -20,8 +20,8 @@ With a simple text editor, open the downloaded template and adjust it to match y
 
 ### **3. Upload your data to a repository**
 
-- Create an account with [Github.com](https://www.github.com)
-- OR sign in to your existing [Github.com](https://www.github.com) account
+- Create an account with [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com)
+- OR sign in to your existing [Github.com](https://www.github.com) or [Gitlab.com](https://www.gitlab.com) account
 - Add your specification file to an existing repository or create a new repository
 - Commit and push your changes of the file to the remote repository.
 
@@ -29,6 +29,6 @@ With a simple text editor, open the downloaded template and adjust it to match y
 
 Our crawler service will periodically sift through repositories with the requisite file name and structure and pick up your specifications at the next opportunity.
 
-### **5. Check your specifications**
+### **5. Update your specifications**
 
-Share your specifications or update your specifications with new changes.
+If you need to make changes to your specs, edit the file in your repository and push the changes. The crawler will pick up the changes. 
