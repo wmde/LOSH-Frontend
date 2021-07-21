@@ -17,8 +17,12 @@ exports[`Layout renders correctly 1`] = `
           "to": "/",
         },
         Object {
-          "title": "Contribute Data",
-          "to": "/contribute-data",
+          "title": "Contribute specifications",
+          "to": "/contribute-specifications",
+        },
+        Object {
+          "title": "About the Project",
+          "to": "/about",
         },
         Object {
           "title": "Ecosystem",
@@ -53,12 +57,12 @@ exports[`Layout renders correctly 1`] = `
           "to": "/",
         },
         Object {
-          "title": "About the Project",
-          "to": "/about",
+          "title": "Imprint",
+          "to": "https://opennext.eu/",
         },
         Object {
           "title": "Legal Disclaimer",
-          "to": "/disclaimer",
+          "to": "https://opennext.eu/",
         },
         Object {
           "title": "Submit an issue",

@@ -19,10 +19,15 @@ jest.mock("antd", () => {
 		Typography: {
 			Text: (): null => null,
 		},
-		Grid: {
-			useBreakpoint: (): unknown => ({}),
-		},
 	};
+});
+
+jest.mock("../../hooks/useWindowSize", () => {
+	const useWindowSize = () => ({
+		width: 1230,
+		height: 0,
+	});
+	return useWindowSize;
 });
 
 const pagePadding = {

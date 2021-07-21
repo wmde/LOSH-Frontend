@@ -32,10 +32,10 @@ exports[`Footer renders correctly 1`] = `
           "textDecoration": "none",
         }
       }
-      to="/about"
+      to="https://opennext.eu/"
     >
       <Text>
-        About the Project
+        Imprint
       </Text>
     </mockConstructor>
     <mockConstructor
@@ -45,7 +45,7 @@ exports[`Footer renders correctly 1`] = `
           "textDecoration": "none",
         }
       }
-      to="/disclaimer"
+      to="https://opennext.eu/"
     >
       <Text>
         Legal Disclaimer

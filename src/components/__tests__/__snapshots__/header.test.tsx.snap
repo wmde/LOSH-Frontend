@@ -42,8 +42,12 @@ exports[`Header renders correctly 1`] = `
               "to": "/",
             },
             Object {
-              "title": "Contribute Data",
-              "to": "/contribute-data",
+              "title": "Contribute specifications",
+              "to": "/contribute-specifications",
+            },
+            Object {
+              "title": "About the Project",
+              "to": "/about",
             },
             Object {
               "title": "Ecosystem",

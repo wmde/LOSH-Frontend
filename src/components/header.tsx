@@ -8,12 +8,12 @@ import {
 	Typography,
 	Dropdown,
 	Button,
-	Grid,
 } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import OpenNextLogo from "../images/opennextlogo";
 
 import "./header.css";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface HeaderProps {
 	headerLinks: Array<{
@@ -66,7 +66,7 @@ const MobileMenu = ({ links }: MobileMenuProps) => {
 };
 
 const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
-	const { lg } = Grid.useBreakpoint();
+	const { width } = useWindowSize();
 
 	return (
 		<AntdLayout.Header style={{ ...pagePadding }}>
@@ -82,7 +82,7 @@ const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
 					</Link>
 				</Col>
 				<Col className="menu-col">
-					{lg ? (
+					{width > 1230 ? (
 						<Menu mode="horizontal">
 							{headerLinks.map((link) => (
 								<Menu.Item key={link.title}>

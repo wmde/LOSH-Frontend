@@ -12,9 +12,9 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incid
 - Name (Site), Skills: Stuff, other stuff
 - Name (repo), Skills: Stuff, other stuff
 
-
 ## For Developers
 
-Developers can contribute features and bugfixes on these repositories: 
+Developers can contribute features and bugfixes on these repositories:
+
 - Name (repo), Skills: Stuff, other stuff
 - Name (repo), Skills: Stuff, other stuff

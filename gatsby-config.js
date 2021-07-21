@@ -9,8 +9,12 @@ module.exports = {
 				title: "Explore Data",
 			},
 			{
-				to: "/contribute-data",
-				title: "Contribute Data",
+				to: "/contribute-specifications",
+				title: "Contribute specifications",
+			},
+			{
+				to: "/about",
+				title: "About the Project",
 			},
 			{
 				to: "/ecosystem",
@@ -27,11 +31,11 @@ module.exports = {
 				title: "(c) OPEN!NEXT",
 			},
 			{
-				to: "/about",
-				title: "About the Project",
+				to: "https://opennext.eu/",
+				title: "Imprint",
 			},
 			{
-				to: "/disclaimer",
+				to: "https://opennext.eu/",
 				title: "Legal Disclaimer",
 			},
 			{
