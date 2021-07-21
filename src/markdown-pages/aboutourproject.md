@@ -10,5 +10,5 @@ These organizations are part of the working group:
 
 ### Our mission
 
-Development of standards for the open source community to enable sharing and reuse of data and hardware
-Providing an accessible open source database that allows for easy exploration of the stored data and guides makers in contributing their open source hardware specifications. 
+1. Development of standards for the open source community to enable sharing and reuse of data and hardware
+2. Providing an accessible open source database that allows for easy exploration of the stored data and guides makers in contributing their open source hardware specifications. 
