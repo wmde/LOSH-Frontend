@@ -3,20 +3,18 @@ slug: "/get-involved"
 title: "Get Involved"
 ---
 
-We will guide you in a step-by-step guide through the process of submitting OSH Data. Please consult ...
+Are you interested in supporting the development of Open Source Hardware? Please consider contributing to a range of projects that need assistance. These communities are always looking for helping hands:
 
 ## For Makers
 
-We will guide you in a step-by-step guide through the process of submitting OSH Data. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat
 
-[Wikimedia Deutschland](https://www.wikimedia.de/)
+- Name (Site), Skills: Stuff, other stuff
+- Name (repo), Skills: Stuff, other stuff
 
-[Wikimedia Deutschland](https://www.wikimedia.de/)
 
 ## For Developers
 
-We will guide you in a step-by-step guide through the process of submitting OSH Data. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat
-
-[Wikimedia Deutschland](https://www.wikimedia.de/)
-
-[Wikimedia Deutschland](https://www.wikimedia.de/)
+Developers can contribute features and bugfixes on these repositories: 
+- Name (repo), Skills: Stuff, other stuff
+- Name (repo), Skills: Stuff, other stuff
