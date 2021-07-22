@@ -22,43 +22,43 @@ const tableHeaders: ColumnsType<HardwareData> = [
 	{
 		title: "Name",
 		dataIndex: "name",
-		key: "name",
+		key: "name"
 	},
 	{
 		title: "Identifier",
 		dataIndex: "identifier",
-		key: "identifier",
+		key: "identifier"
 	},
 	{
 		title: "Repository",
 		dataIndex: "repository",
-		key: "repository",
+		key: "repository"
 	},
 	{
 		title: "Version",
 		dataIndex: "version",
-		key: "version",
+		key: "version"
 	},
 	{
 		title: "License",
 		dataIndex: "license",
-		key: "license",
+		key: "license"
 	},
 	{
 		title: "Organization",
 		dataIndex: "organization",
-		key: "organization",
+		key: "organization"
 	},
 	{
 		title: "Language",
 		dataIndex: "language",
-		key: "language",
+		key: "language"
 	},
 	{
 		title: "TsdcId",
 		dataIndex: "tsdcId",
-		key: "tsdcId",
-	},
+		key: "tsdcId"
+	}
 ];
 
 const tableData: HardwareData[] = [
@@ -71,7 +71,7 @@ const tableData: HardwareData[] = [
 		license: "donec",
 		organization: "Lakin, Ondricka and Thiel",
 		language: "Maltese",
-		tsdcId: 1,
+		tsdcId: 1
 	},
 	{
 		name: "imperdiet",
@@ -82,7 +82,7 @@ const tableData: HardwareData[] = [
 		license: "etiam",
 		organization: "Orn Inc",
 		language: "Greek",
-		tsdcId: 2,
+		tsdcId: 2
 	},
 	{
 		name: "volutpat",
@@ -92,7 +92,7 @@ const tableData: HardwareData[] = [
 		license: "ut",
 		organization: "Gutkowski LLC",
 		language: "Danish",
-		tsdcId: 3,
+		tsdcId: 3
 	},
 	{
 		name: "sit",
@@ -102,7 +102,7 @@ const tableData: HardwareData[] = [
 		license: "ligula",
 		organization: "Bernhard-Kuhn",
 		language: "Kashmiri",
-		tsdcId: 4,
+		tsdcId: 4
 	},
 	{
 		name: "justo sit",
@@ -113,7 +113,7 @@ const tableData: HardwareData[] = [
 		license: "erat",
 		organization: "Kunze, Dickinson and Zboncak",
 		language: "Spanish",
-		tsdcId: 5,
+		tsdcId: 5
 	},
 	{
 		name: "nunc nisl",
@@ -123,7 +123,7 @@ const tableData: HardwareData[] = [
 		license: "lacus",
 		organization: "Green Group",
 		language: "Hiri Motu",
-		tsdcId: 6,
+		tsdcId: 6
 	},
 	{
 		name: "nisi",
@@ -133,7 +133,7 @@ const tableData: HardwareData[] = [
 		license: "nulla",
 		organization: "Brakus and Sons",
 		language: "Maltese",
-		tsdcId: 7,
+		tsdcId: 7
 	},
 	{
 		name: "mi nulla",
@@ -143,7 +143,7 @@ const tableData: HardwareData[] = [
 		license: "tortor",
 		organization: "Ernser-Gorczany",
 		language: "Danish",
-		tsdcId: 8,
+		tsdcId: 8
 	},
 	{
 		name: "odio",
@@ -153,7 +153,7 @@ const tableData: HardwareData[] = [
 		license: "quisque",
 		organization: "Doyle and Sons",
 		language: "Nepali",
-		tsdcId: 9,
+		tsdcId: 9
 	},
 	{
 		name: "est",
@@ -164,8 +164,8 @@ const tableData: HardwareData[] = [
 		license: "quam",
 		organization: "Denesik Group",
 		language: "Nepali",
-		tsdcId: 10,
-	},
+		tsdcId: 10
+	}
 ];
 
 interface HardwarePageProps {
@@ -175,7 +175,7 @@ interface HardwarePageProps {
 
 const HardwareTable = ({
 	dataSource,
-	columns,
+	columns
 }: HardwarePageProps): JSX.Element => (
 	<AntTable<HardwareData>
 		columns={columns}

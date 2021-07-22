@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SEO renders the test correctly 1`] = `
+<HelmetWrapper
+  defer={true}
+  encodeSpecialCharacters={true}
+  htmlAttributes={
+    Object {
+      "lang": undefined,
+    }
+  }
+  meta={
+    Array [
+      Object {
+        "content": "TypeScript version of the default Gatsby starter",
+        "name": "description",
+      },
+      Object {
+        "content": "All posts",
+        "property": "og:title",
+      },
+      Object {
+        "content": "TypeScript version of the default Gatsby starter",
+        "property": "og:description",
+      },
+      Object {
+        "content": "website",
+        "property": "og:type",
+      },
+      Object {
+        "content": "summary",
+        "name": "twitter:card",
+      },
+      Object {
+        "content": "@jongwooo",
+        "name": "twitter:creator",
+      },
+      Object {
+        "content": "All posts",
+        "name": "twitter:title",
+      },
+      Object {
+        "content": "TypeScript version of the default Gatsby starter",
+        "name": "twitter:description",
+      },
+    ]
+  }
+  title="All posts"
+  titleTemplate="%s | Library of Open Source Hardware"
+/>
+`;

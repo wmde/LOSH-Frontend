@@ -3,19 +3,19 @@ module.exports = {
 		browser: true,
 		node: true,
 		es6: true,
-		jest: true,
+		jest: true
 	},
 	extends: ["eslint:recommended", "plugin:react/recommended"],
 	globals: {
 		Atomics: "readonly",
-		SharedArrayBuffer: "readonly",
+		SharedArrayBuffer: "readonly"
 	},
 	parserOptions: {
 		ecmaFeatures: {
-			jsx: true,
+			jsx: true
 		},
 		ecmaVersion: 2018,
-		sourceType: "module",
+		sourceType: "module"
 	},
 	plugins: ["react"],
 	overrides: [
@@ -24,20 +24,20 @@ module.exports = {
 			parser: "@typescript-eslint/parser",
 			extends: [
 				"plugin:@typescript-eslint/eslint-recommended",
-				"plugin:@typescript-eslint/recommended",
+				"plugin:@typescript-eslint/recommended"
 			],
 			rules: {
-				"@typescript-eslint/ban-ts-comment": "off",
+				"@typescript-eslint/ban-ts-comment": "off"
 			},
-			plugins: ["@typescript-eslint"],
-		},
+			plugins: ["@typescript-eslint"]
+		}
 	],
 	settings: {
 		react: {
-			version: "detect",
-		},
+			version: "detect"
+		}
 	},
 	rules: {
-		"react/display-name": "off",
-	},
+		"react/display-name": "off"
+	}
 };

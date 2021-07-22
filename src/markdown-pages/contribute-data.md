@@ -24,7 +24,7 @@ With a text editor, open the downloaded template and adjust it to match your har
 
 ### 4. Wait for your specifications to be picked up
 
-Our crawler service will periodically go  through repositories with osh-files and pick up your specifications.
+Our crawler service will periodically go through repositories with osh-files and pick up your specifications.
 
 ### 5. Update your specifications
 

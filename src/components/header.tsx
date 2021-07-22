@@ -7,7 +7,7 @@ import {
 	Menu,
 	Typography,
 	Dropdown,
-	Button,
+	Button
 } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import OpenNextLogo from "../images/opennextlogo";
@@ -36,7 +36,7 @@ interface MainMenuProps {
 
 const MainMenu = ({ links, mode }: MainMenuProps) => (
 	<Menu mode={mode}>
-		{links.map((link) => (
+		{links.map(link => (
 			<Menu.Item key={link.title}>
 				<Link to={link.to}>
 					<Typography.Text>{link.title}</Typography.Text>
@@ -84,7 +84,7 @@ const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
 				<Col className="menu-col">
 					{width > 1230 ? (
 						<Menu mode="horizontal">
-							{headerLinks.map((link) => (
+							{headerLinks.map(link => (
 								<Menu.Item key={link.title}>
 									<Link to={link.to}>
 										<Typography.Text>{link.title}</Typography.Text>
