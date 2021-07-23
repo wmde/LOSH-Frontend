@@ -12,3 +12,7 @@ input {
 .ant-dropdown-menu {
 	font-family: "Source Code Pro", monospace, "Courier New";
 }
+
+.ant-layout-content {
+	padding-top: 16px;
+}
