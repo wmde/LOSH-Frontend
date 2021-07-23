@@ -18,9 +18,10 @@ export default class QueryController {
 
 interface GetItemsProps {
 	search: string;
+	page: number;
 }
 
-interface HardwareData {
+export interface HardwareData {
 	name: string;
 	identifier: string;
 	repository: string;

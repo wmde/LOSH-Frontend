@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Input } from "antd";
 import { QueryContext } from "../context/query-context";
+import "./search-box.css";
+import { useEffect } from "react";
 
 export const SearchBox = () => {
-	const queryContext = React.useContext(QueryContext);
+	const { search, setSearch } = React.useContext(QueryContext);
+
+	const [currentValue, setCurrentValue] = useState(search);
+
+	useEffect(() => {
+		if (!currentValue) {
+			setCurrentValue(search);
+		}
+	}, [search]);
 
 	return (
 		<Row className="search-box">
@@ -11,9 +21,9 @@ export const SearchBox = () => {
 			<Input.Search
 				id="search"
 				placeholder="input search text"
-				onSearch={(value) => {
-					queryContext.setSearch(value);
-				}}
+				onSearch={(value) => setSearch(value)}
+				onChange={(e) => setCurrentValue(e.target.value)}
+				value={currentValue}
 				style={{ maxWidth: 400 }}
 			/>
 		</Row>

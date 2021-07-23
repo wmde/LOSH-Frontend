@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Menu, Dropdown, Button, message, Space } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
-import "../styles/filter.css";
+import "./filter.css";
 
 function handleMenuClick(e: any): void {
 	message.info("Click on menu item.");
