@@ -17,12 +17,12 @@ export default function Template({ data }: TemplateProps) {
 		<Layout>
 			<SEO title={frontmatter.title} />
 			<Typography.Title level={1}>{frontmatter.title}</Typography.Title>
-			{renderAst(htmlAst)}
+			<div className="markdown-content">{renderAst(htmlAst)}</div>
 		</Layout>
 	);
 }
 export const pageQuery = graphql`
-	query($id: String!) {
+	query ($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			html
 			htmlAst

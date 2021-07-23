@@ -7,16 +7,25 @@ import { DownloadOutlined } from "@ant-design/icons";
 const processor = unified().use(rehypeReact, {
 	createElement: React.createElement,
 	components: {
-		h1: (props: any) => <Typography.Title level={1} {...props} />,
-		h2: (props: any) => <Typography.Title level={2} {...props} />,
-		h3: (props: any) => <Typography.Title level={3} {...props} />,
-		h4: (props: any) => <Typography.Title level={4} {...props} />,
-		h5: (props: any) => <Typography.Title level={5} {...props} />,
-		button: (props: any) => (
-			<Button
-				icon={props.name === "download" && <DownloadOutlined />}
-				{...props}
-			/>
+		h1: (props: React.HTMLProps<HTMLTitleElement>) => (
+			<Typography.Title level={1}>{props.children}</Typography.Title>
+		),
+		h2: (props: React.HTMLProps<HTMLTitleElement>) => (
+			<Typography.Title level={2}>{props.children}</Typography.Title>
+		),
+		h3: (props: React.HTMLProps<HTMLTitleElement>) => (
+			<Typography.Title level={3}>{props.children}</Typography.Title>
+		),
+		h4: (props: React.HTMLProps<HTMLTitleElement>) => (
+			<Typography.Title level={4}>{props.children}</Typography.Title>
+		),
+		h5: (props: React.HTMLProps<HTMLTitleElement>) => (
+			<Typography.Title level={5}>{props.children}</Typography.Title>
+		),
+		button: (props: React.HTMLProps<HTMLButtonElement>) => (
+			<Button icon={props.name === "download" && <DownloadOutlined />}>
+				{props.children}
+			</Button>
 		),
 	},
 });

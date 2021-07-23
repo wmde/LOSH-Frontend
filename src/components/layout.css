@@ -16,3 +16,7 @@ input {
 .ant-layout-content {
 	padding-top: 16px;
 }
+
+.markdown-content a {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+}

@@ -86,7 +86,7 @@ module.exports = {
 			options: {
 				lessOptions: {
 					modifyVars: {
-						"font-family": "'Source Sans Pro', Helvetica",
+						"font-family": "'Source Sans Pro', Helvetica, sans-serif",
 						"body-background": "#ededed",
 						"layout-header-background": "#ededed",
 						"layout-body-background": "#ededed",
