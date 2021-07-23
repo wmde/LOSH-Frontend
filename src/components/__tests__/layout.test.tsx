@@ -1,10 +1,12 @@
 import site from "../../../gatsby-config";
-// ES6
 import Layout from "../layout";
 import { useStaticQuery } from "gatsby";
 import * as React from "react";
 import ShallowRenderer from "react-test-renderer/shallow";
 
+const useStaticQueryMock = useStaticQuery as jest.MockedFunction<
+	typeof useStaticQuery
+>;
 const renderer = ShallowRenderer.createRenderer();
 
 jest.mock("antd", () => {
@@ -29,7 +31,7 @@ jest.mock("../footer", () => {
 });
 
 beforeEach(() => {
-	useStaticQuery.mockImplementationOnce(() => ({
+	useStaticQueryMock.mockImplementationOnce(() => ({
 		site
 	}));
 });

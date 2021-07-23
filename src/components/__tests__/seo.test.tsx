@@ -4,10 +4,13 @@ import { useStaticQuery } from "gatsby";
 import site from "../../../gatsby-config";
 import SEO from "../seo";
 
+const useStaticQueryMock = useStaticQuery as jest.MockedFunction<
+	typeof useStaticQuery
+>;
 const renderer = ShallowRenderer.createRenderer();
 
 beforeEach(() => {
-	useStaticQuery.mockImplementationOnce(() => ({
+	useStaticQueryMock.mockImplementationOnce(() => ({
 		site
 	}));
 });
