@@ -8,7 +8,7 @@ Here’s a step-by-step guide to getting your hardware specifications included i
 
 ### 1. Download the Template
 
-[Download template file](somelink)
+[<button name="download">Download template file</button>](somelink)
 
 Click on “Download template file” button to download your copy of the template. It will save the file in your downloads folder
 
