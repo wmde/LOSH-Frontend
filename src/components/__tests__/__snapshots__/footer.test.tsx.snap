@@ -12,26 +12,16 @@ exports[`Footer renders correctly 1`] = `
   <Row
     align="middle"
   >
-    <mockConstructor
+    <Text
       style={
         Object {
           "paddingRight": "1rem",
-          "textDecoration": "none",
         }
       }
-      to="/"
     >
-      <Text>
-        (c) OPEN!NEXT
-      </Text>
-    </mockConstructor>
+      © OPEN!NEXT
+    </Text>
     <mockConstructor
-      style={
-        Object {
-          "paddingRight": "1rem",
-          "textDecoration": "none",
-        }
-      }
       to="https://opennext.eu/"
     >
       <Text>
@@ -39,12 +29,6 @@ exports[`Footer renders correctly 1`] = `
       </Text>
     </mockConstructor>
     <mockConstructor
-      style={
-        Object {
-          "paddingRight": "1rem",
-          "textDecoration": "none",
-        }
-      }
       to="https://opennext.eu/"
     >
       <Text>
@@ -52,12 +36,6 @@ exports[`Footer renders correctly 1`] = `
       </Text>
     </mockConstructor>
     <mockConstructor
-      style={
-        Object {
-          "paddingRight": "1rem",
-          "textDecoration": "none",
-        }
-      }
       to="/issue"
     >
       <Text>

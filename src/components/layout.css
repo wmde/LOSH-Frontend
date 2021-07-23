@@ -20,3 +20,19 @@ input {
 .markdown-content a {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
+
+.ant-layout-footer a {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	border-left: 1px solid #68717A;
+	padding: 0 1rem;
+}
+
+.ant-layout-footer span {
+	color: #68717A;
+	font-size: 16px;
+}
+
+.ant-layout-footer a span {
+	color: #46749F;
+}
+

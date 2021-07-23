@@ -27,10 +27,6 @@ module.exports = {
 		],
 		footerLinks: [
 			{
-				to: "/",
-				title: "(c) OPEN!NEXT",
-			},
-			{
 				to: "https://opennext.eu/",
 				title: "Imprint",
 			},

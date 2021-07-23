@@ -53,10 +53,6 @@ exports[`Layout renders correctly 1`] = `
     footerLinks={
       Array [
         Object {
-          "title": "(c) OPEN!NEXT",
-          "to": "/",
-        },
-        Object {
           "title": "Imprint",
           "to": "https://opennext.eu/",
         },

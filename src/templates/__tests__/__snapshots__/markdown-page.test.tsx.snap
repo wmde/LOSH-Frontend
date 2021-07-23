@@ -10,90 +10,94 @@ exports[`Markdown Page renders correctly 1`] = `
   >
     About our project
   </Title>
-  <div>
-    <p>
-      The Library of Open Source Hardware was created by the 
-      <a
-        href="https://opennext.eu/"
-      >
-        OPEN!NEXT
-      </a>
-       working group. They are a team of institutions and organizations that support the growth of Open Source hardware. Tasked by the 
-      <a
-        href="https://cordis.europa.eu/project/id/869984"
-      >
-        European Commission
-      </a>
-       to create a consolidated database for Open Source Hardware specifications, the OPEN!NEXT working group created this library for use by the maker community.
-    </p>
-    
-
-    <p>
-      These organizations are part of the working group:
-    </p>
-    
-
-    <ul>
-      
-
-      <li>
+  <div
+    className="markdown-content"
+  >
+    <div>
+      <p>
+        The Library of Open Source Hardware was created by the 
         <a
-          href="https://wikimedia.de"
+          href="https://opennext.eu/"
         >
-          Wikimedia Germany
+          OPEN!NEXT
         </a>
-      </li>
-      
-
-      <li>
+         working group. They are a team of institutions and organizations that support the growth of Open Source hardware. Tasked by the 
         <a
-          href=""
+          href="https://cordis.europa.eu/project/id/869984"
         >
-          Fraunhofer IPK
+          European Commission
         </a>
-      </li>
+         to create a consolidated database for Open Source Hardware specifications, the OPEN!NEXT working group created this library for use by the maker community.
+      </p>
       
 
-      <li>
-        <a
-          href=""
-        >
-          TU Berlin
-        </a>
-      </li>
+      <p>
+        These organizations are part of the working group:
+      </p>
       
 
-      <li>
-        <a
-          href=""
-        >
-          Wikifactory
-        </a>
-      </li>
+      <ul>
+        
+
+        <li>
+          <a
+            href="https://wikimedia.de"
+          >
+            Wikimedia Germany
+          </a>
+        </li>
+        
+
+        <li>
+          <a
+            href=""
+          >
+            Fraunhofer IPK
+          </a>
+        </li>
+        
+
+        <li>
+          <a
+            href=""
+          >
+            TU Berlin
+          </a>
+        </li>
+        
+
+        <li>
+          <a
+            href=""
+          >
+            Wikifactory
+          </a>
+        </li>
+        
+
+      </ul>
       
 
-    </ul>
-    
-
-    <h3>
-      Our mission
-    </h3>
-    
-
-    <ol>
+      <h3>
+        Our mission
+      </h3>
       
 
-      <li>
-        Development of standards for the open source community to enable sharing and reuse of data and hardware
-      </li>
-      
+      <ol>
+        
 
-      <li>
-        Providing an accessible open source database that allows for easy exploration of the stored data and guides makers in contributing their open source hardware specifications.
-      </li>
-      
+        <li>
+          Development of standards for the open source community to enable sharing and reuse of data and hardware
+        </li>
+        
 
-    </ol>
+        <li>
+          Providing an accessible open source database that allows for easy exploration of the stored data and guides makers in contributing their open source hardware specifications.
+        </li>
+        
+
+      </ol>
+    </div>
   </div>
 </Layout>
 `;

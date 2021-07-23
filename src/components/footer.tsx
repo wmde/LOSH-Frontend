@@ -16,15 +16,11 @@ interface FooterProps {
 const Footer = ({ footerLinks, pagePadding }: FooterProps): JSX.Element => (
 	<AntdLayout.Footer style={{ ...pagePadding }}>
 		<Row align="middle">
-			{footerLinks.map(link => (
-				<Link
-					key={link.title}
-					to={link.to}
-					style={{
-						textDecoration: `none`,
-						paddingRight: "1rem"
-					}}
-				>
+			<Typography.Text style={{ paddingRight: "1rem" }}>
+				© OPEN!NEXT
+			</Typography.Text>
+			{footerLinks.map((link) => (
+				<Link key={link.title} to={link.to}>
 					<Typography.Text>{link.title}</Typography.Text>
 				</Link>
 			))}
