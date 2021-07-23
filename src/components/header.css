@@ -53,4 +53,5 @@
 .ant-layout-header .ant-menu {
 	width: 100%;
 	justify-content: flex-end;
+	font-weight: 700;
 }
