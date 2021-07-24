@@ -11,7 +11,7 @@ const renderer = ShallowRenderer.createRenderer();
 
 beforeEach(() => {
 	useStaticQueryMock.mockImplementationOnce(() => ({
-		site
+		site,
 	}));
 });
 

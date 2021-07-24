@@ -22,7 +22,7 @@ exports.createPages = ({ actions, graphql }) => {
 				}
 			}
 		}
-	`).then(result => {
+	`).then((result) => {
 		if (result.errors) {
 			return Promise.reject(result.errors);
 		}
@@ -32,8 +32,8 @@ exports.createPages = ({ actions, graphql }) => {
 				path: node.frontmatter.slug,
 				component: template,
 				context: {
-					id: node.id
-				}
+					id: node.id,
+				},
 			});
 		});
 	});
@@ -47,7 +47,7 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, actions }) => {
 		const config = getConfig();
 		// Get the mini-css-extract-plugin
 		const miniCssExtractPlugin = config.plugins.find(
-			plugin => plugin.constructor.name === "MiniCssExtractPlugin"
+			(plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
 		);
 		// Set the option here to true.
 		if (miniCssExtractPlugin) {

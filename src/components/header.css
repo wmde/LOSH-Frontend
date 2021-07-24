@@ -31,12 +31,15 @@
 	border-bottom: 0;
 }
 
-.ant-layout-header .ant-menu-horizontal .ant-menu-item [aria-current='page']::after {
-	content: ' ';
+.ant-layout-header
+	.ant-menu-horizontal
+	.ant-menu-item
+	[aria-current="page"]::after {
+	content: " ";
 	display: block;
 	position: relative;
 	top: 8px;
-	border-bottom: 3px solid #46749F;
+	border-bottom: 3px solid #46749f;
 }
 
 .ant-layout-header .ant-menu-horizontal .ant-menu-item:hover::after {

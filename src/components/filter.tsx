@@ -1,15 +1,10 @@
 import * as React from "react";
-import { Menu, Dropdown, Button, message, Space } from "antd";
+import { Menu, Dropdown, Button, Space } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import "./filter.css";
 
-function handleMenuClick(e: any): void {
-	message.info("Click on menu item.");
-	console.log("click", e);
-}
-
 const menu = (
-	<Menu onClick={handleMenuClick}>
+	<Menu>
 		<Menu.Item key="1" icon={<UserOutlined />}>
 			1st menu item
 		</Menu.Item>

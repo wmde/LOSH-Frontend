@@ -13,14 +13,14 @@ jest.mock("antd", () => {
 		message: (): null => null,
 		Space: (): null => null,
 		Typography: {
-			Text: (): null => null
-		}
+			Text: (): null => null,
+		},
 	};
 });
 jest.mock("@ant-design/icons", () => {
 	return {
 		DownOutlined: (): null => null,
-		UserOutlined: (): null => null
+		UserOutlined: (): null => null,
 	};
 });
 

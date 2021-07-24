@@ -3,10 +3,16 @@ import { useState } from "react";
 import { useEffect } from "react";
 import QueryController, { HardwareData } from "../query-controller";
 
-export const QueryContext = React.createContext({
+interface QueryContextState {
+	search: string;
+	setSearch: (value: string) => void;
+	items: HardwareData[];
+}
+
+export const QueryContext = React.createContext<QueryContextState>({
 	search: "",
-	setSearch: (value: string): void => undefined,
-	items: [] as HardwareData[],
+	setSearch: () => undefined,
+	items: [],
 });
 
 export const QueryProvider: React.FC = ({ children }) => {
@@ -21,7 +27,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 			page,
 		};
 
-		const newItems = controller.getItems({ search, page });
+		const newItems = controller.getItems(query);
 		setItems(newItems);
 	};
 

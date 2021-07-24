@@ -11,7 +11,7 @@ export default class QueryController {
 		});
 	}
 
-	getItem() {
+	getItem(): null {
 		return null;
 	}
 }

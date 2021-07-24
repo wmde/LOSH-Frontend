@@ -4,7 +4,7 @@ import { QueryContext } from "../context/query-context";
 import "./search-box.css";
 import { useEffect } from "react";
 
-export const SearchBox = () => {
+export const SearchBox: React.FC = () => {
 	const { search, setSearch } = React.useContext(QueryContext);
 
 	const [currentValue, setCurrentValue] = useState(search);

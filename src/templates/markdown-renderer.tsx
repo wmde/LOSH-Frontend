@@ -3,6 +3,7 @@ import unified from "unified";
 import { Typography, Button } from "antd";
 import rehypeReact from "rehype-react";
 import { DownloadOutlined } from "@ant-design/icons";
+import { Node } from "unist";
 
 const processor = unified().use(rehypeReact, {
 	createElement: React.createElement,
@@ -30,6 +31,6 @@ const processor = unified().use(rehypeReact, {
 	},
 });
 
-export const renderAst = (ast: any): JSX.Element => {
+export const renderAst = (ast: Node): JSX.Element => {
 	return processor.stringify(ast) as unknown as JSX.Element;
 };

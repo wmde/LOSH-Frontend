@@ -35,7 +35,7 @@ const Layout: React.FC = ({ children }: Props) => {
 
 	const pagePadding = {
 		paddingLeft: paddingValue,
-		paddingRight: paddingValue
+		paddingRight: paddingValue,
 	};
 
 	return (
