@@ -1,70 +1,16 @@
-name: example-chrome
+name: End-to-end tests
 on: [push]
 jobs:
-  tests:
+  cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress info
-        uses: ./
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
         with:
-          # just for full picture after installing Cypress
-          # print information about detected browsers, etc
-          # see https://on.cypress.io/command-line#cypress-info
-          build: npx cypress info
-          working-directory: examples/chrome
-
-      - name: Electron
-        uses: ./
-        with:
-          working-directory: examples/chrome
-
-      # store screenshot captured during the test
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-electron
-          path: examples/chrome/cypress/screenshots
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: examples/chrome
-
-      - name: Chrome
-        uses: ./
-        with:
-          working-directory: examples/chrome
-          browser: chrome
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-chrome
-          path: examples/chrome/cypress/screenshots
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: video-in-chrome
-          path: examples/chrome/cypress/videos
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: examples/chrome
-
-      - name: Chrome headless
-        uses: ./
-        with:
-          working-directory: examples/chrome
-          browser: chrome
-          headless: true
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-headless-chrome
-          path: examples/chrome/cypress/screenshots
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: video-in-headless-chrome
-          path: examples/chrome/cypress/videos
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: examples/chrome
+          build: yarn build
+          start: yarn serve --port 8000
+          wait-on: http://localhost:8000

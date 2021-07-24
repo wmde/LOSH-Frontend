@@ -7,9 +7,7 @@ exports[`Filter renders correctly 1`] = `
 >
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
@@ -40,9 +38,7 @@ exports[`Filter renders correctly 1`] = `
   </Dropdown>
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
@@ -73,9 +69,7 @@ exports[`Filter renders correctly 1`] = `
   </Dropdown>
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
@@ -106,9 +100,7 @@ exports[`Filter renders correctly 1`] = `
   </Dropdown>
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
@@ -139,9 +131,7 @@ exports[`Filter renders correctly 1`] = `
   </Dropdown>
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
@@ -172,9 +162,7 @@ exports[`Filter renders correctly 1`] = `
   </Dropdown>
   <Dropdown
     overlay={
-      <Menu
-        onClick={[Function]}
-      >
+      <Menu>
         <Unknown
           icon={<UserOutlined />}
         >
