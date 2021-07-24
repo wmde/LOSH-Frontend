@@ -11,28 +11,28 @@ jest.mock("antd", () => {
 
 	return {
 		Layout: {
-			Header: (): null => null
+			Header: (): null => null,
 		},
 		Row: (): null => null,
 		Col: (): null => null,
 		Menu,
 		Typography: {
-			Text: (): null => null
-		}
+			Text: (): null => null,
+		},
 	};
 });
 
 jest.mock("../../hooks/useWindowSize", () => {
 	const useWindowSize = () => ({
 		width: 1230,
-		height: 0
+		height: 0,
 	});
 	return useWindowSize;
 });
 
 const pagePadding = {
 	paddingLeft: "1rem",
-	paddingRight: "1rem"
+	paddingRight: "1rem",
 };
 
 describe("Header", () => {

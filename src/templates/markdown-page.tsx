@@ -4,12 +4,21 @@ import { Typography } from "antd";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { renderAst } from "./markdown-renderer";
-
+import { Node } from "unist";
 interface TemplateProps {
-	data: any;
+	data: {
+		markdownRemark: {
+			html: string;
+			htmlAst: Node;
+			frontmatter: {
+				title: string;
+				slug: string;
+			};
+		};
+	};
 }
 
-export default function Template({ data }: TemplateProps) {
+export default function Template({ data }: TemplateProps): JSX.Element {
 	const { markdownRemark } = data; // Data injected from GraphQL
 	const { frontmatter, htmlAst } = markdownRemark;
 

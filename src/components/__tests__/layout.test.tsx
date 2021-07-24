@@ -16,8 +16,8 @@ jest.mock("antd", () => {
 	return {
 		Layout,
 		Grid: {
-			useBreakpoint: (): unknown => ({})
-		}
+			useBreakpoint: (): unknown => ({}),
+		},
 	};
 });
 
@@ -32,7 +32,7 @@ jest.mock("../footer", () => {
 
 beforeEach(() => {
 	useStaticQueryMock.mockImplementationOnce(() => ({
-		site
+		site,
 	}));
 });
 

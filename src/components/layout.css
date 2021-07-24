@@ -23,16 +23,15 @@ input {
 
 .ant-layout-footer a {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	border-left: 1px solid #68717A;
+	border-left: 1px solid #68717a;
 	padding: 0 1rem;
 }
 
 .ant-layout-footer span {
-	color: #68717A;
+	color: #68717a;
 	font-size: 16px;
 }
 
 .ant-layout-footer a span {
-	color: #46749F;
+	color: #46749f;
 }
-
