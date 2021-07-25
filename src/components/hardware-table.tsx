@@ -4,6 +4,7 @@ import React from "react";
 import { useContext } from "react";
 import { QueryContext } from "../context/query-context";
 import { HardwareData } from "../query-controller";
+import { PaginationProps } from 'antd/lib/pagination/Pagination'
 
 const columns: ColumnsType<HardwareData> = [
 	{
@@ -49,7 +50,14 @@ const columns: ColumnsType<HardwareData> = [
 ];
 
 const HardwareTable = (): JSX.Element => {
-	const { items } = useContext(QueryContext);
+	const { items, setPage, currentPage } = useContext(QueryContext);
+
+    const pagination: PaginationProps = {
+        pageSize: 5,
+        current: currentPage,
+        onChange: setPage,
+        total: 200
+    }
 
 	return (
 		<Table<HardwareData>
@@ -57,7 +65,7 @@ const HardwareTable = (): JSX.Element => {
 			dataSource={items}
 			size="middle"
 			style={{ overflowX: "scroll" }}
-			pagination={{ position: ["bottomLeft"] }}
+			pagination={{ position: ["bottomLeft"], ...pagination}}
 			rowKey={(r: HardwareData): number => r.tsdcId}
 		/>
 	);

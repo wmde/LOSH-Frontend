@@ -7,24 +7,28 @@ interface QueryContextState {
 	search: string;
 	setSearch: (value: string) => void;
 	items: HardwareData[];
+	currentPage: number;
+	setPage: (value: number) => void;
 }
 
 export const QueryContext = React.createContext<QueryContextState>({
 	search: "",
 	setSearch: () => undefined,
 	items: [],
+	currentPage: 1,
+	setPage: () => undefined,
 });
 
 export const QueryProvider: React.FC = ({ children }) => {
 	const [search, setSearch] = useState("");
 	const [items, setItems] = useState<HardwareData[]>([]);
-	const [page, setPage] = useState<number>(1);
+	const [currentPage, setPage] = useState<number>(1);
 	const controller = new QueryController();
 
 	const executeQuery = () => {
 		const query = {
 			search,
-			page,
+			page: currentPage,
 		};
 
 		const newItems = controller.getItems(query);
@@ -33,7 +37,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 	useEffect(() => {
 		executeQuery();
-	}, [search]);
+	}, [search, currentPage]);
 
 	useEffect(() => {
 		const urlSearchParams = new URLSearchParams(location.search);
@@ -49,7 +53,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 	}, []);
 
 	return (
-		<QueryContext.Provider value={{ search, setSearch, items }}>
+		<QueryContext.Provider value={{ search, setSearch, items, currentPage, setPage }}>
 			{children}
 		</QueryContext.Provider>
 	);
