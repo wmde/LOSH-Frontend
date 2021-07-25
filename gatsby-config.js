@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
 		title: `Library of Open Source Hardware`,
-		description: `TypeScript version of the default Gatsby starter`,
-		author: `@jongwooo`,
+		description: `We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.`,
+		author: `OPEN-NEXT`,
 		headerLinks: [
 			{
 				to: "/",
@@ -35,7 +35,7 @@ module.exports = {
 				title: "Legal Disclaimer",
 			},
 			{
-				to: "/issue",
+				to: "https://github.com/wmde/LOSH-Frontend/issues/new/choose",
 				title: "Submit an issue",
 			},
 		],
