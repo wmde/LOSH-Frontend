@@ -1,7 +1,7 @@
 import * as React from "react";
 import ShallowRenderer from "react-test-renderer/shallow"; // ES6
 import Footer from "../footer";
-import site from "../../../gatsby-config";
+import { siteMetadataMock } from "../__mocks__/site-metadata.mock";
 
 const renderer = ShallowRenderer.createRenderer();
 
@@ -26,7 +26,7 @@ describe("Footer", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
 			<Footer
-				footerLinks={site.siteMetadata.footerLinks}
+				footerLinks={siteMetadataMock.footerLinks}
 				pagePadding={pagePadding}
 			/>
 		);

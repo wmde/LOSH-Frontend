@@ -1,4 +1,4 @@
-export const siteMetadata = {
+export const siteMetadataMock = {
 	title: `Library of Open Source Hardware`,
 	description: `We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.`,
 	author: `OPEN-NEXT`,

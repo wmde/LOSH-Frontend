@@ -1,7 +1,7 @@
 import * as React from "react";
 import ShallowRenderer from "react-test-renderer/shallow"; // ES6
 import Header from "../header";
-import site from "../../../gatsby-config";
+import { siteMetadataMock } from "../__mocks__/site-metadata.mock";
 
 const renderer = ShallowRenderer.createRenderer();
 
@@ -39,7 +39,7 @@ describe("Header", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
 			<Header
-				headerLinks={site.siteMetadata.headerLinks}
+				headerLinks={siteMetadataMock.headerLinks}
 				pagePadding={pagePadding}
 			/>
 		);
