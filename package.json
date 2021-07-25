@@ -27,6 +27,8 @@
     "rehype-react": "^6.2.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@testing-library/cypress": "^8.0.0",
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.14",
@@ -84,14 +86,15 @@
   "husky": {
     "hooks": {
       "pre-commit": [
-        "lint-staged"
+        "lint-staged",
+        "commitlint --edit '$1'"
       ]
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "yarn lint:fix",
-      "prettier"
+      "prettier --write"
     ],
     "*.scss": [
       "prettier --write",
