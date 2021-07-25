@@ -2,16 +2,13 @@
 
 ## Developing
 
-This app is written using the Gatsby front end framework. Typescript....
+### Stack
 
-Layout
-
-- /markdown-pages, Markdown manually maintained page content
-- /components, React components
-- /pages, Templates for different routes
-- /bin, scripts to generate data for the site
-
-### Prerequisites
+- Gatsby v3 (React JS)
+- [Ant Design System](https://ant.design/components/overview/)
+- Typescript
+- Jest (Unit tests)
+- Cypress (e2e tests)
 
 ### Setting up Dev
 
@@ -24,6 +21,10 @@ Use `yarn start` or `gatsby develop` if you have Gatsby installed globally.
 ### Testing
 
 #### Unit tests
+
+Run all tests using Jest
+
+`yarn test:unit`
 
 #### End to end
 
@@ -40,3 +41,5 @@ To build an artifact for deployment, run `yarn build`.
 - Files are linted using a combination of ESLint and Prettier.
 
 ## Guidelines
+
+All files must be linted and formatted before committing changes. All staged files will automatically be linted/formatted using a git pre-commit hook. If you are running into issues with failing builds at the format stage in the CI pipeline, please check that the pre-commit hook is running properly on your local machine.
