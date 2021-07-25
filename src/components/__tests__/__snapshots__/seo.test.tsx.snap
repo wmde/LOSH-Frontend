@@ -12,7 +12,7 @@ exports[`SEO renders the test correctly 1`] = `
   meta={
     Array [
       Object {
-        "content": "TypeScript version of the default Gatsby starter",
+        "content": "We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.",
         "name": "description",
       },
       Object {
@@ -20,7 +20,7 @@ exports[`SEO renders the test correctly 1`] = `
         "property": "og:title",
       },
       Object {
-        "content": "TypeScript version of the default Gatsby starter",
+        "content": "We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.",
         "property": "og:description",
       },
       Object {
@@ -32,7 +32,7 @@ exports[`SEO renders the test correctly 1`] = `
         "name": "twitter:card",
       },
       Object {
-        "content": "@jongwooo",
+        "content": "OPEN-NEXT",
         "name": "twitter:creator",
       },
       Object {
@@ -40,7 +40,7 @@ exports[`SEO renders the test correctly 1`] = `
         "name": "twitter:title",
       },
       Object {
-        "content": "TypeScript version of the default Gatsby starter",
+        "content": "We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.",
         "name": "twitter:description",
       },
     ]
