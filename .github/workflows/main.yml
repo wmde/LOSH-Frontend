@@ -23,3 +23,8 @@ jobs:
         run: yarn test
       - name: Run build
         run: yarn build
+      - name: e2e test
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn serve --port 8000
+          wait-on: http://localhost:8000
