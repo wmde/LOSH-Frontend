@@ -26,7 +26,9 @@ jest.mock("../seo", () => {
 describe("Markdown Page", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<MarkdownPageTemplate data={markdownQueryMock.data}></MarkdownPageTemplate>
+			<MarkdownPageTemplate
+				data={markdownQueryMock.data}
+			></MarkdownPageTemplate>
 		);
 		expect(tree).toMatchSnapshot();
 	});
