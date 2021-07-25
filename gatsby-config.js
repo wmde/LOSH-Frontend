@@ -93,6 +93,7 @@ module.exports = {
 						"input-bg": "#FFFFFF",
 						"btn-default-bg": "#FFFFFF",
 						"dropdown-menu-bg": "#FFFFFF",
+						"ease-in-out": "cubic-bezier(0.05, 0.13, 0, 0.39)",
 					},
 					javascriptEnabled: true,
 				},
