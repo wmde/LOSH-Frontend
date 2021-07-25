@@ -7,7 +7,7 @@
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions;
 
-	const template = require.resolve(`./src/templates/markdown-page.tsx`);
+	const template = require.resolve(`./src/components/markdown-page.tsx`);
 
 	return graphql(`
 		{

@@ -1,8 +1,7 @@
 import * as React from "react";
-import { useStaticQuery } from "gatsby";
 import ShallowRenderer from "react-test-renderer/shallow";
-import Template from "../markdown-page";
-import { markdownQuery } from "../__mocks__/markdown-page-query.mock";
+import MarkdownPageTemplate from "../markdown-page";
+import { markdownQueryMock } from "../__mocks__/markdown-page-query.mock";
 
 const renderer = ShallowRenderer.createRenderer();
 
@@ -14,12 +13,12 @@ jest.mock("antd", () => {
 	};
 });
 
-jest.mock("../../components/layout", () => {
+jest.mock("../layout", () => {
 	const Layout = (): null => null;
 	return Layout;
 });
 
-jest.mock("../../components/seo", () => {
+jest.mock("../seo", () => {
 	const SEO = (): null => null;
 	return SEO;
 });
@@ -27,7 +26,7 @@ jest.mock("../../components/seo", () => {
 describe("Markdown Page", () => {
 	it("renders correctly", () => {
 		const tree = renderer.render(
-			<Template data={markdownQuery.data}></Template>
+			<MarkdownPageTemplate data={markdownQueryMock.data}></MarkdownPageTemplate>
 		);
 		expect(tree).toMatchSnapshot();
 	});

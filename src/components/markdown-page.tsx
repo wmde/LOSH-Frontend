@@ -1,11 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Typography } from "antd";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { renderAst } from "./markdown-renderer";
+import Layout from "./layout";
+import SEO from "./seo";
+import { renderAst } from "../markdown-renderer";
 import { Node } from "unist";
-interface TemplateProps {
+
+interface MarkdownPageTemplate {
 	data: {
 		markdownRemark: {
 			html: string;
@@ -18,7 +19,7 @@ interface TemplateProps {
 	};
 }
 
-export default function Template({ data }: TemplateProps): JSX.Element {
+export default function MarkdownPageTemplate({ data }: MarkdownPageTemplate): JSX.Element {
 	const { markdownRemark } = data; // Data injected from GraphQL
 	const { frontmatter, htmlAst } = markdownRemark;
 

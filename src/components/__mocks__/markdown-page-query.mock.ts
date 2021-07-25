@@ -1,4 +1,4 @@
-export const markdownQuery = {
+export const markdownQueryMock = {
 	data: {
 		markdownRemark: {
 			html: '<p>The Library of Open Source Hardware was created by the <a href="https://opennext.eu/">OPEN!NEXT</a> working group. They are a team of institutions and organizations that support the growth of Open Source hardware. Tasked by the <a href="https://cordis.europa.eu/project/id/869984">European Commission</a> to create a consolidated database for Open Source Hardware specifications, the OPEN!NEXT working group created this library for use by the maker community.</p>\n<p>These organizations are part of the working group:</p>\n<ul>\n<li><a href="https://wikimedia.de">Wikimedia Germany</a></li>\n<li><a href="">Fraunhofer IPK</a></li>\n<li><a href="">TU Berlin</a></li>\n<li><a href="">Wikifactory</a></li>\n</ul>\n<h3>Our mission</h3>\n<ol>\n<li>Development of standards for the open source community to enable sharing and reuse of data and hardware</li>\n<li>Providing an accessible open source database that allows for easy exploration of the stored data and guides makers in contributing their open source hardware specifications.</li>\n</ol>',
