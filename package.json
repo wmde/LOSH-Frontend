@@ -97,7 +97,7 @@
       "prettier --write",
       "stylelint --fix"
     ],
-    "{*.{json,md}}": [
+    "*.{json,md}": [
       "prettier --write"
     ]
   },

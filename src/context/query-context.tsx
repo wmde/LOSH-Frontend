@@ -53,7 +53,9 @@ export const QueryProvider: React.FC = ({ children }) => {
 	}, []);
 
 	return (
-		<QueryContext.Provider value={{ search, setSearch, items, currentPage, setPage }}>
+		<QueryContext.Provider
+			value={{ search, setSearch, items, currentPage, setPage }}
+		>
 			{children}
 		</QueryContext.Provider>
 	);
