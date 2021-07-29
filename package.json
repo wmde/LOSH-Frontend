@@ -6,6 +6,7 @@
   "author": "Adam Hammad <mail@adamham.dev>",
   "dependencies": {
     "antd": "^4.16.8",
+    "axios": "^0.21.1",
     "eslint-loader": "^4.0.2",
     "gatsby": "^3.9.1",
     "gatsby-image": "^3.9.0",
@@ -24,7 +25,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "rehype-react": "^6.2.1"
+    "rehype-react": "^6.2.1",
+    "wikidata-sdk": "^7.13.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.0",

@@ -6,59 +6,47 @@ import { QueryContext } from "../context/query-context";
 import { HardwareData } from "../query-controller";
 import { PaginationProps } from "antd/lib/pagination/Pagination";
 
-const columns: ColumnsType<HardwareData> = [
+const getPropertyValue = (record: any, property: string) => record.claims && record.claims[property] && record.claims[property][0]?.mainsnak.datavalue.value
+
+const generateColumns = (properties: Record<string, string>): ColumnsType<HardwareData> => [
 	{
 		title: "Name",
-		dataIndex: "name",
 		key: "name",
-	},
-	{
-		title: "Identifier",
-		dataIndex: "identifier",
-		key: "identifier",
-	},
-	{
-		title: "Repository",
-		dataIndex: "repository",
-		key: "repository",
+		render: (record) => record.labels.en.value
 	},
 	{
 		title: "Version",
-		dataIndex: "version",
 		key: "version",
+		render: (record) => getPropertyValue(record, properties.version)
 	},
 	{
 		title: "License",
-		dataIndex: "license",
 		key: "license",
+		render: (record) => getPropertyValue(record, properties.spdxLicense)
+	},
+	{
+		title: "Data Source",
+		key: "data-source",
+		render: (record) => getPropertyValue(record, properties.repo)
 	},
 	{
 		title: "Organization",
-		dataIndex: "organization",
 		key: "organization",
-	},
-	{
-		title: "Language",
-		dataIndex: "language",
-		key: "language",
-	},
-	{
-		title: "TsdcId",
-		dataIndex: "tsdcId",
-		key: "tsdcId",
+		render: (record) => getPropertyValue(record, properties.organisation)
 	},
 ];
 
 const HardwareTable = (): JSX.Element => {
-	const { items, setPage, currentPage } = useContext(QueryContext);
+	const { items, setPage, currentPage, properties } = useContext(QueryContext);
+	const columns = generateColumns(properties)
 
 	const pagination: PaginationProps = {
-		pageSize: 5,
+		pageSize: 15,
 		current: currentPage,
 		onChange: setPage,
 		total: 200,
 	};
-
+	console.log(properties)
 	return (
 		<Table<HardwareData>
 			columns={columns}

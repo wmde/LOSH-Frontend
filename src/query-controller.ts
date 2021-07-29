@@ -1,11 +1,49 @@
+import axios from "axios";
+import WBK from "wikibase-sdk";
+
+const wbk = WBK({
+	instance: "https://wikibase-reconcile-testing.wmcloud.org",
+});
+
 export default class QueryController {
 	url: string;
+	properties: Record<string, string> = {};
 
-	constructor() {
-		this.url = "url";
+	constructor({ url }: { url: string }) {
+		this.url = url;
 	}
 
-	getItems({ search }: GetItemsProps): HardwareData[] {
+	async getProperties() {
+
+		const { data: propertiesPages } = await axios
+		.get(
+			this.url +
+				"/w/api.php?action=query&list=allpages&apnamespace=122&aplimit=max&format=json&origin=*"
+		)
+
+		const propertiesQuery = propertiesPages.query.allpages.map((p: any) => p.title.split(':')[1])
+
+		const entitiesUrl = wbk.getManyEntities(propertiesQuery)
+
+		const { data: entitiesResponse } = await axios.get(entitiesUrl)
+
+		Object.entries(entitiesResponse.entities).map(([key, value]: any) => {
+			this.properties[value.labels.en.value] = key
+		});
+
+		return this.properties
+	}
+
+	async getItems({ search }: GetItemsProps): Promise<HardwareData[]> {
+
+		const test = await axios.get('https://wikibase-reconcile-testing.wmcloud.org/w/api.php?action=query&list=allpages&apnamespace=120&format=json&origin=*')
+		const entitiesUrl = wbk.getManyEntities(test.data.query.allpages.map((p: any) => p.title.split(':')[1]))
+		const { data } = await axios.get(entitiesUrl)
+
+		console.log(data);
+
+		return Object.values(data.entities);
+
 		return tableData.filter((item) => {
 			return item.name.includes(search);
 		});
