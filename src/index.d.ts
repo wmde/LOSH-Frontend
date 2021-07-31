@@ -1,1 +1,1 @@
-declare module 'wikibase-sdk'
+declare module "wikibase-sdk";

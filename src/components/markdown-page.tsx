@@ -19,7 +19,9 @@ interface MarkdownPageTemplate {
 	};
 }
 
-export default function MarkdownPageTemplate({ data }: MarkdownPageTemplate): JSX.Element {
+export default function MarkdownPageTemplate({
+	data,
+}: MarkdownPageTemplate): JSX.Element {
 	const { markdownRemark } = data; // Data injected from GraphQL
 	const { frontmatter, htmlAst } = markdownRemark;
 

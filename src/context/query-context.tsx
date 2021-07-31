@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import QueryController, { HardwareData } from "../query-controller";
+import QueryController, { HardwareData, Pagination } from "../query-controller";
 
 interface QueryContextState {
 	search: string;
@@ -9,7 +9,9 @@ interface QueryContextState {
 	items: HardwareData[];
 	currentPage: number;
 	setPage: (value: number) => void;
-	properties: Record<string, string>
+	properties: Record<string, string>;
+	controller: QueryController | null;
+	totalHits: number;
 }
 
 export const QueryContext = React.createContext<QueryContextState>({
@@ -18,7 +20,9 @@ export const QueryContext = React.createContext<QueryContextState>({
 	items: [],
 	currentPage: 1,
 	setPage: () => undefined,
-	properties: {}
+	properties: {},
+	controller: null,
+	totalHits: 0,
 });
 
 export const QueryProvider: React.FC = ({ children }) => {
@@ -27,33 +31,35 @@ export const QueryProvider: React.FC = ({ children }) => {
 	const [currentPage, setPage] = useState<number>(1);
 	const [controller, setController] = useState<QueryController>();
 
-	const [properties, setProperties] = useState<Record<string, string>>({})
+	const [properties, setProperties] = useState<Record<string, string>>({});
+	const [totalHits, setTotalHits] = useState(0);
+
+	const [ready, setReady] = useState(false);
 
 	const setupController = async () => {
 		const c = new QueryController({
-			url: 'https://wikibase-reconcile-testing.wmcloud.org'
+			url: "https://wikibase-reconcile-testing.wmcloud.org",
 		});
 
 		setProperties(await c.getProperties());
-		setController(c)
+		setController(c);
 		executeQuery(c);
-	}
+		setReady(true);
+	};
 
 	const executeQuery = async (c: QueryController) => {
-
 		const query = {
 			search,
 			page: currentPage,
 		};
 
 		const newItems = await c.getItems(query);
-		console.log({ newItems })
-		setItems(newItems);
+		setItems(newItems.entities);
+		setTotalHits(newItems.totalHits);
 	};
 
 	useEffect(() => {
-		if(controller)
-		executeQuery(controller);
+		if (controller) executeQuery(controller);
 	}, [search, currentPage]);
 
 	useEffect(() => {
@@ -65,16 +71,29 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 		setSearch(initialSearch);
 
-		setupController()
+		setupController();
 
 		if (initialPage) {
 			setPage(initialPage);
 		}
 	}, []);
 
+	if (!ready || !controller) {
+		return <></>;
+	}
+
 	return (
 		<QueryContext.Provider
-			value={{ search, setSearch, items, currentPage, setPage, properties }}
+			value={{
+				search,
+				setSearch,
+				items,
+				currentPage,
+				setPage,
+				properties,
+				controller,
+				totalHits,
+			}}
 		>
 			{children}
 		</QueryContext.Provider>

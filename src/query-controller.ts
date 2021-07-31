@@ -5,6 +5,14 @@ const wbk = WBK({
 	instance: "https://wikibase-reconcile-testing.wmcloud.org",
 });
 
+export interface Pagination {
+	sroffset: number;
+	continue: string;
+	totalhits: number;
+}
+
+export const LIMIT = 10;
+
 export default class QueryController {
 	url: string;
 	properties: Record<string, string> = {};
@@ -14,43 +22,83 @@ export default class QueryController {
 	}
 
 	async getProperties() {
-
-		const { data: propertiesPages } = await axios
-		.get(
+		const { data: propertiesPages } = await axios.get(
 			this.url +
 				"/w/api.php?action=query&list=allpages&apnamespace=122&aplimit=max&format=json&origin=*"
-		)
+		);
 
-		const propertiesQuery = propertiesPages.query.allpages.map((p: any) => p.title.split(':')[1])
+		const propertiesQuery = propertiesPages.query.allpages.map(
+			(p: any) => p.title.split(":")[1]
+		);
 
-		const entitiesUrl = wbk.getManyEntities(propertiesQuery)
+		const entitiesUrl = wbk.getManyEntities(propertiesQuery);
 
-		const { data: entitiesResponse } = await axios.get(entitiesUrl)
+		const { data: entitiesResponse } = await axios.get(entitiesUrl);
 
 		Object.entries(entitiesResponse.entities).map(([key, value]: any) => {
-			this.properties[value.labels.en.value] = key
+			this.properties[key] = value.labels.en.value;
 		});
 
-		return this.properties
+		console.log(this.properties);
+
+		return this.properties;
 	}
 
-	async getItems({ search }: GetItemsProps): Promise<HardwareData[]> {
+	async getItems({ search, page }: GetItemsProps): Promise<{
+		entities: HardwareData[];
+		totalHits: number;
+	}> {
+		let totalHits = 0;
 
-		const test = await axios.get('https://wikibase-reconcile-testing.wmcloud.org/w/api.php?action=query&list=allpages&apnamespace=120&format=json&origin=*')
-		const entitiesUrl = wbk.getManyEntities(test.data.query.allpages.map((p: any) => p.title.split(':')[1]))
-		const { data } = await axios.get(entitiesUrl)
+		const offset = (page - 1) * LIMIT;
 
-		console.log(data);
-
-		return Object.values(data.entities);
-
-		return tableData.filter((item) => {
-			return item.name.includes(search);
+		const searchUrl = wbk.cirrusSearchPages({
+			search: search || "*",
+			namespace: 120,
+			limit: LIMIT,
+			offset,
 		});
+
+		return await axios
+			.get(searchUrl)
+			.then((res) => res.data)
+			.then((data) => {
+				totalHits = data.query.searchinfo.totalhits;
+				return data;
+			})
+			.then(wbk.parse.wb.pagesTitles)
+			.then(async (titles: any) => {
+				const ids = titles.map((title: string) => title.split(":")[1]);
+
+				// Get full entities data
+				const entitiesUrl = wbk.getEntities({ ids });
+				const { data } = await axios.get(entitiesUrl);
+				const rawEntities: Record<string, RawWikibaseData> = data.entities;
+
+				const result = {
+					entities: Object.values(rawEntities).map((e) =>
+						this.parseData(e)
+					) as HardwareData[],
+					totalHits,
+				};
+				return result;
+			});
 	}
 
-	getItem(): null {
-		return null;
+	async getItem(itemId: string): Promise<any> {
+		const { data } = await axios.get(wbk.getEntities([itemId]));
+		return data.entities[itemId];
+	}
+
+	parseData(entity: RawWikibaseData): HardwareData {
+		const parsed: HardwareData = {
+			id: entity.id,
+			name: entity.labels.en.value,
+		};
+		Object.entries(entity.claims).forEach(([key, value]) => {
+			parsed[this.properties[key]] = value[0].mainsnak.datavalue.value;
+		});
+		return parsed;
 	}
 }
 
@@ -59,224 +107,101 @@ interface GetItemsProps {
 	page: number;
 }
 
-export interface HardwareData {
-	name: string;
-	identifier: string;
-	repository: string;
-	version: string;
-	license: string;
-	organization: string;
-	language: string;
-	tsdcId: number;
+type DataValueString = string;
+
+type DataValueTime = {
+	time: string;
+	timezone: number;
+	before: number;
+	after: number;
+	precision: number;
+	calendarmodel: string;
+};
+type DataValueItem = {
+	"entity-type": string;
+	"numeric-id": number;
+	id: string;
+};
+
+type DataValue = DataValueString | DataValueTime | DataValueItem;
+
+interface RawWikibaseData {
+	pageid: number;
+	ns: number;
+	title: string;
+	lastrevid: number;
+	modified: string;
+	type: string;
+	id: string;
+	labels: {
+		en: {
+			language: string;
+			value: string;
+		};
+	};
+	descriptions: Record<string, unknown>;
+	aliases: Record<string, unknown>;
+	claims: Record<
+		string,
+		Array<{
+			mainsnak: {
+				snaktype: string;
+				property: string;
+				hash: string;
+				datavalue: {
+					value: DataValue;
+					type: string;
+				};
+				datatype: string;
+			};
+			type: string;
+			id: string;
+			rank: string;
+		}>
+	>;
+	siteLinks: Record<string, unknown>;
 }
 
-const tableData: HardwareData[] = [
-	{
-		name: "in hac",
-		identifier:
-			"https://latimes.com/habitasse/platea/dictumst/aliquam/augue.json?",
-		repository: "in",
-		version: "0.73",
-		license: "donec",
-		organization: "Lakin, Ondricka and Thiel",
-		language: "Maltese",
-		tsdcId: 1,
-	},
-	{
-		name: "imperdiet",
-		identifier:
-			"http://unc.edu/tristique.html?velit=quis&vivamus=tortor&vel=id&nul",
-		repository: "mattis",
-		version: "6.0",
-		license: "etiam",
-		organization: "Orn Inc",
-		language: "Greek",
-		tsdcId: 2,
-	},
-	{
-		name: "volutpat",
-		identifier: "http://google.pl/non/lec",
-		repository: "at",
-		version: "1.09",
-		license: "ut",
-		organization: "Gutkowski LLC",
-		language: "Danish",
-		tsdcId: 3,
-	},
-	{
-		name: "sit",
-		identifier: "https://ameblo.jp/in/blandit/ultrices/enim/lor",
-		repository: "nunc",
-		version: "0.19",
-		license: "ligula",
-		organization: "Bernhard-Kuhn",
-		language: "Kashmiri",
-		tsdcId: 4,
-	},
-	{
-		name: "justo sit",
-		identifier:
-			"https://miitbeian.gov.cn/nulla.aspx?bibendum=venenatis&morbi=tri",
-		repository: "at",
-		version: "1.7",
-		license: "erat",
-		organization: "Kunze, Dickinson and Zboncak",
-		language: "Spanish",
-		tsdcId: 5,
-	},
-	{
-		name: "nunc nisl",
-		identifier: "https://epa.gov/fusce/congue/diam.html?",
-		repository: "nulla",
-		version: "2.5.1",
-		license: "lacus",
-		organization: "Green Group",
-		language: "Hiri Motu",
-		tsdcId: 6,
-	},
-	{
-		name: "nisi",
-		identifier: "https://google.com.br/euismod/scelerisque/quam/turpis",
-		repository: "in",
-		version: "0.4.6",
-		license: "nulla",
-		organization: "Brakus and Sons",
-		language: "Maltese",
-		tsdcId: 7,
-	},
-	{
-		name: "mi nulla",
-		identifier: "http://google.co.jp/at/velit.json?aliquam",
-		repository: "morbi",
-		version: "7.6",
-		license: "tortor",
-		organization: "Ernser-Gorczany",
-		language: "Danish",
-		tsdcId: 8,
-	},
-	{
-		name: "odio",
-		identifier: "http://netlog.com/turpis/adipiscing/lorem/v",
-		repository: "quam",
-		version: "8.5",
-		license: "quisque",
-		organization: "Doyle and Sons",
-		language: "Nepali",
-		tsdcId: 9,
-	},
-	{
-		name: "est",
-		identifier:
-			"https://mysql.com/risus/dapibus.js?consequat=libero&lectus=convallis&in=eget&est=eleifend&risus=luctus&auctor=ultricies&sed=eu&tristique=nibh&",
-		repository: "quis",
-		version: "0.30",
-		license: "quam",
-		organization: "Denesik Group",
-		language: "Nepali",
-		tsdcId: 10,
-	},
-	{
-		name: "in hac",
-		identifier:
-			"https://latimes.com/habitasse/platea/dictumst/aliquam/augue.json?",
-		repository: "in",
-		version: "0.73",
-		license: "donec",
-		organization: "Lakin, Ondricka and Thiel",
-		language: "Maltese",
-		tsdcId: 11,
-	},
-	{
-		name: "imperdiet",
-		identifier:
-			"http://unc.edu/tristique.html?velit=quis&vivamus=tortor&vel=id&nul",
-		repository: "mattis",
-		version: "6.0",
-		license: "etiam",
-		organization: "Orn Inc",
-		language: "Greek",
-		tsdcId: 12,
-	},
-	{
-		name: "volutpat",
-		identifier: "http://google.pl/non/lec",
-		repository: "at",
-		version: "1.09",
-		license: "ut",
-		organization: "Gutkowski LLC",
-		language: "Danish",
-		tsdcId: 13,
-	},
-	{
-		name: "sit",
-		identifier: "https://ameblo.jp/in/blandit/ultrices/enim/lor",
-		repository: "nunc",
-		version: "0.19",
-		license: "ligula",
-		organization: "Bernhard-Kuhn",
-		language: "Kashmiri",
-		tsdcId: 14,
-	},
-	{
-		name: "justo sit",
-		identifier:
-			"https://miitbeian.gov.cn/nulla.aspx?bibendum=venenatis&morbi=tri",
-		repository: "at",
-		version: "1.7",
-		license: "erat",
-		organization: "Kunze, Dickinson and Zboncak",
-		language: "Spanish",
-		tsdcId: 15,
-	},
-	{
-		name: "nunc nisl",
-		identifier: "https://epa.gov/fusce/congue/diam.html?",
-		repository: "nulla",
-		version: "2.5.1",
-		license: "lacus",
-		organization: "Green Group",
-		language: "Hiri Motu",
-		tsdcId: 16,
-	},
-	{
-		name: "nisi",
-		identifier: "https://google.com.br/euismod/scelerisque/quam/turpis",
-		repository: "in",
-		version: "0.4.6",
-		license: "nulla",
-		organization: "Brakus and Sons",
-		language: "Maltese",
-		tsdcId: 17,
-	},
-	{
-		name: "mi nulla",
-		identifier: "http://google.co.jp/at/velit.json?aliquam",
-		repository: "morbi",
-		version: "7.6",
-		license: "tortor",
-		organization: "Ernser-Gorczany",
-		language: "Danish",
-		tsdcId: 18,
-	},
-	{
-		name: "odio",
-		identifier: "http://netlog.com/turpis/adipiscing/lorem/v",
-		repository: "quam",
-		version: "8.5",
-		license: "quisque",
-		organization: "Doyle and Sons",
-		language: "Nepali",
-		tsdcId: 19,
-	},
-	{
-		name: "est",
-		identifier:
-			"https://mysql.com/risus/dapibus.js?consequat=libero&lectus=convallis&in=eget&est=eleifend&risus=luctus&auctor=ultricies&sed=eu&tristique=nibh&",
-		repository: "quis",
-		version: "0.30",
-		license: "quam",
-		organization: "Denesik Group",
-		language: "Nepali",
-		tsdcId: 20,
-	},
-];
+export interface HardwareData {
+	[key: string]: any;
+	id: string;
+	name: string;
+	contributorCount?: string;
+	cpcPatentClass?: string;
+	documentationLanguage?: string;
+	documentationReadinessLevel?: string;
+	export?: string;
+	fileFormat?: string;
+	fileURL?: string;
+	function?: string;
+	hasBoM?: string;
+	hasComponent?: string;
+	hasImage?: string;
+	hasManifestFile?: string;
+	hasManufacturingInstructions?: string;
+	hasReadme?: string;
+	hasUserManual?: string;
+	identifier?: string;
+	image?: string;
+	lastRequested?: string;
+	lastSeen?: string;
+	licensor?: string;
+	manufacturingProcess?: string;
+	material?: string;
+	okhv?: string;
+	organisation?: string;
+	originalURL?: string;
+	outerDimensionsMM?: string;
+	permaURL?: string;
+	relatedTsDC?: string;
+	release?: string;
+	repo?: string;
+	source?: string;
+	spdxLicense?: string;
+	technologyReadinessLevel?: string;
+	test?: string;
+	timestamp?: string;
+	type?: string;
+	version?: string;
+	versionOf?: string;
+}
