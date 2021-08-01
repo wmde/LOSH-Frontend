@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import QueryController, { HardwareData, Pagination } from "../query-controller";
+import QueryController from "../controller/query-controller";
+import { HardwareData } from "../controller/types";
 
 interface QueryContextState {
 	search: string;
@@ -9,6 +10,7 @@ interface QueryContextState {
 	items: HardwareData[];
 	currentPage: number;
 	setPage: (value: number) => void;
+	setSorting: (value: any) => void;
 	properties: Record<string, string>;
 	controller: QueryController | null;
 	totalHits: number;
@@ -20,6 +22,7 @@ export const QueryContext = React.createContext<QueryContextState>({
 	items: [],
 	currentPage: 1,
 	setPage: () => undefined,
+	setSorting: () => undefined,
 	properties: {},
 	controller: null,
 	totalHits: 0,
@@ -33,6 +36,8 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 	const [properties, setProperties] = useState<Record<string, string>>({});
 	const [totalHits, setTotalHits] = useState(0);
+
+	const [sorting, setSorting] = useState();
 
 	const [ready, setReady] = useState(false);
 
@@ -93,6 +98,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 				properties,
 				controller,
 				totalHits,
+				setSorting,
 			}}
 		>
 			{children}
