@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { Layout as AntdLayout, Row, Typography } from "antd";
+import "./footer.css";
 
 interface FooterProps {
 	footerLinks: Array<{
