@@ -9,6 +9,14 @@ input {
 	font-family: "Source Code Pro", monospace, "Courier New";
 }
 
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child) {
+	margin-top: 1em;
+}
+
 .ant-dropdown-menu {
 	font-family: "Source Code Pro", monospace, "Courier New";
 }
