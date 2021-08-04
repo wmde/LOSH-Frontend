@@ -28,3 +28,18 @@ h5:not(:first-child) {
 .markdown-content a {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
+
+.ant-btn:hover {
+	color: #46749f;
+	border-color: #46749f;
+}
+
+.ant-btn-primary:hover {
+	background-color: #6eb2f3;
+	border-color: #0f4a83;
+}
+.ant-btn-primary:disabled {
+	background-color: #ededed;
+	color: #bfbfbf;
+	border-color: #bfbfbf;
+}
