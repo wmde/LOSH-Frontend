@@ -21,7 +21,7 @@ function Filter(): JSX.Element {
 	return (
 		<Space wrap className="filter">
 			<Dropdown overlay={menu} trigger={["click"]}>
-				<Button>
+				<Button type="primary">
 					Actions <DownOutlined />
 				</Button>
 			</Dropdown>

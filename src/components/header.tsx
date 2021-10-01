@@ -35,7 +35,7 @@ interface MainMenuProps {
 }
 
 const MainMenu = ({ links, mode }: MainMenuProps) => (
-	<Menu mode={mode}>
+	<Menu id="main-menu" mode={mode}>
 		{links.map((link) => (
 			<Menu.Item key={link.title}>
 				<Link to={link.to}>
@@ -58,7 +58,7 @@ const MobileMenu = ({ links }: MobileMenuProps) => {
 
 	return (
 		<Dropdown overlay={menu} trigger={["click"]}>
-			<Button>
+			<Button id="mobile-menu-button">
 				<MenuOutlined />
 			</Button>
 		</Dropdown>
@@ -83,15 +83,7 @@ const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
 				</Col>
 				<Col className="menu-col">
 					{width > 1230 ? (
-						<Menu mode="horizontal">
-							{headerLinks.map((link) => (
-								<Menu.Item key={link.title}>
-									<Link to={link.to}>
-										<Typography.Text>{link.title}</Typography.Text>
-									</Link>
-								</Menu.Item>
-							))}
-						</Menu>
+						<MainMenu links={headerLinks} mode="horizontal" />
 					) : (
 						<MobileMenu links={headerLinks} />
 					)}
