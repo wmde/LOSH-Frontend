@@ -69,9 +69,7 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 					title="Timestamp"
 					value={
 						pageData.timestamp &&
-						new Date(
-							pageData.timestamp.datavalue.value.time.replace("+", "")
-						).toLocaleDateString()
+						new Date(pageData.timestamp.datavalue.value).toLocaleDateString()
 					}
 				/>
 				<DetailRowUrl

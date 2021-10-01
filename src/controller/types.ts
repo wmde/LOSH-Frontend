@@ -132,7 +132,7 @@ export interface HardwareData {
 	spdxLicense?: DataValueString;
 	technologyReadinessLevel?: DataValue;
 	test?: DataValue;
-	timestamp?: DataValueTime;
+	timestamp?: DataValueString;
 	type?: DataValue;
 	version?: DataValue;
 	versionOf?: DataValue;

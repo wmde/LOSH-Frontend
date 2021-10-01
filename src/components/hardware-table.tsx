@@ -12,7 +12,7 @@ import {
 } from "antd/lib/table/interface";
 import { HardwareData } from "../controller/types";
 import { Properties } from "../controller/constants";
-import { navigate } from "@reach/router";
+import { Link, navigate } from "gatsby";
 
 const columns: ColumnsType<HardwareData> = [
 	{
@@ -20,6 +20,9 @@ const columns: ColumnsType<HardwareData> = [
 		key: "name",
 		dataIndex: "name",
 		sorter: true,
+		render: (value, record) => (
+			<Link to={`/detail/${record.id}`}>{record.name}</Link>
+		),
 	},
 	{
 		title: "Version",
