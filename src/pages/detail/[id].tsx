@@ -11,6 +11,7 @@ import DetailRowUrl from "../../components/detail-rows/detail-row-url";
 import DetailRowDownload from "../../components/detail-rows/detail-row-download";
 import DetailRowRelatedUrls from "../../components/detail-rows/detail-row-related-urls";
 import DetailRowParts from "../../components/detail-rows/detail-row-parts";
+import DetailRowReadinessLevel from "../../components/detail-rows/detail-row-readiness-level";
 
 const renderImage = (property: DataValue | undefined) => {
 	if (
@@ -79,6 +80,26 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 				<DetailRowString
 					title="Licensor / Owner / Organisation"
 					value={pageData.organisation?.datavalue.value}
+				/>
+				<DetailRowReadinessLevel
+					title="Technology Readiness Level"
+					value={pageData.technologyReadinessLevel?.datavalue.value}
+				/>
+				<DetailRowReadinessLevel
+					title="Documentation Readiness Level"
+					value={pageData.documentationReadinessLevel?.datavalue.value}
+				/>
+				<DetailRowString
+					title="Outer Dimensions MM"
+					value={pageData.outerDimensionsMM?.datavalue.value}
+				/>
+				<DetailRowString
+					title="CPC Patent Class"
+					value={pageData.cpcPatentClass?.datavalue.value}
+				/>
+				<DetailRowUrl
+					title="Related TsDC"
+					value={pageData.relatedTsDC?.datavalue.value}
 				/>
 				<DetailRowUrl
 					title="License"
