@@ -1,11 +1,6 @@
 import axios from "axios";
 import WBK from "wikibase-sdk";
-import {
-	DataValue,
-	DataValueItem,
-	HardwareData,
-	RawWikibaseData,
-} from "./types";
+import { DataValueItem, HardwareData, RawWikibaseData } from "./types";
 
 export const LIMIT = 10;
 
@@ -68,8 +63,12 @@ export default class QueryController {
 			namespace: 120,
 			limit: LIMIT,
 			offset,
-			haswbstatement:
+			haswbstatement: [
 				"P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+				// "-P1187=*", // organisation
+				// "-P509=*", // certificate
+				// "P1452=CC-BY-4.0" // license
+			],
 		});
 
 		return await axios

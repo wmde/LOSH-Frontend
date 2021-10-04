@@ -9,19 +9,9 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<UserOutlined />}
+          icon={<UNDEFINED />}
         >
-          1st menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
+          True
         </Unknown>
       </Menu>
     }
@@ -32,7 +22,7 @@ exports[`Filter renders correctly 1`] = `
     }
   >
     <Button>
-      Actions 
+      License 
       <DownOutlined />
     </Button>
   </Dropdown>
@@ -40,19 +30,14 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<UserOutlined />}
+          icon={<UNDEFINED />}
         >
-          1st menu item
+          True
         </Unknown>
         <Unknown
-          icon={<UserOutlined />}
+          icon={<UNDEFINED />}
         >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
+          Cert type 2
         </Unknown>
       </Menu>
     }
@@ -63,7 +48,7 @@ exports[`Filter renders correctly 1`] = `
     }
   >
     <Button>
-      Actions 
+      Certified Project 
       <DownOutlined />
     </Button>
   </Dropdown>
@@ -71,19 +56,9 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<UserOutlined />}
+          icon={<UNDEFINED />}
         >
-          1st menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
+          True
         </Unknown>
       </Menu>
     }
@@ -94,7 +69,7 @@ exports[`Filter renders correctly 1`] = `
     }
   >
     <Button>
-      Actions 
+      Data Source 
       <DownOutlined />
     </Button>
   </Dropdown>
@@ -102,19 +77,9 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<UserOutlined />}
+          icon={<UNDEFINED />}
         >
-          1st menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
+          True
         </Unknown>
       </Menu>
     }
@@ -125,69 +90,7 @@ exports[`Filter renders correctly 1`] = `
     }
   >
     <Button>
-      Actions 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          1st menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Actions 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          1st menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          2nd menu item
-        </Unknown>
-        <Unknown
-          icon={<UserOutlined />}
-        >
-          3rd menu item
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Actions 
+      Organisation 
       <DownOutlined />
     </Button>
   </Dropdown>

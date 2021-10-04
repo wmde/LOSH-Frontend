@@ -73,10 +73,6 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 						new Date(pageData.timestamp.datavalue.value).toLocaleDateString()
 					}
 				/>
-				<DetailRowUrl
-					title="Repository URL"
-					value={pageData.repo?.datavalue.value}
-				/>
 				<DetailRowString
 					title="Licensor / Owner / Organisation"
 					value={pageData.organisation?.datavalue.value}
@@ -101,7 +97,7 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 					title="Related TsDC"
 					value={pageData.relatedTsDC?.datavalue.value}
 				/>
-				<DetailRowUrl
+				<DetailRowString
 					title="License"
 					value={pageData.spdxLicense?.datavalue.value}
 				/>
