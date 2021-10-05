@@ -21,9 +21,9 @@ const Footer = ({ footerLinks, pagePadding }: FooterProps): JSX.Element => (
 				© OPEN!NEXT
 			</Typography.Text>
 			{footerLinks.map((link) => (
-				<Link key={link.title} to={link.to}>
+				<a key={link.title} href={link.to} target="_blank" rel="noreferrer">
 					<Typography.Text>{link.title}</Typography.Text>
-				</Link>
+				</a>
 			))}
 		</Row>
 	</AntdLayout.Footer>

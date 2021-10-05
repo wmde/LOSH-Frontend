@@ -5,7 +5,7 @@ import "./search-box.css";
 import { useEffect } from "react";
 
 export const SearchBox: React.FC = () => {
-	const { search, setSearch } = React.useContext(QueryContext);
+	const { search, handleSearchChange } = React.useContext(QueryContext);
 
 	const [currentValue, setCurrentValue] = useState(search);
 
@@ -13,7 +13,7 @@ export const SearchBox: React.FC = () => {
 		if (!currentValue) {
 			setCurrentValue(search);
 		}
-	}, [search]);
+	}, []);
 
 	return (
 		<Row className="search-box">
@@ -21,7 +21,7 @@ export const SearchBox: React.FC = () => {
 			<Input.Search
 				id="search"
 				placeholder="input search text"
-				onSearch={(value) => setSearch(value)}
+				onSearch={handleSearchChange}
 				onChange={(e) => setCurrentValue(e.target.value)}
 				value={currentValue}
 				style={{ maxWidth: 400 }}

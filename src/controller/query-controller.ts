@@ -127,8 +127,6 @@ export default class QueryController {
 	}
 
 	parseData(entity: RawWikibaseData): HardwareData {
-		console.log({ entity });
-		console.log({ properties: this.properties });
 		const parsed: HardwareData = {
 			id: entity.id,
 			name: entity.labels.en.value,

@@ -21,27 +21,33 @@ exports[`Footer renders correctly 1`] = `
     >
       © OPEN!NEXT
     </Text>
-    <mockConstructor
-      to="https://opennext.eu/"
+    <a
+      href="https://opennext.eu/"
+      rel="noreferrer"
+      target="_blank"
     >
       <Text>
         Imprint
       </Text>
-    </mockConstructor>
-    <mockConstructor
-      to="https://opennext.eu/"
+    </a>
+    <a
+      href="https://opennext.eu/"
+      rel="noreferrer"
+      target="_blank"
     >
       <Text>
         Legal Disclaimer
       </Text>
-    </mockConstructor>
-    <mockConstructor
-      to="/issue"
+    </a>
+    <a
+      href="/issue"
+      rel="noreferrer"
+      target="_blank"
     >
       <Text>
         Submit an issue
       </Text>
-    </mockConstructor>
+    </a>
   </Row>
 </Footer>
 `;

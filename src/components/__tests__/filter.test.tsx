@@ -21,6 +21,7 @@ jest.mock("@ant-design/icons", () => {
 	return {
 		DownOutlined: (): null => null,
 		UserOutlined: (): null => null,
+		CheckOutlined: (): null => null,
 	};
 });
 

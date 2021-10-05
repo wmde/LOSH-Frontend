@@ -56,7 +56,7 @@ const columns: ColumnsType<HardwareData> = [
 ];
 
 const HardwareTable = (): JSX.Element => {
-	const { items, setPage, currentPage, totalHits, setSorting } =
+	const { items, handlePageChange, currentPage, totalHits } =
 		useContext(QueryContext);
 
 	const paginationState: PaginationProps = {
@@ -73,11 +73,11 @@ const HardwareTable = (): JSX.Element => {
 	) => {
 		switch (extra.action) {
 			case "paginate":
-				setPage(pagination.current || 1);
+				handlePageChange(pagination.current || 1);
 				break;
 			case "sort":
-				console.log(sorter);
-				setSorting(sorter);
+				// console.log(sorter);
+				// setSorting(sorter);
 				break;
 			default:
 				return;
