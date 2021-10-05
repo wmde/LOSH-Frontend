@@ -11,6 +11,9 @@ const IndexPage: React.FC = () => {
 		<Layout>
 			<SEO title="Explore Data" />
 			<Typography.Title>Explore Data</Typography.Title>
+			<Typography.Text>
+				Explore Open Source Hardware specifications by browsing the data table.
+			</Typography.Text>
 			<SearchBox />
 			<Filter />
 			<HardwareTable />
