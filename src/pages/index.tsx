@@ -12,7 +12,9 @@ const IndexPage: React.FC = () => {
 			<SEO title="Explore Data" />
 			<Typography.Title>Explore Data</Typography.Title>
 			<Typography.Text>
-				Explore Open Source Hardware specifications by browsing the data table.
+				Find Open Source Hardware matching your use case. LOSH crawls data from
+				several platforms for you and connects it in a graph database. Go ahead
+				and search for free/open designs by the search bar below.
 			</Typography.Text>
 			<SearchBox />
 			<Filter />
