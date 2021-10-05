@@ -1,11 +1,6 @@
 import axios from "axios";
 import WBK from "wikibase-sdk";
-import {
-	DataValue,
-	DataValueItem,
-	HardwareData,
-	RawWikibaseData,
-} from "./types";
+import { DataValueItem, HardwareData, RawWikibaseData } from "./types";
 
 export const LIMIT = 10;
 
@@ -35,12 +30,19 @@ export default class QueryController {
 			(p: any) => p.title.split(":")[1]
 		);
 
-		const entitiesUrl = this.wbk.getManyEntities(propertiesQuery);
+		const entitiesUrls: Array<string> =
+			this.wbk.getManyEntities(propertiesQuery);
 
-		const { data: entitiesResponse } = await axios.get(entitiesUrl);
+		const entitiesRequests = entitiesUrls.map((url) =>
+			axios.get(url).then((res) => res.data.entities)
+		);
+		const entitiesResponse = await Promise.all(entitiesRequests);
 
-		Object.entries(entitiesResponse.entities).map(([key, value]: any) => {
-			this.properties[key] = value.labels.en.value;
+		entitiesResponse.map((response: Record<string, any>) => {
+			Object.entries(response).map(([key, value]: any) => {
+				const label = value.labels.en?.value;
+				if (label) this.properties[key] = label;
+			});
 		});
 
 		console.log(this.properties);
@@ -61,7 +63,12 @@ export default class QueryController {
 			namespace: 120,
 			limit: LIMIT,
 			offset,
-			// haswbstatement: 'P58=Q14'
+			haswbstatement: [
+				"P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+				// "-P1187=*", // organisation
+				// "-P509=*", // certificate
+				// "P1452=CC-BY-4.0" // license
+			],
 		});
 
 		return await axios
@@ -120,6 +127,8 @@ export default class QueryController {
 	}
 
 	parseData(entity: RawWikibaseData): HardwareData {
+		console.log({ entity });
+		console.log({ properties: this.properties });
 		const parsed: HardwareData = {
 			id: entity.id,
 			name: entity.labels.en.value,

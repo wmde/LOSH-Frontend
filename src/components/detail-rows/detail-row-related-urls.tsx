@@ -23,6 +23,22 @@ const generateRelatedUrls = (data: HardwareData) => {
 		});
 	}
 
+	if (data.hasManufacturingInstructions) {
+		relatedUrls.push({
+			title: data.hasManufacturingInstructions.datavalue.result.name,
+			value:
+				data.hasManufacturingInstructions.datavalue.result.identifier?.datavalue
+					.value,
+		});
+	}
+
+	if (data.hasManifestFile) {
+		relatedUrls.push({
+			title: data.hasManifestFile.datavalue.result.name,
+			value: data.hasManifestFile.datavalue.result.identifier?.datavalue.value,
+		});
+	}
+
 	return relatedUrls;
 };
 

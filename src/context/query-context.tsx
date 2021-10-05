@@ -43,7 +43,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 	const setupController = async () => {
 		const c = new QueryController({
-			url: "https://wikibase-reconcile-testing.wmcloud.org",
+			url: "https://losh.ose-germany.de",
 		});
 
 		setProperties(await c.getProperties());

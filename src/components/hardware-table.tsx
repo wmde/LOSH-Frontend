@@ -12,34 +12,46 @@ import {
 } from "antd/lib/table/interface";
 import { HardwareData } from "../controller/types";
 import { Properties } from "../controller/constants";
-import { navigate } from "@reach/router";
+import { Link } from "gatsby";
+import { parseDataSource } from "../utils/parse-data-source";
 
 const columns: ColumnsType<HardwareData> = [
 	{
 		title: "Name",
 		key: "name",
 		dataIndex: "name",
-		sorter: true,
+		render: (value, record) => (
+			<Link to={`/detail/${record.id}`}>{record.name}</Link>
+		),
 	},
 	{
 		title: "Version",
 		key: Properties.VERSION,
 		dataIndex: Properties.VERSION,
+		render: (v, record) => record.version?.datavalue.value,
 	},
 	{
 		title: "License",
 		key: Properties.SPDX_LICENSE,
 		dataIndex: Properties.SPDX_LICENSE,
+		render: (v, record) => record.spdxLicense?.datavalue.value,
 	},
 	{
 		title: "Data Source",
 		key: Properties.REPO,
 		dataIndex: Properties.REPO,
+		render: (v, record) =>
+			record.repo && (
+				<a href={record.repo.datavalue.value} target="_blank" rel="noreferrer">
+					{parseDataSource(record.repo?.datavalue.value)}
+				</a>
+			),
 	},
 	{
 		title: "Organisation",
 		key: Properties.ORGANISATION,
 		dataIndex: Properties.ORGANISATION,
+		render: (v, record) => record.organisation?.datavalue.value,
 	},
 ];
 
@@ -80,11 +92,6 @@ const HardwareTable = (): JSX.Element => {
 			style={{ overflowX: "scroll" }}
 			pagination={{ position: ["bottomLeft"], ...paginationState }}
 			rowKey={(r: HardwareData): string => r.id}
-			onRow={(record, rowIndex) => {
-				return {
-					onClick: () => navigate(`/detail/${record.id}`),
-				};
-			}}
 			onChange={handleChange}
 		/>
 	);
