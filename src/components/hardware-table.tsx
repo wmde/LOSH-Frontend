@@ -3,13 +3,9 @@ import { ColumnsType } from "antd/es/table";
 import React from "react";
 import { useContext } from "react";
 import { QueryContext } from "../context/query-context";
-import { LIMIT } from "../controller/query-controller";
+import { DEFAULT_PAGE_SIZE } from "../controller/query-controller";
 import { PaginationProps } from "antd/lib/pagination/Pagination";
-import {
-	SorterResult,
-	TablePaginationConfig,
-	FilterValue,
-} from "antd/lib/table/interface";
+import { TablePaginationConfig } from "antd/lib/table/interface";
 import { HardwareData } from "../controller/types";
 import { Properties } from "../controller/constants";
 import { Link } from "gatsby";
@@ -56,32 +52,26 @@ const columns: ColumnsType<HardwareData> = [
 ];
 
 const HardwareTable = (): JSX.Element => {
-	const { items, handlePageChange, currentPage, totalHits } =
-		useContext(QueryContext);
+	const {
+		items,
+		handlePageChange,
+		handlePageSizeChange,
+		currentPage,
+		pageSize,
+		totalHits,
+	} = useContext(QueryContext);
 
 	const paginationState: PaginationProps = {
-		pageSize: LIMIT,
+		pageSize,
 		current: currentPage,
 		total: totalHits,
 	};
 
-	const handleChange = (
-		pagination: TablePaginationConfig,
-		filters: Record<string, FilterValue | null>,
-		sorter: SorterResult<HardwareData> | SorterResult<HardwareData>[],
-		extra: any
-	) => {
-		switch (extra.action) {
-			case "paginate":
-				handlePageChange(pagination.current || 1);
-				break;
-			case "sort":
-				// console.log(sorter);
-				// setSorting(sorter);
-				break;
-			default:
-				return;
-		}
+	const handleChange = (pagination: TablePaginationConfig) => {
+		if (currentPage !== pagination.current)
+			handlePageChange(pagination.current || 1);
+		if (pageSize !== pagination.pageSize)
+			handlePageSizeChange(pagination.pageSize || DEFAULT_PAGE_SIZE);
 	};
 
 	return (

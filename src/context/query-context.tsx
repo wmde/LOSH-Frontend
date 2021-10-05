@@ -1,30 +1,36 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import QueryController from "../controller/query-controller";
+import QueryController, {
+	DEFAULT_PAGE_SIZE,
+} from "../controller/query-controller";
 import { HardwareData } from "../controller/types";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 interface QueryContextState {
 	search: string;
-	handleSearchChange: (value: string) => void;
 	items: HardwareData[];
 	currentPage: number;
-	handlePageChange: (value: number) => void;
+	pageSize: number;
 	properties: Record<string, string>;
 	controller: QueryController | null;
 	totalHits: number;
+	handleSearchChange: (value: string) => void;
+	handlePageChange: (value: number) => void;
+	handlePageSizeChange: (value: number) => void;
 }
 
 export const QueryContext = React.createContext<QueryContextState>({
 	search: "",
-	handleSearchChange: () => undefined,
 	items: [],
 	currentPage: 1,
-	handlePageChange: () => undefined,
+	pageSize: DEFAULT_PAGE_SIZE,
 	properties: {},
 	controller: null,
 	totalHits: 0,
+	handleSearchChange: () => undefined,
+	handlePageChange: () => undefined,
+	handlePageSizeChange: () => undefined,
 });
 
 export const QueryProvider: React.FC = ({ children }) => {
@@ -33,6 +39,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 	const [search, setSearch] = useState("");
 	const [items, setItems] = useState<HardwareData[]>([]);
 	const [currentPage, setPage] = useState<number>(1);
+	const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 	const [controller, setController] = useState<QueryController>();
 
 	const [properties, setProperties] = useState<Record<string, string>>({});
@@ -54,6 +61,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 		const query = {
 			search,
 			page: currentPage,
+			limit: pageSize,
 		};
 
 		const newItems = await c.getItems(query);
@@ -61,7 +69,11 @@ export const QueryProvider: React.FC = ({ children }) => {
 		setTotalHits(newItems.totalHits);
 	};
 
-	const generateSearchParams = (searchValue: string, pageValue: number) => {
+	const generateSearchParams = (
+		searchValue: string,
+		pageValue: number,
+		pageSizeValue: number
+	) => {
 		let params = "";
 
 		if (searchValue) {
@@ -78,18 +90,35 @@ export const QueryProvider: React.FC = ({ children }) => {
 			params += `page=${pageValue}`;
 		}
 
+		if (pageSizeValue !== DEFAULT_PAGE_SIZE) {
+			if (params.length) {
+				params += "&";
+			} else {
+				params += "?";
+			}
+
+			params += `limit=${pageSizeValue}`;
+		}
+
 		return params;
 	};
 
 	const handleSearchChange = (value: string) => {
 		setSearch(value);
-		const params = generateSearchParams(value, 1);
+		const params = generateSearchParams(value, 1, pageSize);
 		navigate(`/${params}`);
 	};
 
 	const handlePageChange = (value: number) => {
 		setPage(value);
-		const params = generateSearchParams(search, value);
+		const params = generateSearchParams(search, value, pageSize);
+		navigate(`/${params}`);
+	};
+
+	const handlePageSizeChange = (value: number) => {
+		setPageSize(value);
+		setPage(1);
+		const params = generateSearchParams(search, 1, value);
 		navigate(`/${params}`);
 	};
 
@@ -126,13 +155,15 @@ export const QueryProvider: React.FC = ({ children }) => {
 		<QueryContext.Provider
 			value={{
 				search,
-				handleSearchChange,
 				items,
 				currentPage,
-				handlePageChange,
+				pageSize,
 				properties,
 				controller,
 				totalHits,
+				handleSearchChange,
+				handlePageChange,
+				handlePageSizeChange,
 			}}
 		>
 			{children}

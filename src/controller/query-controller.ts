@@ -2,7 +2,7 @@ import axios from "axios";
 import WBK from "wikibase-sdk";
 import { DataValueItem, HardwareData, RawWikibaseData } from "./types";
 
-export const LIMIT = 10;
+export const DEFAULT_PAGE_SIZE = 10;
 
 interface QueryControllerProps {
 	url: string;
@@ -45,23 +45,29 @@ export default class QueryController {
 			});
 		});
 
-		console.log(this.properties);
-
 		return this.properties;
 	}
 
-	async getItems({ search, page }: { search: string; page: number }): Promise<{
+	async getItems({
+		search,
+		page,
+		limit,
+	}: {
+		search: string;
+		page: number;
+		limit: number;
+	}): Promise<{
 		entities: HardwareData[];
 		totalHits: number;
 	}> {
 		let totalHits = 0;
 
-		const offset = (page - 1) * LIMIT;
+		const offset = (page - 1) * limit;
 
 		const searchUrl = this.wbk.cirrusSearchPages({
 			search: search || "*",
 			namespace: 120,
-			limit: LIMIT,
+			limit: limit || DEFAULT_PAGE_SIZE,
 			offset,
 			haswbstatement: [
 				"P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
@@ -129,8 +135,9 @@ export default class QueryController {
 	parseData(entity: RawWikibaseData): HardwareData {
 		const parsed: HardwareData = {
 			id: entity.id,
-			name: entity.labels.en.value,
+			name: entity.labels.en?.value,
 		};
+
 		Object.entries(entity.claims).forEach(([key, value]) => {
 			parsed[this.properties[key]] = value[0].mainsnak;
 		});
