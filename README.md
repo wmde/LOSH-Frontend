@@ -18,6 +18,8 @@ Run `yarn` or `yarn install` in the repostitory directory to install the depende
 
 Use `yarn start` or `gatsby develop` if you have Gatsby installed globally.
 
+If the pre-commit hooks are not working correctly, run `yarn husky` to install the Git hooks.
+
 ### Testing
 
 #### Unit tests
@@ -37,8 +39,10 @@ To build an artifact for deployment, run `yarn build`.
 
 ## Style Guide
 
+Code style is enforced locally using Husky as a precommit hook, and is tested in the pipeline. Code that does not conform to the style will cause a build to fail.
+
 - Commits must use the [Conventional Commits](https://www.conventionalcommits.org/) format.
-- Files are linted using a combination of ESLint and Prettier.
+- Files are linted and formatted using a combination of ESLint and Prettier.
 
 ## Guidelines
 
