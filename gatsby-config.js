@@ -1,4 +1,5 @@
 module.exports = {
+	pathPrefix: process.env.PATH_PREFIX || "",
 	siteMetadata: {
 		title: `Library of Open Source Hardware`,
 		description: `We are aiming to build the (real) Internet of Things – the Internet of Open Hardware.`,
