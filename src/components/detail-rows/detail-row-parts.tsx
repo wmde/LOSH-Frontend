@@ -9,7 +9,7 @@ interface DetailRowPartsProps {
 function DetailRowParts({ hasComponents }: DetailRowPartsProps) {
 	if (!hasComponents) return null;
 	return (
-		<p>
+		<div>
 			<Typography.Text strong>Designed parts</Typography.Text>
 			<br></br>
 			<ul>
@@ -19,7 +19,7 @@ function DetailRowParts({ hasComponents }: DetailRowPartsProps) {
 					</Typography.Text>
 				</li>
 			</ul>
-		</p>
+		</div>
 	);
 }
 

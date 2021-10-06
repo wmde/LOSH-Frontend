@@ -2,11 +2,11 @@ import { Typography } from "antd";
 import React from "react";
 import { HardwareData } from "../../controller/types";
 
-interface DetailRowRelatedUrlsProps {
+interface DetailRowLinkedFilesProps {
 	data: HardwareData;
 }
 
-const generateRelatedUrls = (data: HardwareData) => {
+const generateLinkedFiles = (data: HardwareData) => {
 	const relatedUrls = [];
 
 	if (data.hasReadme) {
@@ -42,16 +42,16 @@ const generateRelatedUrls = (data: HardwareData) => {
 	return relatedUrls;
 };
 
-function DetailRowRelatedUrls({ data }: DetailRowRelatedUrlsProps) {
-	const relatedUrls = generateRelatedUrls(data);
+function DetailRowLinkedFiles({ data }: DetailRowLinkedFilesProps) {
+	const linkedFiles = generateLinkedFiles(data);
 
-	if (!relatedUrls.length) return null;
+	if (!linkedFiles.length) return null;
 
 	return (
-		<p>
-			<Typography.Text strong>Related URLs</Typography.Text>
+		<div>
+			<Typography.Text strong>Linked Files</Typography.Text>
 			<ul>
-				{relatedUrls.map((url) => (
+				{linkedFiles.map((url) => (
 					<li key={url.title}>
 						<a href={url.value} target="_blank" rel="noreferrer">
 							{url.title}
@@ -59,8 +59,8 @@ function DetailRowRelatedUrls({ data }: DetailRowRelatedUrlsProps) {
 					</li>
 				))}
 			</ul>
-		</p>
+		</div>
 	);
 }
 
-export default DetailRowRelatedUrls;
+export default DetailRowLinkedFiles;

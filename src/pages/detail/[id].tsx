@@ -9,9 +9,9 @@ import { navigate } from "@reach/router";
 import DetailRowString from "../../components/detail-rows/detail-row-string";
 import DetailRowUrl from "../../components/detail-rows/detail-row-url";
 import DetailRowDownload from "../../components/detail-rows/detail-row-download";
-import DetailRowRelatedUrls from "../../components/detail-rows/detail-row-related-urls";
 import DetailRowParts from "../../components/detail-rows/detail-row-parts";
 import DetailRowReadinessLevel from "../../components/detail-rows/detail-row-readiness-level";
+import DetailRowLinkedFiles from "../../components/detail-rows/detail-row-linked-files";
 
 const renderImage = (property: DataValue | undefined) => {
 	if (
@@ -23,7 +23,11 @@ const renderImage = (property: DataValue | undefined) => {
 	}
 
 	return (
-		<img src={property.datavalue.result.fileURL.datavalue.value} width={300} />
+		<img
+			src={property.datavalue.result.fileURL.datavalue.value}
+			width={400}
+			style={{ marginBottom: "1rem" }}
+		/>
 	);
 };
 
@@ -62,21 +66,30 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 			<Typography.Title>{pageData.name}</Typography.Title>
 
 			<div>
-				<DetailRowUrl
-					title="Data source"
-					value={pageData.repo?.datavalue.value}
+				{renderImage(pageData.hasImage)}
+				<DetailRowString
+					title="Functional Description"
+					value={pageData.function?.datavalue.value}
+				/>
+
+				<DetailRowString
+					title="Version"
+					value={pageData.version?.datavalue.value}
+				/>
+
+				<DetailRowString
+					title="License"
+					value={pageData.spdxLicense?.datavalue.value}
 				/>
 				<DetailRowString
-					title="Timestamp"
-					value={
-						pageData.timestamp &&
-						new Date(pageData.timestamp.datavalue.value).toLocaleDateString()
-					}
+					title="Licensor"
+					value={pageData.licensor?.datavalue.value}
 				/>
 				<DetailRowString
-					title="Licensor / Owner / Organisation"
+					title="Organisation"
 					value={pageData.organisation?.datavalue.value}
 				/>
+
 				<DetailRowReadinessLevel
 					title="Technology Readiness Level"
 					value={pageData.technologyReadinessLevel?.datavalue.value}
@@ -89,28 +102,33 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 					title="Outer Dimensions MM"
 					value={pageData.outerDimensionsMM?.datavalue.value}
 				/>
-				<DetailRowString
+				<DetailRowParts hasComponents={pageData.hasComponent} />
+
+				<DetailRowUrl
 					title="CPC Patent Class"
-					value={pageData.cpcPatentClass?.datavalue.value}
+					label={pageData.cpcPatentClass?.datavalue.value}
+					value={`https://worldwide.espacenet.com/patent/cpc-browser#!/CPC=${pageData.cpcPatentClass?.datavalue.value}`}
 				/>
+
+				<DetailRowString
+					title="Timestamp"
+					value={
+						pageData.timestamp &&
+						new Date(pageData.timestamp.datavalue.value).toLocaleDateString()
+					}
+				/>
+
+				<DetailRowUrl
+					title="Data source"
+					value={pageData.repo?.datavalue.value}
+				/>
+
 				<DetailRowUrl
 					title="Related TsDC"
 					value={pageData.relatedTsDC?.datavalue.value}
 				/>
-				<DetailRowString
-					title="License"
-					value={pageData.spdxLicense?.datavalue.value}
-				/>
-				{renderImage(pageData.hasImage)}
+				<DetailRowLinkedFiles data={pageData} />
 
-				<DetailRowParts hasComponents={pageData.hasComponent} />
-
-				<DetailRowRelatedUrls data={pageData} />
-
-				<DetailRowString
-					title="Functional Description"
-					value={pageData.function?.datavalue.value}
-				/>
 				<DetailRowDownload repoUrl={pageData.repo?.datavalue.value} />
 			</div>
 		</Layout>

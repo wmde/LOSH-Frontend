@@ -117,7 +117,7 @@ export interface HardwareData {
 	image?: DataValue;
 	lastRequested?: DataValue;
 	lastSeen?: DataValue;
-	licensor?: DataValue;
+	licensor?: DataValueString;
 	manufacturingProcess?: DataValue;
 	material?: DataValue;
 	okhv?: DataValue;
@@ -134,6 +134,6 @@ export interface HardwareData {
 	test?: DataValue;
 	timestamp?: DataValueString;
 	type?: DataValue;
-	version?: DataValue;
+	version?: DataValueString;
 	versionOf?: DataValue;
 }
