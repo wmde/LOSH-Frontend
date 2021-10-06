@@ -7,9 +7,18 @@ import QueryController, {
 import { HardwareData } from "../controller/types";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
+
+const DEFAULT_FILTERS = {
+	License: {
+		Weak: false,
+		Strong: false,
+		"Non-copyleft": false,
+	},
+};
 interface QueryContextState {
 	search: string;
 	items: HardwareData[];
+	filters: Record<string, Record<string, boolean>>;
 	currentPage: number;
 	pageSize: number;
 	properties: Record<string, string>;
@@ -18,11 +27,17 @@ interface QueryContextState {
 	handleSearchChange: (value: string) => void;
 	handlePageChange: (value: number) => void;
 	handlePageSizeChange: (value: number) => void;
+	handleFilterChange: (
+		filterName: string,
+		filterKey: string,
+		filterValue: any
+	) => void;
 }
 
 export const QueryContext = React.createContext<QueryContextState>({
 	search: "",
 	items: [],
+	filters: DEFAULT_FILTERS,
 	currentPage: 1,
 	pageSize: DEFAULT_PAGE_SIZE,
 	properties: {},
@@ -31,6 +46,11 @@ export const QueryContext = React.createContext<QueryContextState>({
 	handleSearchChange: () => undefined,
 	handlePageChange: () => undefined,
 	handlePageSizeChange: () => undefined,
+	handleFilterChange: (
+		filterName: string,
+		filterKey: string,
+		filterValue: any
+	) => undefined,
 });
 
 export const QueryProvider: React.FC = ({ children }) => {
@@ -40,6 +60,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 	const [items, setItems] = useState<HardwareData[]>([]);
 	const [currentPage, setPage] = useState<number>(1);
 	const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
+	const [filters, setFilters] = useState<any>(DEFAULT_FILTERS);
 	const [controller, setController] = useState<QueryController>();
 
 	const [properties, setProperties] = useState<Record<string, string>>({});
@@ -52,7 +73,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 			url: "https://losh.ose-germany.de",
 		});
 
-		setProperties(await c.getProperties());
+		setProperties(await c.loadProperties());
 		setController(c);
 		setReady(true);
 	};
@@ -62,6 +83,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 			search,
 			page: currentPage,
 			limit: pageSize,
+			filters,
 		};
 
 		const newItems = await c.getItems(query);
@@ -122,9 +144,19 @@ export const QueryProvider: React.FC = ({ children }) => {
 		navigate(`/${params}`);
 	};
 
+	const handleFilterChange = (
+		parentName: string,
+		childName: string,
+		value: any
+	) => {
+		const updatedFilter = { ...filters };
+		updatedFilter[parentName][childName] = value;
+		setFilters(updatedFilter);
+	};
+
 	useEffect(() => {
 		if (controller) executeQuery(controller);
-	}, [search, currentPage, controller]);
+	}, [search, currentPage, controller, filters]);
 
 	useEffect(() => {
 		const urlSearchParams = new URLSearchParams(location.search);
@@ -156,6 +188,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 			value={{
 				search,
 				items,
+				filters,
 				currentPage,
 				pageSize,
 				properties,
@@ -164,6 +197,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 				handleSearchChange,
 				handlePageChange,
 				handlePageSizeChange,
+				handleFilterChange,
 			}}
 		>
 			{children}

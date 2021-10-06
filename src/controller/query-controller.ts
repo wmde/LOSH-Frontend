@@ -1,5 +1,6 @@
 import axios from "axios";
 import WBK from "wikibase-sdk";
+import { LICENSE_SCHEME } from "./constants";
 import { DataValueItem, HardwareData, RawWikibaseData } from "./types";
 
 export const DEFAULT_PAGE_SIZE = 10;
@@ -20,7 +21,7 @@ export default class QueryController {
 		});
 	}
 
-	async getProperties() {
+	async loadProperties(): Promise<Record<string, any>> {
 		const { data: propertiesPages } = await axios.get(
 			this.url +
 				"/w/api.php?action=query&list=allpages&apnamespace=122&aplimit=max&format=json&origin=*"
@@ -39,11 +40,13 @@ export default class QueryController {
 		const entitiesResponse = await Promise.all(entitiesRequests);
 
 		entitiesResponse.map((response: Record<string, any>) => {
-			Object.entries(response).map(([key, value]: any) => {
+			Object.entries(response).map(([key, value]) => {
 				const label = value.labels.en?.value;
 				if (label) this.properties[key] = label;
 			});
 		});
+
+		console.log(this.properties);
 
 		return this.properties;
 	}
@@ -52,10 +55,12 @@ export default class QueryController {
 		search,
 		page,
 		limit,
+		filters,
 	}: {
 		search: string;
 		page: number;
 		limit: number;
+		filters: any;
 	}): Promise<{
 		entities: HardwareData[];
 		totalHits: number;
@@ -63,6 +68,8 @@ export default class QueryController {
 		let totalHits = 0;
 
 		const offset = (page - 1) * limit;
+
+		const licenseFilter = this.generateLicenseFilters(filters.License);
 
 		const searchUrl = this.wbk.cirrusSearchPages({
 			search: search || "*",
@@ -73,8 +80,8 @@ export default class QueryController {
 				"P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
 				// "-P1187=*", // organisation
 				// "-P509=*", // certificate
-				// "P1452=CC-BY-4.0" // license
-			],
+				licenseFilter, // license
+			].filter(Boolean),
 		});
 
 		return await axios
@@ -132,7 +139,7 @@ export default class QueryController {
 			});
 	}
 
-	parseData(entity: RawWikibaseData): HardwareData {
+	private parseData(entity: RawWikibaseData): HardwareData {
 		const parsed: HardwareData = {
 			id: entity.id,
 			name: entity.labels.en?.value,
@@ -142,5 +149,20 @@ export default class QueryController {
 			parsed[this.properties[key]] = value[0].mainsnak;
 		});
 		return parsed;
+	}
+
+	private generateLicenseFilters(licenseFilters: any): false | string {
+		const activeFilters = Object.entries(licenseFilters)
+			.map(([key, value]) => (value ? key : false))
+			.filter(Boolean);
+
+		if (activeFilters.length === 0) {
+			return false;
+		}
+		const licencesToFilter = activeFilters
+			.map((filterName: any) => LICENSE_SCHEME[filterName])
+			.reduce((acc, curVal) => acc.concat(curVal), []);
+
+		return `P1452=${licencesToFilter.join("|P1452=")}`;
 	}
 }

@@ -2,18 +2,27 @@ import * as React from "react";
 import { Menu, Dropdown, Button, Space } from "antd";
 import { DownOutlined, CheckOutlined } from "@ant-design/icons";
 import "./filter.css";
+import { QueryContext } from "../context/query-context";
 
-type MenuItems = Array<{
-	name: string;
-}>;
+type MenuItems = Record<string, boolean>;
 
-const menu = (items: MenuItems) => (
+const menu = (
+	items: MenuItems,
+	parentName: string,
+	handleFilterChange: any
+) => (
 	<Menu>
-		{items.map((item) => (
-			<Menu.Item key={item.name} icon={<CheckOutlined />}>
-				{item.name}
-			</Menu.Item>
-		))}
+		{Object.entries(items).map(([childName, value]) => {
+			return (
+				<Menu.Item
+					key={childName}
+					onClick={() => handleFilterChange(parentName, childName, !value)}
+					icon={value && <CheckOutlined />}
+				>
+					{childName}
+				</Menu.Item>
+			);
+		})}
 	</Menu>
 );
 
@@ -45,28 +54,21 @@ const dataSources = [
 ];
 
 function Filter(): JSX.Element {
+	const { filters, handleFilterChange } = React.useContext(QueryContext);
+
 	return (
 		<Space wrap className="filter">
-			<Dropdown overlay={menu(licences)} trigger={["click"]}>
-				<Button>
-					License <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Dropdown overlay={menu(certifiedProjects)} trigger={["click"]}>
-				<Button>
-					Certified Project <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Dropdown overlay={menu(dataSources)} trigger={["click"]}>
-				<Button>
-					Data Source <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Dropdown overlay={menu(organisations)} trigger={["click"]}>
-				<Button>
-					Organisation <DownOutlined />
-				</Button>
-			</Dropdown>
+			{Object.entries(filters).map(([key, value]) => (
+				<Dropdown
+					key={key}
+					overlay={menu(value, key, handleFilterChange)}
+					trigger={["click"]}
+				>
+					<Button>
+						{key} <DownOutlined />
+					</Button>
+				</Dropdown>
+			))}
 		</Space>
 	);
 }
