@@ -12,6 +12,7 @@ import DetailRowDownload from "../../components/detail-rows/detail-row-download"
 import DetailRowParts from "../../components/detail-rows/detail-row-parts";
 import DetailRowReadinessLevel from "../../components/detail-rows/detail-row-readiness-level";
 import DetailRowLinkedFiles from "../../components/detail-rows/detail-row-linked-files";
+import DetailRowOuterDimensions from "../../components/detail-rows/detail-row-outer-dimensions";
 
 const renderImage = (property: DataValue | undefined) => {
 	if (
@@ -98,8 +99,7 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 					title="Documentation Readiness Level"
 					value={pageData.documentationReadinessLevel?.datavalue.value}
 				/>
-				<DetailRowString
-					title="Outer Dimensions MM"
+				<DetailRowOuterDimensions
 					value={pageData.outerDimensionsMM?.datavalue.value}
 				/>
 				<DetailRowParts hasComponents={pageData.hasComponent} />
