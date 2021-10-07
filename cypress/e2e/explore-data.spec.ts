@@ -11,7 +11,8 @@ describe("explore data page tests", () => {
 
 	it("search box displays input", () => {
 		cy.get("#search")
-			.type("foo")
+			.should("be.visible")
+			.invoke("attr", "value", "foo")
 			.should("have.value", "foo")
 			.should("be.visible");
 	});
