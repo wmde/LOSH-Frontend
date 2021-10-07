@@ -10,7 +10,6 @@ interface DetailRowUrlProps {
 function DetailRowUrl({ title, value, label }: DetailRowUrlProps) {
 	if (!value) return null;
 
-	console.log({ value });
 	return (
 		<p>
 			<Typography.Text strong>{title}</Typography.Text>

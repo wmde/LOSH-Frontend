@@ -13,6 +13,7 @@ import DetailRowParts from "../../components/detail-rows/detail-row-parts";
 import DetailRowReadinessLevel from "../../components/detail-rows/detail-row-readiness-level";
 import DetailRowLinkedFiles from "../../components/detail-rows/detail-row-linked-files";
 import DetailRowOuterDimensions from "../../components/detail-rows/detail-row-outer-dimensions";
+import DetailRowPatentClass from "../../components/detail-rows/detail-row-patent-class";
 
 const renderImage = (property: DataValue | undefined) => {
 	if (
@@ -104,10 +105,9 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 				/>
 				<DetailRowParts hasComponents={pageData.hasComponent} />
 
-				<DetailRowUrl
-					title="CPC Patent Class"
-					label={pageData.cpcPatentClass?.datavalue.value}
-					value={`https://worldwide.espacenet.com/patent/cpc-browser#!/CPC=${pageData.cpcPatentClass?.datavalue.value}`}
+				<DetailRowPatentClass
+					// label={pageData.cpcPatentClass?.datavalue.value}
+					value={pageData.cpcPatentClass?.datavalue.value}
 				/>
 
 				<DetailRowString
