@@ -106,7 +106,6 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 				<DetailRowParts hasComponents={pageData.hasComponent} />
 
 				<DetailRowPatentClass
-					// label={pageData.cpcPatentClass?.datavalue.value}
 					value={pageData.cpcPatentClass?.datavalue.value}
 				/>
 
@@ -124,7 +123,7 @@ const DetailViewPage = ({ params }: DetailViewPageProps): JSX.Element => {
 				/>
 
 				<DetailRowUrl
-					title="Related TsDC"
+					title="Related Technology-specific Documentation Criteria (TsDC)"
 					value={pageData.relatedTsDC?.datavalue.value}
 				/>
 				<DetailRowLinkedFiles data={pageData} />
