@@ -1,0 +1,8 @@
+.ant-table a {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.ant-table a:hover {
+	text-decoration: underline;
+}

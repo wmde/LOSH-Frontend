@@ -10,6 +10,7 @@ import { HardwareData } from "../controller/types";
 import { Properties } from "../controller/constants";
 import { Link } from "gatsby";
 import { parseDataSource } from "../utils/parse-data-source";
+import "./hardware-table.css";
 
 const columns: ColumnsType<HardwareData> = [
 	{

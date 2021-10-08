@@ -96,14 +96,10 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "yarn lint:fix",
-      "prettier --write"
+      "yarn prettier"
     ],
-    "*.scss": [
-      "prettier --write",
-      "stylelint --fix"
-    ],
-    "*.json": [
-      "prettier --write"
+    "*.{scss,css,json}": [
+      "yarn prettier"
     ]
   },
   "repository": {
