@@ -1,0 +1,163 @@
+{
+	"entities": {
+		"Q513": {
+			"pageid": 689,
+			"ns": 120,
+			"title": "Item:Q513",
+			"lastrevid": 4478,
+			"modified": "2021-09-14T14:09:28Z",
+			"type": "item",
+			"id": "Q513",
+			"labels": {
+				"en": { "language": "en", "value": "RoBi - El Robot B\u00ecpedo" }
+			},
+			"descriptions": {},
+			"aliases": {},
+			"claims": {
+				"P1344": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1344",
+							"hash": "178b80f2496b6ae0fcac6305b82caca324352e0e",
+							"datavalue": {
+								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo/20190425141750/RobiElRobotB\u00ecpedo",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q513$31AD59D8-A71F-4017-8135-CCF532C81B14",
+						"rank": "normal"
+					}
+				],
+				"P1426": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1426",
+							"hash": "e20652a31e126a9177f1ae18686961dd957684bc",
+							"datavalue": {
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q513$928151EB-C974-4D3C-9526-BFA55DD744AA",
+						"rank": "normal"
+					}
+				],
+				"P1463": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1463",
+							"hash": "1c82d752a956740a0d7b005447c4bb62236a9a69",
+							"datavalue": {
+								"value": "RoBi is an open source robot based in many other designs of 4th degree of freedom biped robots.",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q513$388DEFC2-0C28-4879-BE19-18670BDDF595",
+						"rank": "normal"
+					}
+				],
+				"P505": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P505",
+							"hash": "5c868c7530917f935b2d72513ff9d6b8f025490f",
+							"datavalue": { "value": "20190425141750", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q513$1968F330-1418-42A8-810B-4C02EA9355D2",
+						"rank": "normal"
+					}
+				],
+				"P467": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P467",
+							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
+							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q513$694BA27A-6EC9-4D0E-9020-52CA1457D897",
+						"rank": "normal"
+					}
+				],
+				"P1422": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1422",
+							"hash": "0f2af38215ed6d5988f94f2b44f6526c732b4317",
+							"datavalue": {
+								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q513$7FABA369-6575-4950-A96C-1190C01321CB",
+						"rank": "normal"
+					}
+				],
+				"P1452": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1452",
+							"hash": "42a765797869c8720299238dda2a9907e8f4a061",
+							"datavalue": { "value": "N/A", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q513$EB7A1188-71D8-4AD1-879F-2161EC6C224B",
+						"rank": "normal"
+					}
+				],
+				"P1532": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1532",
+							"hash": "9343c05def8017c9996c6935b027b999316e0650",
+							"datavalue": { "value": "en", "type": "string" },
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q513$7F7402BA-7975-43EF-A5B8-86374FFB3085",
+						"rank": "normal"
+					}
+				],
+				"P1411": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1411",
+							"hash": "5e86ca5f3b2651faf2d1e7a2858068b8369184ab",
+							"datavalue": {
+								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q513$D1AC65D8-5162-4D18-9333-8F3BE0874E27",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {}
+		}
+	},
+	"success": 1
+}
