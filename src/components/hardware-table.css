@@ -7,6 +7,7 @@
 	text-decoration: underline;
 }
 
-.ant-table a.repo-link {
+.ant-table td.repo,
+.ant-table td.repo a {
 	color: #1890ff;
 }

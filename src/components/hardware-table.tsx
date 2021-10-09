@@ -37,14 +37,10 @@ const columns: ColumnsType<HardwareData> = [
 		key: Properties.REPO,
 		dataIndex: Properties.REPO,
 		ellipsis: true,
+		className: "repo",
 		render: (v, record) =>
 			record.repo && (
-				<a
-					href={record.repo.datavalue.value}
-					target="_blank"
-					className="repo-link"
-					rel="noreferrer"
-				>
+				<a href={record.repo.datavalue.value} target="_blank" rel="noreferrer">
 					{record.repo?.datavalue.value
 						.replace("https://", "")
 						.replace("www.", "")}
