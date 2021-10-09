@@ -9,7 +9,6 @@ import { TablePaginationConfig } from "antd/lib/table/interface";
 import { HardwareData } from "../controller/types";
 import { Properties } from "../controller/constants";
 import { Link } from "gatsby";
-import { parseDataSource } from "../utils/parse-data-source";
 import "./hardware-table.css";
 
 const columns: ColumnsType<HardwareData> = [
@@ -34,13 +33,21 @@ const columns: ColumnsType<HardwareData> = [
 		render: (v, record) => record.spdxLicense?.datavalue.value,
 	},
 	{
-		title: "Data Source",
+		title: "Repo",
 		key: Properties.REPO,
 		dataIndex: Properties.REPO,
+		ellipsis: true,
 		render: (v, record) =>
 			record.repo && (
-				<a href={record.repo.datavalue.value} target="_blank" rel="noreferrer">
-					{parseDataSource(record.repo?.datavalue.value)}
+				<a
+					href={record.repo.datavalue.value}
+					target="_blank"
+					className="repo-link"
+					rel="noreferrer"
+				>
+					{record.repo?.datavalue.value
+						.replace("https://", "")
+						.replace("www.", "")}
 				</a>
 			),
 	},

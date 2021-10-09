@@ -6,3 +6,7 @@
 .ant-table a:hover {
 	text-decoration: underline;
 }
+
+.ant-table a.repo-link {
+	color: #1890ff;
+}
