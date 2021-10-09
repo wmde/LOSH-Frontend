@@ -94,7 +94,7 @@ module.exports = {
 						"input-bg": "#FFFFFF",
 						"btn-default-bg": "#FFFFFF",
 						"dropdown-menu-bg": "#FFFFFF",
-						"ease-in-out": "cubic-bezier(0.05, 0.13, 0, 0.39)",
+						"ease-in-out": "cubic-bezier(.01,.4,0,.39)",
 						"btn-text-shadow": "none",
 						"btn-primary-color": "#000",
 						"btn-primary-bg": "#97C5F1",
