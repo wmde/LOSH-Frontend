@@ -20,7 +20,7 @@ import useWindowSize from "../hooks/useWindowSize";
 interface DetailContentProps {
 	pageData: any;
 }
-const renderImage = (property: DataValue | undefined) => {
+const renderImage = (property: DataValue | undefined, isNarrow: boolean) => {
 	if (
 		!property ||
 		property.datatype !== "wikibase-item" ||
@@ -32,8 +32,12 @@ const renderImage = (property: DataValue | undefined) => {
 	return (
 		<img
 			src={property.datavalue.result.fileURL.datavalue.value}
-			width={400}
-			style={{ marginBottom: "1rem" }}
+			width={"100%"}
+			style={{
+				marginBottom: "1rem",
+				maxWidth: !isNarrow ? "400px" : "100%",
+				minWidth: !isNarrow ? "400px" : "unset",
+			}}
 		/>
 	);
 };
@@ -41,7 +45,7 @@ const renderImage = (property: DataValue | undefined) => {
 const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 	const { width } = useWindowSize();
 
-	const isNarrow = width < 600;
+	const isNarrow = width < 768;
 
 	return (
 		<Layout>
@@ -72,9 +76,9 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 				}}
 			>
 				<Col order={2} flex={2}>
-					{renderImage(pageData.hasImage)}
+					{renderImage(pageData.hasImage, isNarrow)}
 				</Col>
-				<Col order={1} flex={3}>
+				<Col order={1} style={{ paddingRight: "1rem" }} flex={3}>
 					<Typography.Title level={2}>{pageData.name}</Typography.Title>
 
 					<DetailRowString value={pageData.function?.datavalue.value} />
