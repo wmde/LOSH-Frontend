@@ -1,16 +1,14 @@
 {
 	"entities": {
-		"Q513": {
-			"pageid": 689,
+		"Q438": {
+			"pageid": 605,
 			"ns": 120,
-			"title": "Item:Q513",
-			"lastrevid": 4478,
-			"modified": "2021-09-14T14:09:28Z",
+			"title": "Item:Q438",
+			"lastrevid": 5670,
+			"modified": "2021-09-14T15:10:38Z",
 			"type": "item",
-			"id": "Q513",
-			"labels": {
-				"en": { "language": "en", "value": "RoBi - El Robot B\u00ecpedo" }
-			},
+			"id": "Q438",
+			"labels": { "en": { "language": "en", "value": "OHLOOM" } },
 			"descriptions": {},
 			"aliases": {},
 			"claims": {
@@ -19,15 +17,108 @@
 						"mainsnak": {
 							"snaktype": "value",
 							"property": "P1344",
-							"hash": "178b80f2496b6ae0fcac6305b82caca324352e0e",
+							"hash": "1bf055f94a9a547528d1529f860e3efbb4a059a5",
 							"datavalue": {
-								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo/20190425141750/RobiElRobotB\u00ecpedo",
+								"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
 								"type": "string"
 							},
 							"datatype": "url"
 						},
 						"type": "statement",
-						"id": "Q513$31AD59D8-A71F-4017-8135-CCF532C81B14",
+						"id": "Q438$D7CA0F15-5A52-4179-A988-39E01CFC3E85",
+						"rank": "normal"
+					}
+				],
+				"P1457": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1457",
+							"hash": "75f10af98cb40908c98c167f7b3244a3afa14cd1",
+							"datavalue": {
+								"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q438$0E384CB3-F5C3-4E80-B8CC-2F2ABA52EFEB",
+						"rank": "normal"
+					}
+				],
+				"P1463": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1463",
+							"hash": "7d62b7caa40361e01084a3d25412525780f10940",
+							"datavalue": {
+								"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$8E6B6070-75C4-4097-BA8D-409F7B383517",
+						"rank": "normal"
+					}
+				],
+				"P1537": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1537",
+							"hash": "b094eae9fa08d1e74594e15cae5531944364d8eb",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 436,
+									"id": "Q436"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q438$6549F391-DDAC-49A2-B788-C63004E722F9",
+						"rank": "normal"
+					}
+				],
+				"P1531": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1531",
+							"hash": "50ca6b2a66726408bc09355e4c0f25c5f2c9dbcd",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 415,
+									"id": "Q415"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q438$DEFCE13C-901A-4382-B341-1B5EF6AF534E",
+						"rank": "normal"
+					}
+				],
+				"P1532": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1532",
+							"hash": "245732f1ae7a65cfb7c82d931d0fd4f95a098fbb",
+							"datavalue": {
+								"value": "http://purl.org/dc/elements/1.1/language/en",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q438$2751D505-44ED-4252-83C9-7A1D32E2E7ED",
 						"rank": "normal"
 					}
 				],
@@ -44,52 +135,49 @@
 							"datatype": "url"
 						},
 						"type": "statement",
-						"id": "Q513$928151EB-C974-4D3C-9526-BFA55DD744AA",
+						"id": "Q438$BEB72138-193B-4DCA-B607-71054E6280B4",
 						"rank": "normal"
 					}
 				],
-				"P1463": [
+				"P1534": [
 					{
 						"mainsnak": {
 							"snaktype": "value",
-							"property": "P1463",
-							"hash": "1c82d752a956740a0d7b005447c4bb62236a9a69",
+							"property": "P1534",
+							"hash": "68d7792c050906d6ddd1b1f573c76fd6db98f420",
 							"datavalue": {
-								"value": "RoBi is an open source robot based in many other designs of 4th degree of freedom biped robots.",
-								"type": "string"
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 417,
+									"id": "Q417"
+								},
+								"type": "wikibase-entityid"
 							},
-							"datatype": "string"
+							"datatype": "wikibase-item"
 						},
 						"type": "statement",
-						"id": "Q513$388DEFC2-0C28-4879-BE19-18670BDDF595",
+						"id": "Q438$46F0377E-0A7C-4FF4-A7C1-219773C01F5A",
 						"rank": "normal"
 					}
 				],
-				"P505": [
+				"P1540": [
 					{
 						"mainsnak": {
 							"snaktype": "value",
-							"property": "P505",
-							"hash": "5c868c7530917f935b2d72513ff9d6b8f025490f",
-							"datavalue": { "value": "20190425141750", "type": "string" },
-							"datatype": "string"
+							"property": "P1540",
+							"hash": "40cf6b142f9d0b694109f69b94464e8a15437e25",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 437,
+									"id": "Q437"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
 						},
 						"type": "statement",
-						"id": "Q513$1968F330-1418-42A8-810B-4C02EA9355D2",
-						"rank": "normal"
-					}
-				],
-				"P467": [
-					{
-						"mainsnak": {
-							"snaktype": "value",
-							"property": "P467",
-							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
-							"datatype": "string"
-						},
-						"type": "statement",
-						"id": "Q513$694BA27A-6EC9-4D0E-9020-52CA1457D897",
+						"id": "Q438$8A68DC93-B91D-4B79-AE18-0B227EF87D8A",
 						"rank": "normal"
 					}
 				],
@@ -98,15 +186,150 @@
 						"mainsnak": {
 							"snaktype": "value",
 							"property": "P1422",
-							"hash": "0f2af38215ed6d5988f94f2b44f6526c732b4317",
+							"hash": "cb675a344554b8076e26cc7ef615180b12a7bc95",
 							"datavalue": {
-								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo",
+								"value": "https://gitlab.com/OSEGermany/ohloom",
 								"type": "string"
 							},
 							"datatype": "url"
 						},
 						"type": "statement",
-						"id": "Q513$7FABA369-6575-4950-A96C-1190C01321CB",
+						"id": "Q438$512F7FF3-C09C-4473-84DD-B8F2450151ED",
+						"rank": "normal"
+					}
+				],
+				"P1188": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1188",
+							"hash": "c8c90eaf445b8dfccd72a9f9ef0de333b8217084",
+							"datavalue": {
+								"value": "2021-07-27T13:30:16.389991Z",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$78B52981-4D6C-466C-A0BB-859CD3F58AFF",
+						"rank": "normal"
+					}
+				],
+				"P1187": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1187",
+							"hash": "0888c79e1b0406cfcbbcc5b788e3035789841124",
+							"datavalue": { "value": "OSE Germany e.V.", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$0729F23B-2D9B-4FE2-ACEF-E23B3B194DA3",
+						"rank": "normal"
+					}
+				],
+				"P1455": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1455",
+							"hash": "856ddfefd85541edb6c4f6ca2860c94f37c65cec",
+							"datavalue": {
+								"value": "cube(size = [400,350,150]",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$810B519A-4943-4D83-952E-339C6D269513",
+						"rank": "normal"
+					}
+				],
+				"P1194": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1194",
+							"hash": "615c0f73d98829bf23db30de377b4183e827f209",
+							"datavalue": {
+								"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$832C96ED-43F0-4624-AC47-6037F8DE5CF1",
+						"rank": "normal"
+					}
+				],
+				"P1408": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1408",
+							"hash": "6d43d47715ff40d079db3c3c1b9f2066d54a1e91",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 435,
+									"id": "Q435"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q438$3EF410E6-C80C-4BB8-9F48-2FFB99A3A5EF",
+						"rank": "normal"
+					}
+				],
+				"P505": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P505",
+							"hash": "9d7c9d01d54b535b1b9857ba283e10565ba41f57",
+							"datavalue": { "value": "0.10.0", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$15122B17-BA0E-47EA-A98C-E3524460E016",
+						"rank": "normal"
+					}
+				],
+				"P467": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P467",
+							"hash": "5c25bfd8457ef1645931eb77edd324ffc1518170",
+							"datavalue": { "value": "Jens Meisner", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$B32D6AC4-9998-40F6-B837-6D9EA306CB6B",
+						"rank": "normal"
+					}
+				],
+				"P1538": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1538",
+							"hash": "f81c87446850c0e151d7e4cab76694067e307865",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 430,
+									"id": "Q430"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q438$E9CA314B-8894-4208-B7B2-04483DB84901",
 						"rank": "normal"
 					}
 				],
@@ -115,26 +338,32 @@
 						"mainsnak": {
 							"snaktype": "value",
 							"property": "P1452",
-							"hash": "42a765797869c8720299238dda2a9907e8f4a061",
-							"datavalue": { "value": "N/A", "type": "string" },
+							"hash": "863c314e7aa448458af39398556c47fdaa51d1a2",
+							"datavalue": {
+								"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",
-						"id": "Q513$EB7A1188-71D8-4AD1-879F-2161EC6C224B",
+						"id": "Q438$DD53FD45-E172-479C-85D4-E4941C72D5B4",
 						"rank": "normal"
 					}
 				],
-				"P1532": [
+				"P1535": [
 					{
 						"mainsnak": {
 							"snaktype": "value",
-							"property": "P1532",
-							"hash": "9343c05def8017c9996c6935b027b999316e0650",
-							"datavalue": { "value": "en", "type": "string" },
+							"property": "P1535",
+							"hash": "b3bedf0b348ffecf3858b2cb7123b29ad6bbacfa",
+							"datavalue": {
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
+								"type": "string"
+							},
 							"datatype": "url"
 						},
 						"type": "statement",
-						"id": "Q513$7F7402BA-7975-43EF-A5B8-86374FFB3085",
+						"id": "Q438$5734EB84-0CD6-43FF-895F-F3FFB6EEE47D",
 						"rank": "normal"
 					}
 				],
@@ -143,15 +372,67 @@
 						"mainsnak": {
 							"snaktype": "value",
 							"property": "P1411",
-							"hash": "5e86ca5f3b2651faf2d1e7a2858068b8369184ab",
+							"hash": "4666517b8272d9875f8e1a796e3cc30761501a83",
 							"datavalue": {
-								"value": "https://wikifactory.com/@sorensicc/robi-el-robot-b\u00ecpedo",
+								"value": "https://gitlab.com/OSEGermany/ohloom/",
 								"type": "string"
 							},
 							"datatype": "url"
 						},
 						"type": "statement",
-						"id": "Q513$D1AC65D8-5162-4D18-9333-8F3BE0874E27",
+						"id": "Q438$66BC68ED-C404-4143-A188-94A66E78D12C",
+						"rank": "normal"
+					}
+				],
+				"P1471": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1471",
+							"hash": "c7e6c7cb9012905f6c80136e97030e827e03691b",
+							"datavalue": {
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "Q438$54F4F373-B71F-437B-B5D1-33661E3927CB",
+						"rank": "normal"
+					}
+				],
+				"P1467": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1467",
+							"hash": "bd87d6b7ecd6a0b9609b6a5e685d6d5e85a2fba2",
+							"datavalue": { "value": "D03D 35/00", "type": "string" },
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q438$D2BAE233-112D-42F3-BFD8-ED13EA32CE41",
+						"rank": "normal"
+					}
+				],
+				"P1536": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1536",
+							"hash": "8f55c0baf507b52ba6c38ff15d33691da375b55d",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 418,
+									"id": "Q418"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q438$09F7E0FB-299E-4734-B613-37068F37CBE7",
 						"rank": "normal"
 					}
 				]
