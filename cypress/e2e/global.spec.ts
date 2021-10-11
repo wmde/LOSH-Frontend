@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe("navigation tests", () => {
+describe("navbar tests", () => {
 	beforeEach(() => {
 		cy.visit("/");
 	});
@@ -10,34 +10,14 @@ describe("navigation tests", () => {
 	});
 
 	it("checks menu's page links", () => {
-		const navSlugs = [
-			"/",
-			"/contribute-specifications",
-			"/about",
-			"/ecosystem",
-			"/get-involved",
-		];
 		cy.viewport("macbook-15")
 			.wait(200)
 			.get(".ant-menu-horizontal>li>span>a")
 			.should("be.visible")
-			.each((link, counter = 0) => {
-				cy.wrap(link.attr("href")).should("eq", navSlugs[counter]);
-				counter++;
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("navSlugs", "slugs");
 	});
 
 	it("checks for collapsed (mobile) menu and it's page links", () => {
-		const navSlugs = [
-			"/",
-			"/contribute-specifications",
-			"/about",
-			"/ecosystem",
-			"/get-involved",
-		];
 		cy.viewport("ipad-mini")
 			.wait(200)
 			.get("#mobile-menu-button")
@@ -45,16 +25,9 @@ describe("navigation tests", () => {
 			.click();
 		cy.get(".ant-dropdown-menu-vertical>li>span>a")
 			.should("be.visible")
-			.each((link, counter = 0) => {
-				cy.wrap(link.attr("href")).should("eq", navSlugs[counter]);
-				counter++;
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("navSlugs", "slugs");
 	});
 });
-
 describe("footer tests", () => {
 	it("checks footer links", () => {
 		cy.visit("/")
