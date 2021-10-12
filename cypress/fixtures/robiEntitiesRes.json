@@ -85,7 +85,10 @@
 							"snaktype": "value",
 							"property": "P467",
 							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datavalue": {
+								"value": "Cristian Cisneros",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",
@@ -305,7 +308,10 @@
 							"snaktype": "value",
 							"property": "P467",
 							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datavalue": {
+								"value": "Cristian Cisneros",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",
@@ -353,7 +359,10 @@
 							"snaktype": "value",
 							"property": "P467",
 							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datavalue": {
+								"value": "Cristian Cisneros",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",
@@ -607,7 +616,10 @@
 							"snaktype": "value",
 							"property": "P467",
 							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datavalue": {
+								"value": "Cristian Cisneros",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",
@@ -700,7 +712,10 @@
 							"snaktype": "value",
 							"property": "P467",
 							"hash": "548d0a2b39224bdc9b6e2acf68182ce27eed90ca",
-							"datavalue": { "value": "Cristian Cisneros", "type": "string" },
+							"datavalue": {
+								"value": "Cristian Cisneros",
+								"type": "string"
+							},
 							"datatype": "string"
 						},
 						"type": "statement",

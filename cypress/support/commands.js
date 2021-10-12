@@ -48,3 +48,28 @@ Cypress.Commands.add(
 		});
 	}
 );
+
+Cypress.Commands.add(
+	"pageChecker",
+	{ prevSubject: ["optional", "element"] },
+	(pageButton = subject) => {
+		const page1 = [];
+		cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
+			const name = tr.attr("data-row-key").toString();
+			page1.push(name);
+		});
+
+		cy.get(pageButton, { timeout: 10000 }).click();
+		cy.wait(2000);
+
+		const page2 = [];
+		cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
+			const name = tr.attr("data-row-key").toString();
+			page2.push(name);
+		});
+
+		cy.then(() => {
+			expect(page1).to.not.deep.equal(page2);
+		});
+	}
+);
