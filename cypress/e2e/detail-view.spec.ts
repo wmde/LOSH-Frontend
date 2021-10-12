@@ -5,7 +5,7 @@ describe("detail view page tests", () => {
 		cy.intercept(
 			"GET",
 			"https://losh.ose-germany.de/w/api.php?action=wbgetentities&ids=Q438&format=json&origin=*",
-			{ fixture: "detailViewGetResponse.json" }
+			{ fixture: "getDetailViewResponse.json" }
 		).as("getEntity");
 		cy.visit("/detail/Q438");
 		cy.wait("@getEntity");
