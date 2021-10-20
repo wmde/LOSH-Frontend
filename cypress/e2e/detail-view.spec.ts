@@ -2,13 +2,16 @@
 
 describe("detail view page tests", () => {
 	beforeEach("match query and stub response", () => {
-		cy.intercept(
-			"GET",
-			"https://losh.ose-germany.de/w/api.php?action=wbgetentities&ids=Q438&format=json&origin=*",
-			{ fixture: "getDetailViewResponse.json" }
-		).as("getEntity");
-		cy.visit("/detail/Q438");
-		cy.wait("@getEntity");
+		cy.fixture("detail-view-fixtures").then((data) => {
+			const { getDetailsRes } = data;
+			cy.intercept(
+				"GET",
+				"https://losh.ose-germany.de/w/api.php?action=wbgetentities&ids=Q438&format=json&origin=*",
+				getDetailsRes
+			).as("getEntity");
+			cy.visit("/detail/Q438");
+			cy.wait("@getEntity");
+		});
 	});
 
 	it("has download button", () => {

@@ -14,7 +14,7 @@ describe("navbar tests", () => {
 			.wait(200)
 			.get(".ant-menu-horizontal>li>span>a")
 			.should("be.visible")
-			.linkChecker("navSlugs", "slugs");
+			.linkChecker("global-fixtures", "navSlugs");
 	});
 
 	it("checks for collapsed (mobile) menu and it's page links", () => {
@@ -25,7 +25,7 @@ describe("navbar tests", () => {
 			.click();
 		cy.get(".ant-dropdown-menu-vertical>li>span>a")
 			.should("be.visible")
-			.linkChecker("navSlugs", "slugs");
+			.linkChecker("global-fixtures", "navSlugs");
 	});
 });
 describe("footer tests", () => {
