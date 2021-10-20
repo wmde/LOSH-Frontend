@@ -31,15 +31,12 @@ import "@testing-library/cypress/add-commands";
 Cypress.Commands.add(
 	"linkChecker",
 	{ prevSubject: ["optional", "Array"] },
-	(linksArr = subject, linksFixture, fixtureParam) => {
+	(linksArr = subject, fixtureFile, fixtureName) => {
 		cy.wrap(linksArr).each((link) => {
-			cy.fixture(linksFixture).then((linksFixture) => {
+			cy.fixture(fixtureFile).then((data) => {
 				const linkText = Cypress.$(link).text();
-				if (
-					cy
-						.wrap(link.attr("href"))
-						.should("eq", linksFixture[fixtureParam][linkText])
-				) {
+				const slugList = data[fixtureName];
+				if (cy.wrap(link.attr("href")).should("eq", slugList[linkText])) {
 					cy.request(link.prop("href")).then((res) => {
 						expect(res.status).eq(200);
 					});
@@ -48,28 +45,30 @@ Cypress.Commands.add(
 		});
 	}
 );
-
+//before and after comparison of data-table's first column (names) each page turn.
 Cypress.Commands.add(
 	"pageChecker",
 	{ prevSubject: ["optional", "element"] },
-	(pageButton = subject) => {
+	(pageButton = subject, waitFor = 2000) => {
 		const page1 = [];
 		cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
 			const name = tr.attr("data-row-key").toString();
 			page1.push(name);
 		});
 
-		cy.get(pageButton, { timeout: 10000 }).click();
-		cy.wait(2000);
+		cy.get(pageButton, { timeout: 10000 })
+			.click()
+			.wait(waitFor)
+			.then(() => {
+				const page2 = [];
+				cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
+					const name = tr.attr("data-row-key").toString();
+					page2.push(name);
+				});
 
-		const page2 = [];
-		cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
-			const name = tr.attr("data-row-key").toString();
-			page2.push(name);
-		});
-
-		cy.then(() => {
-			expect(page1).to.not.deep.equal(page2);
-		});
+				cy.then(() => {
+					expect(page1).to.not.deep.equal(page2);
+				});
+			});
 	}
 );
