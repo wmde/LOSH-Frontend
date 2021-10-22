@@ -16,9 +16,7 @@ const columns: ColumnsType<HardwareData> = [
 		title: "Name",
 		key: "name",
 		dataIndex: "name",
-		render: (value, record) => (
-			<Link to={`/detail/${record.id}`}>{record.name}</Link>
-		),
+		render: (value, record) => record.name,
 	},
 	{
 		title: "Version",
@@ -40,7 +38,12 @@ const columns: ColumnsType<HardwareData> = [
 		className: "repo",
 		render: (v, record) =>
 			record.repo && (
-				<a href={record.repo.datavalue.value} target="_blank" rel="noreferrer">
+				<a
+					href={record.repo.datavalue.value}
+					onClick={(e) => e.stopPropagation()}
+					target="_blank"
+					rel="noreferrer"
+				>
 					{record.repo?.datavalue.value
 						.replace("https://", "")
 						.replace("www.", "")}
@@ -85,6 +88,20 @@ const HardwareTable = (): JSX.Element => {
 			size="middle"
 			style={{ overflowX: "scroll" }}
 			pagination={{ position: ["bottomLeft"], ...paginationState }}
+			components={{
+				body: {
+					row: (props: any) => {
+						console.log({ props });
+						return (
+							<Link
+								{...props}
+								className="table-row"
+								to={`/detail/${props["data-row-key"]}`}
+							/>
+						);
+					},
+				},
+			}}
 			rowKey={(r: HardwareData): string => r.id}
 			onChange={handleChange}
 		/>

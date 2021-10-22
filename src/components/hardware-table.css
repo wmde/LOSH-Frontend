@@ -1,13 +1,24 @@
 .ant-table a {
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	color: rgba(0, 0, 0, 0.85);
-}
-
-.ant-table a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .ant-table td.repo,
 .ant-table td.repo a {
-	color: #1890ff;
+	color: #5087bc;
+}
+
+.ant-table .table-row {
+	display: table-row;
+}
+
+.ant-table .table-row td {
+	padding: 12px 8px;
+}
+
+.ant-table .table-row:hover {
+	transition-duration: 200ms;
+	transition-property: background-color;
+	background-color: rgba(255, 255, 255, 0.5);
 }
