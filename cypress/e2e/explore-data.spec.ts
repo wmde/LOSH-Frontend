@@ -38,7 +38,7 @@ describe("explore data page tests", () => {
 		cy.wait("@query");
 		cy.wait("@getEntities");
 		cy.get(".ant-table-tbody")
-			.find("tr")
+			.find("a.table-row")
 			.should("have.length", 5)
 			.should("be.visible");
 	});
@@ -83,7 +83,7 @@ describe("explore data page tests", () => {
 	});
 
 	it("accessess table entry's detail page", () => {
-		cy.get(".ant-table-tbody>tr>td>a", { timeout: 10000 })
+		cy.get(".ant-table-tbody>a.table-row>td>a", { timeout: 10000 })
 			.first()
 			.as("detailLink")
 			.invoke("attr", "href")

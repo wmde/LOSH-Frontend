@@ -51,7 +51,7 @@ Cypress.Commands.add(
 	{ prevSubject: ["optional", "element"] },
 	(pageButton = subject, waitFor = 2000) => {
 		const page1 = [];
-		cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
+		cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
 			const name = tr.attr("data-row-key").toString();
 			page1.push(name);
 		});
@@ -61,7 +61,7 @@ Cypress.Commands.add(
 			.wait(waitFor)
 			.then(() => {
 				const page2 = [];
-				cy.get(".ant-table-tbody>tr", { timeout: 10000 }).each((tr) => {
+				cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
 					const name = tr.attr("data-row-key").toString();
 					page2.push(name);
 				});
