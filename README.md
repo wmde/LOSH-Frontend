@@ -16,6 +16,7 @@ The LOSH frontend is a monorepo comprising of a client and server package. The c
 
 #### Server
 - GraphQL
+- Express
 - Jest (Unit tests)
 - Typescript
 
@@ -32,6 +33,16 @@ Run `yarn server start`
 The start the client in development mode:
 
 Run `yarn client start`
+
+### Build
+
+To build the server package:
+
+Run `yarn server build`. The compilation output will be in `packages/server/dist`.
+
+To build the client package:
+
+Run `yarn client build`. The compilation output will be in `packages/client/public`.
 
 ### Testing
 
