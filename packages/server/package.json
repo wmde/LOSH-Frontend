@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.15.0",
+    "apollo-datasource-http": "^0.17.1",
     "apollo-server-express": "^3.4.0",
     "axios": "^0.23.0",
     "compression": "^1.7.4",

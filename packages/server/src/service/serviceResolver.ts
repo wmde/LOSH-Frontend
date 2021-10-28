@@ -1,70 +1,36 @@
 import { ApolloError } from "apollo-server-express";
-import WikibaseController from "../wikibase";
-import { Client } from "@elastic/elasticsearch";
-import { generateLicenseQuery } from "../elastic";
-
-const elastic = new Client({ node: "http://127.0.0.1:9200" });
-const wikibase = new WikibaseController({ url: "https://losh.ose-germany.de" });
+import { DataSources } from "../dataSources";
+import { GetItemsArgs, SearchItemsArgs } from "../types";
 
 const ServiceResolvers = {
   Query: {
-    searchItems: async (_: any, args: any) => {
-      const licenseQuery = generateLicenseQuery(args);
+    searchItems: async (
+      _: any,
+      args: SearchItemsArgs,
+      { dataSources }: { dataSources: DataSources }
+    ) => {
       try {
-        const query = {
-          bool: {
-            must: [
-              args.query && { match: { text: args.query } },
-              {
-                match: {
-                  statement_keywords:
-                    "P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
-                },
-              },
-              {
-                bool: {
-                  should: licenseQuery,
-                },
-              },
-            ].filter(Boolean),
-            should: [],
-          },
+        const { total, ids } = await dataSources.elasticAPI.searchItems(args);
+
+        const items = await dataSources.wikibaseAPI.getItems(ids);
+
+        const response = {
+          items,
+          total,
         };
 
-        console.log(JSON.stringify(query));
-
-        const sort = [{ text: "desc" }];
-
-        const { body } = await elastic.search({
-          index: "losh_01_content_first",
-          body: {
-            from: (args.page - 1) * args.pageSize,
-            size: args.pageSize,
-            query,
-            // sort,
-            // _source: ["title"],
-          },
-        });
-
-        console.log(body.hits.hits[0]);
-
-        const ids = body.hits.hits.map((hit: any) => hit._source.title);
-
-        const items = await wikibase.getItems(ids);
-
-        body.items = items;
-
-        return body;
+        return response;
       } catch (error) {
         throw new ApolloError(error as any);
       }
     },
-    getItem: async (_: any, args: any) => {
+    getItem: async (
+      _: any,
+      { id }: GetItemsArgs,
+      { dataSources }: { dataSources: DataSources }
+    ) => {
       try {
-        const id = args.id;
-        const item = await wikibase.getItem(id);
-        console.log(item.hasReadme?.datavalue.result);
-        return item;
+        return await dataSources.wikibaseAPI.getItem(id);
       } catch (error) {
         throw new ApolloError(error as any);
       }

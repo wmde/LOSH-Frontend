@@ -1,53 +1,21 @@
+import { HTTPDataSource } from "apollo-datasource-http";
 import axios from "axios";
 import WBK from "wikibase-sdk";
-import { DataValueItem, HardwareData, RawWikibaseData } from "./types";
+import { HardwareData, RawWikibaseData, DataValueItem } from "./types";
 
 export const DEFAULT_PAGE_SIZE = 10;
 
-interface WikibaseControllerProps {
-  url: string;
-}
-
-export default class WikibaseController {
-  url: string;
+export default class WikibaseDataSource extends HTTPDataSource {
   properties: Record<string, string> = {};
   wbk: any;
 
-  constructor({ url }: WikibaseControllerProps) {
-    this.url = url;
+  constructor(url: string) {
+    super(url);
     this.wbk = WBK({
       instance: url,
     });
 
     this.getProperties();
-  }
-
-  async getProperties() {
-    const { data: propertiesPages } = await axios.get<any>(
-      this.url +
-        "/w/api.php?action=query&list=allpages&apnamespace=122&aplimit=max&format=json&origin=*"
-    );
-
-    const propertiesQuery = propertiesPages.query.allpages.map(
-      (p: any) => p.title.split(":")[1]
-    );
-
-    const entitiesUrls: Array<string> =
-      this.wbk.getManyEntities(propertiesQuery);
-
-    const entitiesRequests = entitiesUrls.map((url) =>
-      axios.get(url).then((res: any) => res.data.entities)
-    );
-    const entitiesResponse = await Promise.all(entitiesRequests);
-
-    entitiesResponse.map((response: Record<string, any>) => {
-      Object.entries(response).map(([key, value]: any) => {
-        const label = value.labels.en?.value;
-        if (label) this.properties[key] = label;
-      });
-    });
-
-    return this.properties;
   }
 
   async getItems(ids: Array<string>): Promise<HardwareData[]> {
@@ -92,7 +60,7 @@ export default class WikibaseController {
       });
   }
 
-  parseData(entity: RawWikibaseData): HardwareData {
+  private parseData(entity: RawWikibaseData): HardwareData {
     const parsed: HardwareData = {
       id: entity.id,
       name: entity.labels.en?.value,
@@ -106,5 +74,31 @@ export default class WikibaseController {
       }
     });
     return parsed;
+  }
+
+  private async getProperties(): Promise<void> {
+    const { body: propertiesPages } = await this.get<any>(
+      "/w/api.php?action=query&list=allpages&apnamespace=122&aplimit=max&format=json&origin=*"
+    );
+
+    const propertiesByID = propertiesPages.query.allpages.map(
+      (p: any) => p.title.split(":")[1]
+    );
+
+    const entitiesUrls: Array<string> =
+      this.wbk.getManyEntities(propertiesByID);
+
+    const entitiesRequests = entitiesUrls.map((url) =>
+      this.get(url).then((res: any) => res.body.entities)
+    );
+    const entitiesResponse = await Promise.all(entitiesRequests);
+
+    // Property key/pair values are loaded into this.properties
+    entitiesResponse.map((response: Record<string, any>) => {
+      Object.entries(response).map(([key, value]: any) => {
+        const label = value.labels.en?.value;
+        if (label) this.properties[key] = label;
+      });
+    });
   }
 }

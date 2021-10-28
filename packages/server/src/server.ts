@@ -5,6 +5,7 @@ import compression from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import { schema } from "./schema";
+import { dataSources } from "./dataSources";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -15,6 +16,7 @@ app.use(compression());
 const startServer = async () => {
   const server = new ApolloServer({
     schema,
+    dataSources: () => dataSources,
   });
   await server.start();
   server.applyMiddleware({ app, path: "/graphql" });

@@ -41,24 +41,8 @@ const non = [
   "CERN-OHL-P-2.0",
 ];
 
-const LICENSES = {
+export const LICENSES = {
   weak,
   strong,
   non,
-};
-
-export const generateLicenseQuery = (args: any) => {
-  if (!args.license) {
-    return [];
-  }
-
-  const values = LICENSES[args.license as "weak" | "strong" | "non"].map(
-    (l) => `P1452=https://spdx.org/licenses/${l}`
-  );
-
-  return values.map((v) => ({
-    match: {
-      statement_keywords: v,
-    },
-  }));
 };
