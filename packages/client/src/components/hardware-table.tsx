@@ -2,8 +2,7 @@ import { Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import React from "react";
 import { useContext } from "react";
-import { QueryContext } from "../context/query-context";
-import { DEFAULT_PAGE_SIZE } from "../controller/query-controller";
+import { DEFAULT_PAGE_SIZE, QueryContext } from "../context/query-context";
 import { PaginationProps } from "antd/lib/pagination/Pagination";
 import { TablePaginationConfig } from "antd/lib/table/interface";
 import { HardwareData } from "../controller/types";
@@ -28,7 +27,11 @@ const columns: ColumnsType<HardwareData> = [
 		title: "License",
 		key: Properties.SPDX_LICENSE,
 		dataIndex: Properties.SPDX_LICENSE,
-		render: (v, record) => record.spdxLicense?.datavalue.value,
+		render: (v, record) =>
+			record.spdxLicense?.datavalue.value.replace(
+				"https://spdx.org/licenses/",
+				""
+			),
 	},
 	{
 		title: "Repo",
@@ -91,7 +94,6 @@ const HardwareTable = (): JSX.Element => {
 			components={{
 				body: {
 					row: (props: any) => {
-						console.log({ props });
 						return (
 							<Link
 								{...props}

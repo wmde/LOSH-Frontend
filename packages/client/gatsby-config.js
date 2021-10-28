@@ -45,6 +45,12 @@ module.exports = {
 		`gatsby-plugin-eslint`,
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-ts-checker`,
+		{
+			resolve: "gatsby-plugin-apollo",
+			options: {
+				uri: "http://localhost:3000/graphql",
+			},
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
