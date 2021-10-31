@@ -6,4 +6,7 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
   },
+  rules: {
+    "@typescript-eslint/no-var-requires": "off",
+  },
 };

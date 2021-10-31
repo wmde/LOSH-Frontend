@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 'dist/server.js'",
+    "serve": "node 'dist/server.js'",
     "build": "tsc -p . && ncp src dist",
     "test": "jest",
     "test:watch": "jest --verbose --detectOpenHandles",
-    "start:dev": "yarn build:dev",
-    "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,graphql"
+    "start": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,graphql"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +25,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.15.0",
+    "apollo-datasource": "^3.2.0",
     "apollo-datasource-http": "^0.17.1",
     "apollo-server-express": "^3.4.0",
     "axios": "^0.23.0",

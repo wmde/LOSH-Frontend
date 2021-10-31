@@ -179,7 +179,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 				filters,
 				currentPage,
 				pageSize,
-				totalHits: data?.searchItems.hits.total || 0,
+				totalHits: data?.searchItems.total || 0,
 				handleSearchChange,
 				handlePageChange,
 				handlePageSizeChange,

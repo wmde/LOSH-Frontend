@@ -1,7 +1,8 @@
 import { HTTPDataSource } from "apollo-datasource-http";
 import axios from "axios";
-import WBK from "wikibase-sdk";
 import { HardwareData, RawWikibaseData, DataValueItem } from "./types";
+
+const WBK = require("wikibase-sdk");
 
 export const DEFAULT_PAGE_SIZE = 10;
 

@@ -19,10 +19,8 @@ export const ServiceTypeDefs = gql`
     hits: [ElasticResponseHit]
   }
   type SearchResponse {
-    took: Int
-    timed_out: Boolean
     items: [ItemResponse]
-    hits: ElasticResponseHits
+    total: Int
   }
   type Filters {
     certified: Boolean

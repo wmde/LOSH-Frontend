@@ -4,6 +4,18 @@
 
 The LOSH frontend is a monorepo comprising of a client and server package. The client is a React application built on the Gatsby framework using the GraphQL server as a data source.
 
+### Get Access
+
+To develop the server package locally you will need SSH access to the Elastic web server. 
+
+1. Contact Andre for with an access request along with a copy of your public key.
+
+2. Create an SSH tunnel to the web server.
+
+`ssh -p 41022 -L 9200:elasticsearch.library-of-open-source-hardware.svc:9200 YOUR_USERNAME@opensourceecology.de`
+
+This will forward all requests to `http://localhost:9200` through the web server.
+
 ### Stack
 
 #### Client

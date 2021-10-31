@@ -15,10 +15,7 @@ export const GET_ITEMS = gql`
 			pageSize: $pageSize
 			license: $licenseFilter
 		) {
-			took
-			hits {
-				total
-			}
+			total
 			items {
 				id
 				name

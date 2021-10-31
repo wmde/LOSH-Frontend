@@ -1,14 +1,14 @@
 import { Client } from "@elastic/elasticsearch";
-import { HTTPDataSource } from "apollo-datasource-http";
 import { LICENSES } from "../../constants";
 import { SearchItemsArgs, LicenceValue } from "../../types";
 import { ElasticSearchItemsResponse } from "./types";
+import { DataSource } from "apollo-datasource";
 
-class ElasticDataSource extends HTTPDataSource {
+class ElasticDataSource extends DataSource {
   elastic: Client;
 
   constructor(url: string) {
-    super(url);
+    super();
     this.elastic = new Client({ node: url });
   }
 

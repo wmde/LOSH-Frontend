@@ -48,7 +48,7 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-apollo",
 			options: {
-				uri: "http://localhost:3000/graphql",
+				uri: process.env.GRAPHQL_API_URL || "http://localhost:3000/graphql",
 			},
 		},
 		`gatsby-plugin-react-helmet`,
