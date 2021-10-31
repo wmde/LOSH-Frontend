@@ -9,9 +9,22 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<CheckOutlined />}
+          icon={false}
+          onClick={[Function]}
         >
-          True
+          Weak
+        </Unknown>
+        <Unknown
+          icon={false}
+          onClick={[Function]}
+        >
+          Strong
+        </Unknown>
+        <Unknown
+          icon={false}
+          onClick={[Function]}
+        >
+          Non Copyleft
         </Unknown>
       </Menu>
     }
@@ -30,35 +43,34 @@ exports[`Filter renders correctly 1`] = `
     overlay={
       <Menu>
         <Unknown
-          icon={<CheckOutlined />}
+          icon={false}
+          onClick={[Function]}
         >
-          True
+          Github
         </Unknown>
         <Unknown
-          icon={<CheckOutlined />}
+          icon={false}
+          onClick={[Function]}
         >
-          Cert type 2
+          GitLab
         </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Certified Project 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={
-      <Menu>
         <Unknown
-          icon={<CheckOutlined />}
+          icon={false}
+          onClick={[Function]}
         >
-          True
+          Appropedia
+        </Unknown>
+        <Unknown
+          icon={false}
+          onClick={[Function]}
+        >
+          Wikifactory
+        </Unknown>
+        <Unknown
+          icon={false}
+          onClick={[Function]}
+        >
+          OSHWA
         </Unknown>
       </Menu>
     }
@@ -70,27 +82,6 @@ exports[`Filter renders correctly 1`] = `
   >
     <Button>
       Data Source 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={<CheckOutlined />}
-        >
-          True
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Organisation 
       <DownOutlined />
     </Button>
   </Dropdown>

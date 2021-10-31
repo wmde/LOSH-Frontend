@@ -2,7 +2,6 @@ import * as React from "react";
 import { Menu, Dropdown, Button, Space } from "antd";
 import { DownOutlined, CheckOutlined } from "@ant-design/icons";
 import "./filter.css";
-import { QueryContext } from "../context/query-context";
 
 type MenuItems = Array<{
 	name: string;
@@ -83,11 +82,14 @@ const dataSources = [
 	},
 ];
 
-function Filter(): JSX.Element {
-	const { filters, handleFilterChange } = React.useContext(QueryContext);
+interface FilterProps {
+	filters: Record<string, string>;
+	onFilterChange: (name: string, value: any) => void;
+}
 
+const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 	const handleClickItem = (name: string, item: any) => {
-		handleFilterChange(name, item.value);
+		onFilterChange(name, item.value);
 	};
 
 	return (
@@ -125,6 +127,6 @@ function Filter(): JSX.Element {
 			</Dropdown> */}
 		</Space>
 	);
-}
+};
 
 export default Filter;

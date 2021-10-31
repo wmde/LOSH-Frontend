@@ -27,7 +27,9 @@ jest.mock("@ant-design/icons", () => {
 
 describe("Filter", () => {
 	it("renders correctly", () => {
-		const tree = renderer.render(<Filter />);
+		const tree = renderer.render(
+			<Filter filters={{}} onFilterChange={() => null} />
+		);
 		expect(tree).toMatchSnapshot();
 	});
 });

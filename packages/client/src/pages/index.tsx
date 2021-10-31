@@ -5,8 +5,11 @@ import { Typography } from "antd";
 import Filter from "../components/filter";
 import { SearchBox } from "../components/search-box";
 import HardwareTable from "../components/hardware-table";
+import { QueryContext } from "../context/query-context";
 
 const IndexPage: React.FC = () => {
+	const { filters, handleFilterChange } = React.useContext(QueryContext);
+
 	return (
 		<Layout>
 			<SEO title="Explore Data" />
@@ -17,7 +20,7 @@ const IndexPage: React.FC = () => {
 				and search for free/open designs by the search bar below.
 			</Typography.Text>
 			<SearchBox />
-			<Filter />
+			<Filter filters={filters} onFilterChange={handleFilterChange} />
 			<HardwareTable />
 		</Layout>
 	);
