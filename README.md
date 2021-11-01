@@ -36,7 +36,17 @@ To develop the server package locally you will need SSH access to the Elastic we
 
 1. Contact the administrator with an access request to the Elastic server along with a copy of your public key.
 
-2. Create an SSH tunnel to the web server. (Replace YOUR_USERNAME with the username assigned by the administrator).
+2. Setup your SSH config file for the host.
+
+```
+Host losh
+    Hostname opensourceecology.de
+    IdentityFile ~/.ssh/KEYFILE
+    Port 41022
+    User YOUR_USERNAME
+``` 
+    
+4. Create an SSH tunnel to the web server. (Replace YOUR_USERNAME with the username assigned by the administrator).
 
 `ssh -p 41022 -L 9200:elasticsearch.library-of-open-source-hardware.svc:9200 YOUR_USERNAME@opensourceecology.de`
 
