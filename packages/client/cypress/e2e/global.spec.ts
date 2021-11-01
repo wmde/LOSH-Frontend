@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe("navigation tests", () => {
+describe("navbar tests", () => {
 	beforeEach(() => {
 		cy.visit("/");
 	});
@@ -14,14 +14,10 @@ describe("navigation tests", () => {
 			.wait(200)
 			.get(".ant-menu-horizontal>li>span>a")
 			.should("be.visible")
-			.each((link) => {
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("global-fixtures", "navSlugs");
 	});
 
-	it("checks mobile menu's page links", () => {
+	it("checks for collapsed (mobile) menu and it's page links", () => {
 		cy.viewport("ipad-mini")
 			.wait(200)
 			.get("#mobile-menu-button")
@@ -29,14 +25,9 @@ describe("navigation tests", () => {
 			.click();
 		cy.get(".ant-dropdown-menu-vertical>li>span>a")
 			.should("be.visible")
-			.each((link) => {
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("global-fixtures", "navSlugs");
 	});
 });
-
 describe("footer tests", () => {
 	it("checks footer links", () => {
 		cy.visit("/")
