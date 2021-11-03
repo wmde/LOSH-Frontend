@@ -76,7 +76,7 @@
 		"develop": "gatsby develop",
 		"start": "yarn develop",
 		"serve": "gatsby serve",
-		"test": "jest",
+		"test:unit": "jest",
 		"cy:open": "cypress open",
 		"husky": "husky install",
 		"test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",

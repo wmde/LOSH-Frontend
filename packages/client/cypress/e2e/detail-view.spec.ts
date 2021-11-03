@@ -3,12 +3,15 @@
 describe("detail view page tests", () => {
 	beforeEach("match query and stub response", () => {
 		cy.fixture("detail-view-fixtures").then((data) => {
-			const { getDetailsRes } = data;
-			cy.intercept(
-				"GET",
-				"https://losh.ose-germany.de/w/api.php?action=wbgetentities&ids=Q438&format=json&origin=*",
-				getDetailsRes
-			).as("getEntity");
+			const { getDetailsRes, getAllPost } = data;
+			cy.intercept("POST", "http://localhost:3000/graphql", (req) => {
+				req.reply((res) => {
+					if (req.body.getItem) {
+						res.body = getDetailsRes;
+					}
+					res.body = getAllPost;
+				});
+			}).as("getEntity");
 			cy.visit("/detail/Q438");
 			cy.wait("@getEntity");
 		});
@@ -31,7 +34,6 @@ describe("detail view page tests", () => {
 		cy.get("#back")
 			.should("be.visible")
 			.click()
-			.wait(2000)
 			.location("pathname")
 			.should("eq", "/");
 	});
