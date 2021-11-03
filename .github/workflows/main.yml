@@ -26,6 +26,6 @@ jobs:
       - name: e2e test
         uses: cypress-io/github-action@v2
         with:
-          start: yarn client test:e2e
+          start: yarn client test:e2e:ci
           wait-on: http://localhost:8000
           project: packages/client
