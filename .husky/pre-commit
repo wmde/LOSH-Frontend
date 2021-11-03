@@ -2,3 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn precommit
+echo "pre-commit" # should be visible in the console when doing a git commit

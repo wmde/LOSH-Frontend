@@ -44,8 +44,8 @@ Host losh
     IdentityFile ~/.ssh/KEYFILE
     Port 41022
     User YOUR_USERNAME
-``` 
-    
+```
+
 4. Create an SSH tunnel to the web server. (Replace YOUR_USERNAME with the username assigned by the administrator).
 
 `ssh -p 41022 -L 9200:elasticsearch.library-of-open-source-hardware.svc:9200 YOUR_USERNAME@opensourceecology.de`

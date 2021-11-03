@@ -46,6 +46,7 @@
 		"cross-env": "^7.0.3",
 		"cypress": "^8.0.0",
 		"eslint": "^7.31.0",
+		"eslint-plugin-cypress": "^2.12.1",
 		"eslint-plugin-react": "^7.24.0",
 		"gatsby-plugin-eslint": "^3.0.0",
 		"gatsby-plugin-ts-checker": "^1.1.0",
@@ -78,7 +79,6 @@
 		"serve": "gatsby serve",
 		"test:unit": "jest",
 		"cy:open": "cypress open",
-		"husky": "husky install",
 		"test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
 		"test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
 	},

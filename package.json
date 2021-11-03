@@ -10,7 +10,8 @@
     "format": "prettier --check \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "lint": "eslint packages",
     "lint:fix": "eslint packages --fix",
-    "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\""
+    "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
+    "husky": "husky install"
   },
   "husky": {
     "hooks": {

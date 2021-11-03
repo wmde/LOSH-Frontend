@@ -5,7 +5,7 @@ import { GetItemsArgs, SearchItemsArgs } from "../types";
 const ServiceResolvers = {
   Query: {
     searchItems: async (
-      _: any,
+      _: never,
       args: SearchItemsArgs,
       { dataSources }: { dataSources: DataSources }
     ) => {
@@ -25,7 +25,7 @@ const ServiceResolvers = {
       }
     },
     getItem: async (
-      _: any,
+      _: never,
       { id }: GetItemsArgs,
       { dataSources }: { dataSources: DataSources }
     ) => {
