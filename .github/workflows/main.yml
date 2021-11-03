@@ -27,5 +27,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: yarn client serve --port 8000
-          wait-on: http://localhost:8000
+          wait-on: http://localhost:9000
           project: packages/client

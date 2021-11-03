@@ -1,446 +1,1301 @@
 {
 	"getDetailsRes": {
-		"entities": {
-			"Q438": {
-				"pageid": 605,
-				"ns": 120,
-				"title": "Item:Q438",
-				"lastrevid": 5670,
-				"modified": "2021-09-14T15:10:38Z",
-				"type": "item",
+		"data": {
+			"getItem": {
 				"id": "Q438",
-				"labels": { "en": { "language": "en", "value": "OHLOOM" } },
-				"descriptions": {},
-				"aliases": {},
-				"claims": {
-					"P1344": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1344",
-								"hash": "1bf055f94a9a547528d1529f860e3efbb4a059a5",
-								"datavalue": {
-									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$D7CA0F15-5A52-4179-A988-39E01CFC3E85",
-							"rank": "normal"
-						}
-					],
-					"P1457": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1457",
-								"hash": "75f10af98cb40908c98c167f7b3244a3afa14cd1",
-								"datavalue": {
-									"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$0E384CB3-F5C3-4E80-B8CC-2F2ABA52EFEB",
-							"rank": "normal"
-						}
-					],
-					"P1463": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1463",
-								"hash": "7d62b7caa40361e01084a3d25412525780f10940",
-								"datavalue": {
-									"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
-									"type": "string"
-								},
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$8E6B6070-75C4-4097-BA8D-409F7B383517",
-							"rank": "normal"
-						}
-					],
-					"P1537": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1537",
-								"hash": "b094eae9fa08d1e74594e15cae5531944364d8eb",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 436,
-										"id": "Q436"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$6549F391-DDAC-49A2-B788-C63004E722F9",
-							"rank": "normal"
-						}
-					],
-					"P1531": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1531",
-								"hash": "50ca6b2a66726408bc09355e4c0f25c5f2c9dbcd",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 415,
-										"id": "Q415"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$DEFCE13C-901A-4382-B341-1B5EF6AF534E",
-							"rank": "normal"
-						}
-					],
-					"P1532": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1532",
-								"hash": "245732f1ae7a65cfb7c82d931d0fd4f95a098fbb",
-								"datavalue": {
-									"value": "http://purl.org/dc/elements/1.1/language/en",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$2751D505-44ED-4252-83C9-7A1D32E2E7ED",
-							"rank": "normal"
-						}
-					],
-					"P1426": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1426",
-								"hash": "e20652a31e126a9177f1ae18686961dd957684bc",
-								"datavalue": {
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$BEB72138-193B-4DCA-B607-71054E6280B4",
-							"rank": "normal"
-						}
-					],
-					"P1534": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1534",
-								"hash": "68d7792c050906d6ddd1b1f573c76fd6db98f420",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 417,
-										"id": "Q417"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$46F0377E-0A7C-4FF4-A7C1-219773C01F5A",
-							"rank": "normal"
-						}
-					],
-					"P1540": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1540",
-								"hash": "40cf6b142f9d0b694109f69b94464e8a15437e25",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 437,
-										"id": "Q437"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$8A68DC93-B91D-4B79-AE18-0B227EF87D8A",
-							"rank": "normal"
-						}
-					],
-					"P1422": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1422",
-								"hash": "cb675a344554b8076e26cc7ef615180b12a7bc95",
-								"datavalue": {
-									"value": "https://gitlab.com/OSEGermany/ohloom",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$512F7FF3-C09C-4473-84DD-B8F2450151ED",
-							"rank": "normal"
-						}
-					],
-					"P1188": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1188",
-								"hash": "c8c90eaf445b8dfccd72a9f9ef0de333b8217084",
-								"datavalue": {
-									"value": "2021-07-27T13:30:16.389991Z",
-									"type": "string"
-								},
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$78B52981-4D6C-466C-A0BB-859CD3F58AFF",
-							"rank": "normal"
-						}
-					],
-					"P1187": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1187",
-								"hash": "0888c79e1b0406cfcbbcc5b788e3035789841124",
-								"datavalue": { "value": "OSE Germany e.V.", "type": "string" },
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$0729F23B-2D9B-4FE2-ACEF-E23B3B194DA3",
-							"rank": "normal"
-						}
-					],
-					"P1455": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1455",
-								"hash": "856ddfefd85541edb6c4f6ca2860c94f37c65cec",
-								"datavalue": {
-									"value": "cube(size = [400,350,150]",
-									"type": "string"
-								},
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$810B519A-4943-4D83-952E-339C6D269513",
-							"rank": "normal"
-						}
-					],
-					"P1194": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1194",
-								"hash": "615c0f73d98829bf23db30de377b4183e827f209",
-								"datavalue": {
-									"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
-									"type": "string"
-								},
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$832C96ED-43F0-4624-AC47-6037F8DE5CF1",
-							"rank": "normal"
-						}
-					],
-					"P1408": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1408",
-								"hash": "6d43d47715ff40d079db3c3c1b9f2066d54a1e91",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 435,
-										"id": "Q435"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$3EF410E6-C80C-4BB8-9F48-2FFB99A3A5EF",
-							"rank": "normal"
-						}
-					],
-					"P505": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P505",
-								"hash": "9d7c9d01d54b535b1b9857ba283e10565ba41f57",
-								"datavalue": { "value": "0.10.0", "type": "string" },
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$15122B17-BA0E-47EA-A98C-E3524460E016",
-							"rank": "normal"
-						}
-					],
-					"P467": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P467",
-								"hash": "5c25bfd8457ef1645931eb77edd324ffc1518170",
-								"datavalue": { "value": "Jens Meisner", "type": "string" },
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$B32D6AC4-9998-40F6-B837-6D9EA306CB6B",
-							"rank": "normal"
-						}
-					],
-					"P1538": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1538",
-								"hash": "f81c87446850c0e151d7e4cab76694067e307865",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 430,
-										"id": "Q430"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$E9CA314B-8894-4208-B7B2-04483DB84901",
-							"rank": "normal"
-						}
-					],
-					"P1452": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1452",
-								"hash": "863c314e7aa448458af39398556c47fdaa51d1a2",
-								"datavalue": {
-									"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
-									"type": "string"
-								},
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$DD53FD45-E172-479C-85D4-E4941C72D5B4",
-							"rank": "normal"
-						}
-					],
-					"P1535": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1535",
-								"hash": "b3bedf0b348ffecf3858b2cb7123b29ad6bbacfa",
-								"datavalue": {
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$5734EB84-0CD6-43FF-895F-F3FFB6EEE47D",
-							"rank": "normal"
-						}
-					],
-					"P1411": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1411",
-								"hash": "4666517b8272d9875f8e1a796e3cc30761501a83",
-								"datavalue": {
-									"value": "https://gitlab.com/OSEGermany/ohloom/",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$66BC68ED-C404-4143-A188-94A66E78D12C",
-							"rank": "normal"
-						}
-					],
-					"P1471": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1471",
-								"hash": "c7e6c7cb9012905f6c80136e97030e827e03691b",
-								"datavalue": {
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
-									"type": "string"
-								},
-								"datatype": "url"
-							},
-							"type": "statement",
-							"id": "Q438$54F4F373-B71F-437B-B5D1-33661E3927CB",
-							"rank": "normal"
-						}
-					],
-					"P1467": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1467",
-								"hash": "bd87d6b7ecd6a0b9609b6a5e685d6d5e85a2fba2",
-								"datavalue": { "value": "D03D 35/00", "type": "string" },
-								"datatype": "string"
-							},
-							"type": "statement",
-							"id": "Q438$D2BAE233-112D-42F3-BFD8-ED13EA32CE41",
-							"rank": "normal"
-						}
-					],
-					"P1536": [
-						{
-							"mainsnak": {
-								"snaktype": "value",
-								"property": "P1536",
-								"hash": "8f55c0baf507b52ba6c38ff15d33691da375b55d",
-								"datavalue": {
-									"value": {
-										"entity-type": "item",
-										"numeric-id": 418,
-										"id": "Q418"
-									},
-									"type": "wikibase-entityid"
-								},
-								"datatype": "wikibase-item"
-							},
-							"type": "statement",
-							"id": "Q438$09F7E0FB-299E-4734-B613-37068F37CBE7",
-							"rank": "normal"
-						}
-					]
+				"name": "OHLOOM(stub)",
+				"identifier": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
 				},
-				"sitelinks": {}
+				"outerDimensionsMM": {
+					"datavalue": {
+						"type": "string",
+						"value": "cube(size = [400,350,150]",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"licensor": {
+					"datavalue": {
+						"type": "string",
+						"value": "Jens Meisner",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"source": null,
+				"relatedTsDC": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"release": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"organisation": {
+					"datavalue": {
+						"type": "string",
+						"value": "OSE Germany e.V.",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"documentationReadinessLevel": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"version": {
+					"datavalue": {
+						"type": "string",
+						"value": "0.10.0",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"technologyReadinessLevel": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"cpcPatentClass": {
+					"datavalue": {
+						"type": "string",
+						"value": "D03D 35/00",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"timestamp": {
+					"datavalue": {
+						"type": "string",
+						"value": "2021-07-27T13:30:16.389991Z",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"repo": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"function": {
+					"datavalue": {
+						"type": "string",
+						"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasReadme": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q430",
+						"result": {
+							"id": "Q430",
+							"name": "Readme of OHLOOM v1.0.0",
+							"originalURL": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/-/raw/master/README.md",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasManufacturingInstructions": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q418",
+						"result": {
+							"id": "Q418",
+							"name": "Manufacturing Instructions of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasBoM": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q417",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasUserManual": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q436",
+						"result": {
+							"id": "Q436",
+							"name": "User Manual of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"versionOf": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasImage": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q435",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"spdxLicense": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasManifestFile": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q415",
+						"result": {
+							"id": "Q415",
+							"name": "Manifest File of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasComponent": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q437",
+						"result": {
+							"id": "Q437",
+							"name": "Clamp Ring of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"documentationLanguage": {
+					"datavalue": {
+						"type": "string",
+						"value": "http://purl.org/dc/elements/1.1/language/en",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"type": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"__typename": "ItemResponse"
 			}
-		},
-		"success": 1
+		}
+	},
+	"getAllPost": {
+		"data": {
+			"searchItems": {
+				"total": 664,
+				"items": [
+					{
+						"id": "Q587",
+						"name": "Mini CNC machine(stub)",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@yyazji/mini-cnc-machine/20190523064001/MiniCncMachine",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Yousef Alyazji",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20190523064001",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@yyazji/mini-cnc-machine",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Mini CNC machine is implemented at Fablab Gaza with almost 3D printing parts , nema 17 stepper motor. the 3D parts of machine are designed using Solid works software.",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@yyazji/mini-cnc-machine",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q588",
+						"name": "Hack things around you !",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@minhuy/hack-things-around-you/20190425141806/HackThingsAroundYou",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "NGUYEN HUY VIET MINH",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20190425141806",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@minhuy/hack-things-around-you",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Some ways to hack things around you. ​ ​ ​ ​ Five small projects show you the ways to repair, to give the new life for everything around you. Each project is corresponding to a level of intervention.",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@minhuy/hack-things-around-you",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q591",
+						"name": "Arduino robot",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@sidoxi/arduino-robot/20201112130130/ArduinoRobot",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "EL MESSAOUDI SAID",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20201112130130",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@sidoxi/arduino-robot",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Control with Arduino carte",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@sidoxi/arduino-robot",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q592",
+						"name": "look music",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@amrita-mahant/look-music/20201220102435/LookMusic",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "ganeshwar das",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20201220102435",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@amrita-mahant/look-music",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "project to sing in  music under soulfull lines",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@amrita-mahant/look-music",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q593",
+						"name": "testing",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@piyushkeshav/testing/20201218203203/Testing",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Piyush Keshav",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20201218203203",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@piyushkeshav/testing",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "trying first hand",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@piyushkeshav/testing",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q597",
+						"name": "hola kerdelune",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@uboopenfactory/hola-kerdelune/20210611174712/HolaKerdelune",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "uboopenfactory",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20210611174712",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@uboopenfactory/hola-kerdelune",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Projet de développement d'une culture collaborative et apprenante au sein d'un établissement médico-social et au-delà",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@uboopenfactory/hola-kerdelune",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "fr",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q553",
+						"name": "CNC WOOD CUTTER",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@danejoseph/cnc-wood-cutter/20210804053808/CncWoodCutter",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "DANE",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20210804053808",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@danejoseph/cnc-wood-cutter",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "wood cutting machine for windows and doors",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@danejoseph/cnc-wood-cutter",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q478",
+						"name": "K Room Test",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@nabil27/k-room-test/20210505050405/KRoomTest",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Nabil",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20210505050405",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@nabil27/k-room-test",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "3D Environment",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@nabil27/k-room-test",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q479",
+						"name": "Sadiq",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@alsdegbk/sadiq/20201111202523/Sadiq",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "alsalidegbk",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20201111202523",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@alsdegbk/sadiq",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Hello",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@alsdegbk/sadiq",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q481",
+						"name": "Green Bricks",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@lina/green-bricks/20190425141757/GreenBricks",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Lina Monaco",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "20190425141757",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": null,
+						"timestamp": null,
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@lina/green-bricks",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "Green Brick is the first brick of ProdActive Landscape's project. Is a modular electronic system of environment analysis that can grow and change along the life of a urban vegetable garden or a vertical agricultural system setting.",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://wikifactory.com/@lina/green-bricks",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "N/A",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					}
+				],
+				"__typename": "SearchResponse"
+			}
+		}
 	}
 }
