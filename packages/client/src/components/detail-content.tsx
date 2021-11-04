@@ -3,7 +3,7 @@ import LeftOutlined from "@ant-design/icons/lib/icons/LeftOutlined";
 import { Button, Col, Row, Typography } from "antd";
 import { Link } from "gatsby";
 import React from "react";
-import { DataValue } from "../controller/types";
+import { DataValue } from "../types";
 import DetailRowDownload from "./detail-rows/detail-row-download";
 import DetailRowLinkedFiles from "./detail-rows/detail-row-linked-files";
 import DetailRowOuterDimensions from "./detail-rows/detail-row-outer-dimensions";

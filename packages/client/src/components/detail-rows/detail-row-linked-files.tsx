@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React from "react";
-import { HardwareData } from "../../controller/types";
+import { HardwareData } from "../../types";
 
 interface DetailRowLinkedFilesProps {
 	data: HardwareData;

@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import queryString from "query-string";
-import { HardwareData } from "../controller/types";
+import { HardwareData } from "../types";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useLazyQuery } from "@apollo/client";
-import { GET_ITEMS } from "../controller/get-items";
+import { GET_ITEMS } from "../queries/get-items";
 interface QueryContextState {
 	search: string;
 	items: HardwareData[];
