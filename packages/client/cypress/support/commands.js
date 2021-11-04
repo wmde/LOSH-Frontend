@@ -49,26 +49,26 @@ Cypress.Commands.add(
 Cypress.Commands.add(
 	"pageChecker",
 	{ prevSubject: ["optional", "element"] },
-	(pageButton = subject, waitFor = 1000) => {
+	(pageButton = subject, waitFor = 2000) => {
 		const page1 = [];
 		cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
 			const name = tr.attr("data-row-key").toString();
 			page1.push(name);
 		});
 
-		cy.get(pageButton, { timeout: 10000 }).click();
-		cy.wait(waitFor);
-		cy.then(() => {
-			const page2 = [];
+		cy.get(pageButton, { timeout: 10000 })
+			.click()
+			.wait(waitFor)
+			.then(() => {
+				const page2 = [];
+				cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
+					const name = tr.attr("data-row-key").toString();
+					page2.push(name);
+				});
 
-			cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
-				const name = tr.attr("data-row-key").toString();
-				page2.push(name);
+				cy.then(() => {
+					expect(page1).to.not.deep.equal(page2);
+				});
 			});
-
-			cy.then(() => {
-				cy.expect(page1).to.not.deep.equal(page2);
-			});
-		});
 	}
 );
