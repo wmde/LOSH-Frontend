@@ -7,7 +7,7 @@ import "@testing-library/cypress/add-commands";
 Cypress.Commands.add(
 	"linkChecker",
 	{ prevSubject: ["optional", "Array"] },
-	(linksArr = subject, fixtureFile, fixtureName) => {
+	(linksArr, fixtureFile, fixtureName) => {
 		cy.wrap(linksArr).each((link) => {
 			cy.fixture(fixtureFile).then((data) => {
 				const linkText = Cypress.$(link).text();
@@ -25,7 +25,7 @@ Cypress.Commands.add(
 Cypress.Commands.add(
 	"pageChecker",
 	{ prevSubject: ["optional", "element"] },
-	(pageButton = subject, waitFor = 1000) => {
+	(pageButton, waitFor = 1000) => {
 		const page1 = [];
 		cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
 			const name = tr.attr("data-row-key").toString();
