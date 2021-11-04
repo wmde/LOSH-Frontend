@@ -6,8 +6,8 @@ import "@testing-library/cypress/add-commands";
 //will compare links' name and href to those provided in fixture
 Cypress.Commands.add(
 	"linkChecker",
-	{},
-	(linksArr, fixtureFile, fixtureName) => {
+	{ prevSubject: ["optional", "Array"] },
+	(linksArr = subject, fixtureFile, fixtureName) => {
 		cy.wrap(linksArr).each((link) => {
 			cy.fixture(fixtureFile).then((data) => {
 				const linkText = Cypress.$(link).text();
@@ -22,25 +22,31 @@ Cypress.Commands.add(
 	}
 );
 //before and after comparison of data-table's first column (names) each page turn.
-Cypress.Commands.add("pageChecker", {}, (pageButton, waitFor = 1000) => {
-	const page1 = [];
-	cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
-		const name = tr.attr("data-row-key").toString();
-		page1.push(name);
-	});
-
-	cy.get(pageButton, { timeout: 10000 })
-		.click()
-		.wait(waitFor)
-		.then(() => {
-			const page2 = [];
-			cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
-				const name = tr.attr("data-row-key").toString();
-				page2.push(name);
-			});
-
-			cy.then(() => {
-				expect(page1).to.not.deep.equal(page2);
-			});
+Cypress.Commands.add(
+	"pageChecker",
+	{ prevSubject: ["optional", "element"] },
+	(pageButton = subject, waitFor = 1000) => {
+		const page1 = [];
+		cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
+			const name = tr.attr("data-row-key").toString();
+			page1.push(name);
 		});
-});
+
+		cy.get(pageButton, { timeout: 10000 })
+			.click()
+			.wait(waitFor)
+			.then(() => {
+				const page2 = [];
+				cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each(
+					(tr) => {
+						const name = tr.attr("data-row-key").toString();
+						page2.push(name);
+					}
+				);
+
+				cy.then(() => {
+					expect(page1).to.not.deep.equal(page2);
+				});
+			});
+	}
+);
