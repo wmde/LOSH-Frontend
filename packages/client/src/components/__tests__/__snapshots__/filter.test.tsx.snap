@@ -39,51 +39,5 @@ exports[`Filter renders correctly 1`] = `
       <DownOutlined />
     </Button>
   </Dropdown>
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Github
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          GitLab
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Appropedia
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Wikifactory
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          OSHWA
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Data Source 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
 </Space>
 `;
