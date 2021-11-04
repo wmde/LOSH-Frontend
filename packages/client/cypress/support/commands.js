@@ -6,7 +6,7 @@ import "@testing-library/cypress/add-commands";
 //will compare links' name and href to those provided in fixture
 Cypress.Commands.add(
 	"linkChecker",
-	null,
+	{},
 	(linksArr, fixtureFile, fixtureName) => {
 		cy.wrap(linksArr).each((link) => {
 			cy.fixture(fixtureFile).then((data) => {
@@ -22,7 +22,7 @@ Cypress.Commands.add(
 	}
 );
 //before and after comparison of data-table's first column (names) each page turn.
-Cypress.Commands.add("pageChecker", null, (pageButton, waitFor = 1000) => {
+Cypress.Commands.add("pageChecker", {}, (pageButton, waitFor = 1000) => {
 	const page1 = [];
 	cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
 		const name = tr.attr("data-row-key").toString();
