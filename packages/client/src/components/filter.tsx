@@ -27,24 +27,7 @@ const menu = (
 	</Menu>
 );
 
-const certifiedProjects = [
-	{
-		name: "True",
-		value: "true",
-	},
-	{
-		name: "Cert type 2",
-		value: "false",
-	},
-];
-
-const organisations = [
-	{
-		name: "True",
-	},
-];
-
-const licences = [
+const licenses = [
 	{
 		name: "Weak",
 		value: "weak",
@@ -95,19 +78,14 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 	return (
 		<Space wrap className="filter">
 			<Dropdown
-				overlay={menu(licences, handleClickItem, "licences", filters.licences)}
+				overlay={menu(licenses, handleClickItem, "license", filters.license)}
 				trigger={["click"]}
 			>
 				<Button>
 					License <DownOutlined />
 				</Button>
 			</Dropdown>
-			{/* <Dropdown overlay={menu(certifiedProjects, handleClickItem, "certifiedProjects", filters.certifiedProjects)} trigger={["click"]}>
-				<Button>
-					Certified Project <DownOutlined />
-				</Button>
-			</Dropdown> */}
-			<Dropdown
+			{/* <Dropdown
 				overlay={menu(
 					dataSources,
 					handleClickItem,
@@ -118,11 +96,6 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			>
 				<Button>
 					Data Source <DownOutlined />
-				</Button>
-			</Dropdown>
-			{/* <Dropdown overlay={menu(organisations, handleClickItem, "organisations")} trigger={["click"]}>
-				<Button>
-					Organisation <DownOutlined />
 				</Button>
 			</Dropdown> */}
 		</Space>
