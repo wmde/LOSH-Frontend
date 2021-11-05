@@ -32,21 +32,19 @@ Cypress.Commands.add(
 			page1.push(name);
 		});
 
-		cy.get(pageButton, { timeout: 10000 })
-			.click()
-			.wait(waitFor)
-			.then(() => {
-				const page2 = [];
-				cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each(
-					(tr) => {
-						const name = tr.attr("data-row-key").toString();
-						page2.push(name);
-					}
-				);
-
-				cy.then(() => {
-					expect(page1).to.not.deep.equal(page2);
-				});
+		cy.get(pageButton, { timeout: 10000 }).click();
+		cy.wait(waitFor);
+		cy.then(() => {
+			const page2 = [];
+			cy.get(".ant-table-tbody>a.table-row", { timeout: 10000 }).each((tr) => {
+				const name = tr.attr("data-row-key").toString();
+				page2.push(name);
 			});
+
+			cy.then(() => {
+				cy.expect(page1.length && page2.length).to.equal(10);
+				cy.expect(page1).to.not.deep.equal(page2);
+			});
+		});
 	}
 );

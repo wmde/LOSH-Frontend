@@ -22,7 +22,6 @@ describe("explore data page tests", () => {
 			const { resBody } = data.searchPost;
 			const tblData = resBody.data.searchItems.items;
 			cy.intercept("POST", "http://localhost:3000/graphql", {
-				statusCode: 201,
 				body: resBody,
 			}).as("query");
 			const SEARCHTERM = "ohloom";
@@ -39,12 +38,10 @@ describe("explore data page tests", () => {
 	it("checks if table data changes with page", () => {
 		cy.fixture("explore-data-fixtures").then((data) => {
 			const responses = data.getAllPosts;
-			cy.intercept("POST", "http://localhost:3000/graphql", (req) => {
+			cy.intercept("POST", "/graphql", (req) => {
 				const { page } = req.body.variables;
-				req.reply((res) => {
-					res.body = responses[`page${page}`];
-				});
-			}).as("getAll");
+				req.reply(responses[`page${page}`]);
+			});
 			cy.get(".ant-table", { timeout: 10000 })
 				.should("be.visible")
 				.then(() => {
@@ -56,13 +53,23 @@ describe("explore data page tests", () => {
 	});
 
 	it("accessess table entry's detail page", () => {
-		cy.get(".ant-table-tbody>a.table-row>td", { timeout: 10000 })
-			.first()
-			.as("detailLink")
-			.invoke("attr", "href")
-			.then((url) => {
-				cy.get("@detailLink").click();
-				cy.location("href").should("contain", url);
-			});
+		cy.fixture("explore-data-fixtures").then((data) => {
+			const { page1 } = data.getAllPosts;
+			const { getDetailsRes } = data;
+			const { id } = getDetailsRes.data.getItem;
+			cy.intercept("POST", "http://localhost:3000/graphql", (req) => {
+				if (req.body.query.includes("getItem")) {
+					req.reply(getDetailsRes);
+					return;
+				}
+				req.reply(page1);
+			}).as("getEntity");
+			cy.wait("@getEntity");
+			cy.contains(".ant-table-cell", "Mini CNC machine(stub)")
+				.should("be.visible")
+				.click();
+			cy.wait("@getEntity");
+			cy.location("href").should("contain", id);
+		});
 	});
 });

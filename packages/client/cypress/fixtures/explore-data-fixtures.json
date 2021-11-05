@@ -7,7 +7,7 @@
 					"items": [
 						{
 							"id": "Q438",
-							"name": "OHLOOM",
+							"name": "OHLOOM(stub)",
 							"identifier": {
 								"datavalue": {
 									"type": "string",
@@ -4474,6 +4474,103 @@
 					],
 					"__typename": "SearchResponse"
 				}
+			}
+		}
+	},
+	"getDetailsRes": {
+		"data": {
+			"getItem": {
+				"id": "Q587",
+				"name": "Mini CNC machine(stub)",
+				"identifier": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://wikifactory.com/@yyazji/mini-cnc-machine/20190523064001/MiniCncMachine",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"outerDimensionsMM": null,
+				"licensor": {
+					"datavalue": {
+						"type": "string",
+						"value": "Yousef Alyazji",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"source": null,
+				"relatedTsDC": null,
+				"release": null,
+				"organisation": null,
+				"documentationReadinessLevel": null,
+				"version": {
+					"datavalue": {
+						"type": "string",
+						"value": "20190523064001",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"technologyReadinessLevel": null,
+				"cpcPatentClass": null,
+				"timestamp": null,
+				"repo": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://wikifactory.com/@yyazji/mini-cnc-machine",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"function": {
+					"datavalue": {
+						"type": "string",
+						"value": "Mini CNC machine is implemented at Fablab Gaza with almost 3D printing parts , nema 17 stepper motor. the 3D parts of machine are designed using Solid works software.",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasReadme": null,
+				"hasManufacturingInstructions": null,
+				"hasBoM": null,
+				"hasUserManual": null,
+				"versionOf": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://wikifactory.com/@yyazji/mini-cnc-machine",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasImage": null,
+				"spdxLicense": {
+					"datavalue": {
+						"type": "string",
+						"value": "N/A",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasManifestFile": null,
+				"hasComponent": null,
+				"documentationLanguage": {
+					"datavalue": {
+						"type": "string",
+						"value": "en",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"type": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"__typename": "ItemResponse"
 			}
 		}
 	}

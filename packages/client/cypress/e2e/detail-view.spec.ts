@@ -4,13 +4,12 @@ describe("detail view page tests", () => {
 	beforeEach("match query and stub response", () => {
 		cy.fixture("detail-view-fixtures").then((data) => {
 			const { getDetailsRes, getAllPost } = data;
-			cy.intercept("POST", "http://localhost:3000/graphql", (req) => {
-				req.reply((res) => {
-					if (req.body.getItem) {
-						res.body = getDetailsRes;
-					}
-					res.body = getAllPost;
-				});
+			cy.intercept("POST", "/graphql", (req) => {
+				if (req.body.query.includes("getItem")) {
+					req.reply(getDetailsRes);
+					return;
+				}
+				req.reply(getAllPost);
 			}).as("getEntity");
 			cy.visit("/detail/Q438");
 			cy.wait("@getEntity");
