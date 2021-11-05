@@ -2,17 +2,18 @@
 
 describe("detail view page tests", () => {
 	beforeEach("match query and stub response", () => {
-		cy.fixture("detail-view-fixtures").then((data) => {
-			const { getDetailsRes, getAllPost } = data;
+		cy.fixture("test-fixtures").then((data) => {
+			const { ohLoom, getAllPosts } = data;
 			cy.intercept("POST", "/graphql", (req) => {
-				if (req.body.query.includes("getItem")) {
-					req.reply(getDetailsRes);
+				if (req.body.variables.id === "Q438") {
+					req.reply(ohLoom);
 					return;
 				}
-				req.reply(getAllPost);
-			}).as("getEntity");
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
 			cy.visit("/detail/Q438");
-			cy.wait("@getEntity");
+			cy.wait("@getData");
 		});
 	});
 

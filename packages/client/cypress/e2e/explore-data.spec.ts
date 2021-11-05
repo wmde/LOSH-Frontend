@@ -1,8 +1,23 @@
 ///<reference types="cypress"/>
 
 describe("explore data page tests", () => {
-	beforeEach(() => {
-		cy.visit("/");
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { miniCncMachine, searchResults, getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				if (req.body.variables.id === "Q587") {
+					req.reply(miniCncMachine);
+					return;
+				} else if (req.body.variables.query === "ohloom") {
+					req.reply(searchResults);
+					return;
+				}
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
 	});
 
 	it("search box displays placeholder", () => {
@@ -18,57 +33,38 @@ describe("explore data page tests", () => {
 	});
 
 	it("displays search results in data table", () => {
-		cy.fixture("explore-data-fixtures").then((data) => {
-			const { resBody } = data.searchPost;
-			const tblData = resBody.data.searchItems.items;
-			cy.intercept("POST", "http://localhost:3000/graphql", {
-				body: resBody,
-			}).as("query");
+		cy.fixture("test-fixtures").then((data) => {
+			const { items } = data.searchResults.data.searchItems;
 			const SEARCHTERM = "ohloom";
 			cy.get("#search").should("be.visible").type(SEARCHTERM);
 			cy.get(".ant-input-search-button").should("be.visible").click();
-			cy.wait("@query");
+			cy.wait("@getData");
 			cy.get(".ant-table-tbody")
 				.find("a.table-row")
-				.should("have.length", tblData.length)
+				.should("have.length", items.length)
 				.should("be.visible");
 		});
 	});
 
 	it("checks if table data changes with page", () => {
-		cy.fixture("explore-data-fixtures").then((data) => {
-			const responses = data.getAllPosts;
-			cy.intercept("POST", "/graphql", (req) => {
-				const { page } = req.body.variables;
-				req.reply(responses[`page${page}`]);
+		cy.get(".ant-table", { timeout: 10000 })
+			.should("be.visible")
+			.then(() => {
+				cy.get(".ant-pagination-next").as("pageFwd").pageChecker("@getData");
+				cy.get(".ant-pagination-item-4")
+					.as("pageNumber")
+					.pageChecker("@getData");
+				cy.get(".ant-pagination-prev").as("pageBack").pageChecker("@getData");
 			});
-			cy.get(".ant-table", { timeout: 10000 })
-				.should("be.visible")
-				.then(() => {
-					cy.get(".ant-pagination-next").as("pageFwd").pageChecker();
-					cy.get(".ant-pagination-item-4").as("pageNumber").pageChecker();
-					cy.get(".ant-pagination-prev").as("pageBack").pageChecker();
-				});
-		});
 	});
 
 	it("accessess table entry's detail page", () => {
-		cy.fixture("explore-data-fixtures").then((data) => {
-			const { page1 } = data.getAllPosts;
-			const { getDetailsRes } = data;
-			const { id } = getDetailsRes.data.getItem;
-			cy.intercept("POST", "http://localhost:3000/graphql", (req) => {
-				if (req.body.query.includes("getItem")) {
-					req.reply(getDetailsRes);
-					return;
-				}
-				req.reply(page1);
-			}).as("getEntity");
-			cy.wait("@getEntity");
+		cy.fixture("test-fixtures").then((data) => {
+			const { id } = data.miniCncMachine.data.getItem;
 			cy.contains(".ant-table-cell", "Mini CNC machine(stub)")
 				.should("be.visible")
 				.click();
-			cy.wait("@getEntity");
+			cy.wait("@getData");
 			cy.location("href").should("contain", id);
 		});
 	});

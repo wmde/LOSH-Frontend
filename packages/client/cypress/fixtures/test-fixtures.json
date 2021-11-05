@@ -1,335 +1,340 @@
 {
-	"searchPost": {
-		"resBody": {
-			"data": {
-				"searchItems": {
-					"total": 2,
-					"items": [
-						{
-							"id": "Q438",
-							"name": "OHLOOM(stub)",
-							"identifier": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+	"navSlugs": {
+		"Explore Data": "/",
+		"Contribute specifications": "/contribute-specifications",
+		"About the Project": "/about",
+		"Ecosystem": "/ecosystem",
+		"Get involved": "/get-involved"
+	},
+	"searchResults": {
+		"data": {
+			"searchItems": {
+				"total": 2,
+				"items": [
+					{
+						"id": "Q438",
+						"name": "OHLOOM(stub)",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
+								"__typename": "DataValue"
 							},
-							"fileFormat": null,
-							"outerDimensionsMM": {
-								"datavalue": {
-									"type": "string",
-									"value": "cube(size = [400,350,150]",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"manufacturingProcess": null,
-							"material": null,
-							"licensor": {
-								"datavalue": {
-									"type": "string",
-									"value": "Jens Meisner",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"lastRequested": null,
-							"lastSeen": null,
-							"okhv": null,
-							"fileURL": null,
-							"image": null,
-							"source": null,
-							"relatedTsDC": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"export": null,
-							"release": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"organisation": {
-								"datavalue": {
-									"type": "string",
-									"value": "OSE Germany e.V.",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"documentationReadinessLevel": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"version": {
-								"datavalue": {
-									"type": "string",
-									"value": "0.10.0",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"technologyReadinessLevel": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"cpcPatentClass": {
-								"datavalue": {
-									"type": "string",
-									"value": "D03D 35/00",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"timestamp": {
-								"datavalue": {
-									"type": "string",
-									"value": "2021-07-27T13:30:16.389991Z",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"repo": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom/",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"function": {
-								"datavalue": {
-									"type": "string",
-									"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"permaURL": null,
-							"originalURL": null,
-							"hasReadme": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q430",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasManufacturingInstructions": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q418",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasBoM": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q417",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasUserManual": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q436",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"versionOf": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasImage": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q435",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"contributorCount": null,
-							"spdxLicense": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasManifestFile": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q415",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"hasComponent": {
-								"datavalue": {
-									"type": "wikibase-entityid",
-									"value": "Q437",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"documentationLanguage": {
-								"datavalue": {
-									"type": "string",
-									"value": "http://purl.org/dc/elements/1.1/language/en",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"type": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
-							},
-							"__typename": "ItemResponse"
+							"__typename": "ItemResponseValue"
 						},
-						{
-							"id": "Q820",
-							"name": "OHLOOM",
-							"identifier": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom/0.10.0/Ohloom",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+						"fileFormat": null,
+						"outerDimensionsMM": {
+							"datavalue": {
+								"type": "string",
+								"value": "cube(size = [400,350,150]",
+								"__typename": "DataValue"
 							},
-							"fileFormat": null,
-							"outerDimensionsMM": null,
-							"manufacturingProcess": null,
-							"material": null,
-							"licensor": {
-								"datavalue": {
-									"type": "string",
-									"value": "Jens Meisner",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Jens Meisner",
+								"__typename": "DataValue"
 							},
-							"lastRequested": null,
-							"lastSeen": null,
-							"okhv": null,
-							"fileURL": null,
-							"image": null,
-							"source": null,
-							"relatedTsDC": null,
-							"export": null,
-							"release": null,
-							"organisation": null,
-							"documentationReadinessLevel": null,
-							"version": {
-								"datavalue": {
-									"type": "string",
-									"value": "0.10.0",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
+								"__typename": "DataValue"
 							},
-							"technologyReadinessLevel": null,
-							"cpcPatentClass": {
-								"datavalue": {
-									"type": "string",
-									"value": "D03D 35/00",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"export": null,
+						"release": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
+								"__typename": "DataValue"
 							},
-							"timestamp": {
-								"datavalue": {
-									"type": "string",
-									"value": "Thu, 09 Sep 2021 13:34:29 GMT",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"organisation": {
+							"datavalue": {
+								"type": "string",
+								"value": "OSE Germany e.V.",
+								"__typename": "DataValue"
 							},
-							"repo": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"documentationReadinessLevel": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
+								"__typename": "DataValue"
 							},
-							"function": {
-								"datavalue": {
-									"type": "string",
-									"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic pieces for the most part. It is simple to make and operate.",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "0.10.0",
+								"__typename": "DataValue"
 							},
-							"permaURL": null,
-							"originalURL": null,
-							"hasReadme": null,
-							"hasManufacturingInstructions": null,
-							"hasBoM": null,
-							"hasUserManual": null,
-							"versionOf": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
+								"__typename": "DataValue"
 							},
-							"hasImage": null,
-							"contributorCount": null,
-							"spdxLicense": null,
-							"hasManifestFile": null,
-							"hasComponent": null,
-							"documentationLanguage": {
-								"datavalue": {
-									"type": "string",
-									"value": "en-GB",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"cpcPatentClass": {
+							"datavalue": {
+								"type": "string",
+								"value": "D03D 35/00",
+								"__typename": "DataValue"
 							},
-							"type": {
-								"datavalue": {
-									"type": "string",
-									"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
-									"__typename": "DataValue"
-								},
-								"__typename": "ItemResponseValue"
+							"__typename": "ItemResponseValue"
+						},
+						"timestamp": {
+							"datavalue": {
+								"type": "string",
+								"value": "2021-07-27T13:30:16.389991Z",
+								"__typename": "DataValue"
 							},
-							"__typename": "ItemResponse"
-						}
-					],
-					"__typename": "SearchResponse"
-				}
+							"__typename": "ItemResponseValue"
+						},
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom/",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q430",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManufacturingInstructions": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q418",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasBoM": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q417",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasUserManual": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q436",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q435",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"contributorCount": null,
+						"spdxLicense": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasManifestFile": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q415",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasComponent": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": "Q437",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "http://purl.org/dc/elements/1.1/language/en",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					},
+					{
+						"id": "Q820",
+						"name": "OHLOOM",
+						"identifier": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom/0.10.0/Ohloom",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"fileFormat": null,
+						"outerDimensionsMM": null,
+						"manufacturingProcess": null,
+						"material": null,
+						"licensor": {
+							"datavalue": {
+								"type": "string",
+								"value": "Jens Meisner",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"lastRequested": null,
+						"lastSeen": null,
+						"okhv": null,
+						"fileURL": null,
+						"image": null,
+						"source": null,
+						"relatedTsDC": null,
+						"export": null,
+						"release": null,
+						"organisation": null,
+						"documentationReadinessLevel": null,
+						"version": {
+							"datavalue": {
+								"type": "string",
+								"value": "0.10.0",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"technologyReadinessLevel": null,
+						"cpcPatentClass": {
+							"datavalue": {
+								"type": "string",
+								"value": "D03D 35/00",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"timestamp": {
+							"datavalue": {
+								"type": "string",
+								"value": "Thu, 09 Sep 2021 13:34:29 GMT",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"repo": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"function": {
+							"datavalue": {
+								"type": "string",
+								"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic pieces for the most part. It is simple to make and operate.",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"permaURL": null,
+						"originalURL": null,
+						"hasReadme": null,
+						"hasManufacturingInstructions": null,
+						"hasBoM": null,
+						"hasUserManual": null,
+						"versionOf": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://gitlab.com/OSEGermany/ohloom",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"hasImage": null,
+						"contributorCount": null,
+						"spdxLicense": null,
+						"hasManifestFile": null,
+						"hasComponent": null,
+						"documentationLanguage": {
+							"datavalue": {
+								"type": "string",
+								"value": "en-GB",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"type": {
+							"datavalue": {
+								"type": "string",
+								"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+								"__typename": "DataValue"
+							},
+							"__typename": "ItemResponseValue"
+						},
+						"__typename": "ItemResponse"
+					}
+				],
+				"__typename": "SearchResponse"
 			}
 		}
 	},
@@ -4477,7 +4482,7 @@
 			}
 		}
 	},
-	"getDetailsRes": {
+	"miniCncMachine": {
 		"data": {
 			"getItem": {
 				"id": "Q587",
@@ -4558,6 +4563,245 @@
 					"datavalue": {
 						"type": "string",
 						"value": "en",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"type": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"__typename": "ItemResponse"
+			}
+		}
+	},
+	"ohLoom": {
+		"data": {
+			"getItem": {
+				"id": "Q438",
+				"name": "OHLOOM(stub)",
+				"identifier": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#OHLOOM",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"outerDimensionsMM": {
+					"datavalue": {
+						"type": "string",
+						"value": "cube(size = [400,350,150]",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"licensor": {
+					"datavalue": {
+						"type": "string",
+						"value": "Jens Meisner",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"source": null,
+				"relatedTsDC": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/oh-tsdc/-/raw/master/oh-tsdc.ttl#MEC",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"release": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/-/tags/ohloom-0.10.0",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"organisation": {
+					"datavalue": {
+						"type": "string",
+						"value": "OSE Germany e.V.",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"documentationReadinessLevel": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#ODRL-5",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"version": {
+					"datavalue": {
+						"type": "string",
+						"value": "0.10.0",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"technologyReadinessLevel": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OTRL.ttl#OTRL-5",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"cpcPatentClass": {
+					"datavalue": {
+						"type": "string",
+						"value": "D03D 35/00",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"timestamp": {
+					"datavalue": {
+						"type": "string",
+						"value": "2021-07-27T13:30:16.389991Z",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"repo": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom/",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"function": {
+					"datavalue": {
+						"type": "string",
+						"value": "The Open Hardware Loom is a simple, hand-operated weaving loom made of wood, screws and 3D printed plastic parts for the most part. It is simple to make and operate.",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasReadme": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q430",
+						"result": {
+							"id": "Q430",
+							"name": "Readme of OHLOOM v1.0.0",
+							"originalURL": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/-/raw/master/README.md",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasManufacturingInstructions": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q418",
+						"result": {
+							"id": "Q418",
+							"name": "Manufacturing Instructions of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasBoM": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q417",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasUserManual": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q436",
+						"result": {
+							"id": "Q436",
+							"name": "User Manual of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"versionOf": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://gitlab.com/OSEGermany/ohloom",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasImage": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q435",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"spdxLicense": {
+					"datavalue": {
+						"type": "string",
+						"value": "https://spdx.org/licenses/CC-BY-SA-4.1",
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasManifestFile": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q415",
+						"result": {
+							"id": "Q415",
+							"name": "Manifest File of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"hasComponent": {
+					"datavalue": {
+						"type": "wikibase-entityid",
+						"value": "Q437",
+						"result": {
+							"id": "Q437",
+							"name": "Clamp Ring of OHLOOM v1.0.0",
+							"originalURL": null,
+							"__typename": "ItemResponse"
+						},
+						"__typename": "DataValue"
+					},
+					"__typename": "ItemResponseValue"
+				},
+				"documentationLanguage": {
+					"datavalue": {
+						"type": "string",
+						"value": "http://purl.org/dc/elements/1.1/language/en",
 						"__typename": "DataValue"
 					},
 					"__typename": "ItemResponseValue"

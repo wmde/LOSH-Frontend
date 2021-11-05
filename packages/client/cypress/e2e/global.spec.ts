@@ -1,8 +1,16 @@
 /// <reference types="Cypress" />
 
 describe("navbar tests", () => {
-	beforeEach(() => {
-		cy.visit("/");
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
 	});
 
 	it("check logo link", () => {
@@ -14,7 +22,7 @@ describe("navbar tests", () => {
 			.wait(200)
 			.get(".ant-menu-horizontal>li>span>a")
 			.should("be.visible")
-			.linkChecker("global-fixtures", "navSlugs");
+			.linkChecker("test-fixtures", "navSlugs");
 	});
 
 	it("checks for collapsed (mobile) menu and it's page links", () => {
@@ -25,10 +33,22 @@ describe("navbar tests", () => {
 			.click();
 		cy.get(".ant-dropdown-menu-vertical>li>span>a")
 			.should("be.visible")
-			.linkChecker("global-fixtures", "navSlugs");
+			.linkChecker("test-fixtures", "navSlugs");
 	});
 });
 describe("footer tests", () => {
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
+	});
+
 	it("checks footer links", () => {
 		cy.visit("/")
 			.get(".ant-layout-footer>div>a")
