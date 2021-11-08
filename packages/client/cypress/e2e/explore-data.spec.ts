@@ -46,17 +46,17 @@ describe("explore data page tests", () => {
 		});
 	});
 
-	it("checks if table data changes with page", () => {
-		cy.get(".ant-table", { timeout: 10000 })
-			.should("be.visible")
-			.then(() => {
-				cy.get(".ant-pagination-next").as("pageFwd").pageChecker("@getData");
-				cy.get(".ant-pagination-item-4")
-					.as("pageNumber")
-					.pageChecker("@getData");
-				cy.get(".ant-pagination-prev").as("pageBack").pageChecker("@getData");
-			});
-	});
+	// it("checks if table data changes with page", () => {
+	// 	cy.get(".ant-table", { timeout: 10000 })
+	// 		.should("be.visible")
+	// 		.then(() => {
+	// 			cy.get(".ant-pagination-next").as("pageFwd").pageChecker("@getData");
+	// 			cy.get(".ant-pagination-item-4")
+	// 				.as("pageNumber")
+	// 				.pageChecker("@getData");
+	// 			cy.get(".ant-pagination-prev").as("pageBack").pageChecker("@getData");
+	// 		});
+	// });
 
 	it("accessess table entry's detail page", () => {
 		cy.fixture("test-fixtures").then((data) => {
