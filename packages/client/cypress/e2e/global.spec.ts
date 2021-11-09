@@ -1,8 +1,16 @@
 /// <reference types="Cypress" />
 
-describe("navigation tests", () => {
-	beforeEach(() => {
-		cy.visit("/");
+describe("navbar tests", () => {
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
 	});
 
 	it("check logo link", () => {
@@ -14,14 +22,10 @@ describe("navigation tests", () => {
 			.wait(200)
 			.get(".ant-menu-horizontal>li>span>a")
 			.should("be.visible")
-			.each((link) => {
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("test-fixtures", "navSlugs");
 	});
 
-	it("checks mobile menu's page links", () => {
+	it("checks for collapsed (mobile) menu and it's page links", () => {
 		cy.viewport("ipad-mini")
 			.wait(200)
 			.get("#mobile-menu-button")
@@ -29,15 +33,22 @@ describe("navigation tests", () => {
 			.click();
 		cy.get(".ant-dropdown-menu-vertical>li>span>a")
 			.should("be.visible")
-			.each((link) => {
-				cy.request(link.prop("href")).then((res) => {
-					expect(res.status).eq(200);
-				});
-			});
+			.linkChecker("test-fixtures", "navSlugs");
 	});
 });
-
 describe("footer tests", () => {
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
+	});
+
 	it("checks footer links", () => {
 		cy.visit("/")
 			.get(".ant-layout-footer>div>a")

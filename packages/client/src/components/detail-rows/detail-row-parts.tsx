@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React from "react";
-import { DataValueItem } from "../../controller/types";
+import { DataValueItem } from "../../types";
 
 interface DetailRowPartsProps {
 	hasComponents: DataValueItem | undefined;

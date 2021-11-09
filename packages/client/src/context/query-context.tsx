@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { HardwareData } from "../controller/types";
+import queryString from "query-string";
+import { HardwareData } from "../types";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useLazyQuery } from "@apollo/client";
-import { GET_ITEMS } from "../controller/get-items";
+import { GET_ITEMS } from "../queries/get-items";
 interface QueryContextState {
 	search: string;
 	items: HardwareData[];
@@ -36,15 +37,13 @@ export const QueryContext = React.createContext<QueryContextState>({
 
 export const QueryProvider: React.FC = ({ children }) => {
 	const location = useLocation();
+	const queryParams = queryString.parse(location.search);
 
-	const [search, setSearch] = useState("");
+	const [search, setSearch] = useState((queryParams.search as string) || "");
 	const [currentPage, setPage] = useState<number>(1);
 	const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 
-	const [filters, setFilters] = useState<any>({
-		license: "",
-		dataSource: "",
-	});
+	const [filters, setFilters] = useState<any>({});
 
 	const [getItems, { loading, error, data }] = useLazyQuery(GET_ITEMS);
 
@@ -53,60 +52,29 @@ export const QueryProvider: React.FC = ({ children }) => {
 			query: search,
 			page: currentPage,
 			pageSize,
-			license: filters.license,
-			dataSource: filters.dataSource,
+			licenseFilter: filters.license,
 		};
+
 		getItems({ variables });
 	};
 
 	const generateSearchParams = (
-		searchValue: string,
-		pageValue: number,
-		pageSizeValue: number,
+		search: string,
+		page: number,
+		pageSize: number,
 		filters: any
 	) => {
-		let params = "";
+		const query: any = {};
 
-		if (searchValue) {
-			params += `?search=${searchValue}`;
-		}
+		if (search) query.search = search;
+		if (page > 1) query.page = page;
+		if (pageSize !== DEFAULT_PAGE_SIZE) query.pageSize = pageSize;
+		if (Object.keys(filters).length > 0)
+			query.filters = JSON.stringify(filters);
 
-		if (pageValue > 1) {
-			if (params.length) {
-				params += "&";
-			} else {
-				params += "?";
-			}
+		const result = queryString.stringify(query);
 
-			params += `page=${pageValue}`;
-		}
-
-		if (pageSizeValue !== DEFAULT_PAGE_SIZE) {
-			if (params.length) {
-				params += "&";
-			} else {
-				params += "?";
-			}
-
-			params += `size=${pageSizeValue}`;
-		}
-
-		if (filters) {
-			Object.entries(filters).map(([key, value]) => {
-				if (!value) {
-					return;
-				}
-				if (params.length) {
-					params += "&";
-				} else {
-					params += "?";
-				}
-
-				params += `filter_${key}=${value}`;
-			});
-		}
-
-		return params;
+		return result ? `?${result}` : "";
 	};
 
 	const handleSearchChange = (value: string) => {
@@ -139,36 +107,20 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 	useEffect(() => {
 		executeQuery();
-	}, [search, currentPage, pageSize, filters.license, filters.dataSources]);
+	}, [search, currentPage, pageSize, filters]);
 
 	useEffect(() => {
-		const urlSearchParams = new URLSearchParams(location.search);
-		const searchValue = urlSearchParams.get("search") || "";
-		const pageValue = Number(urlSearchParams.get("page")) || 1;
-		const pageSizeValue = Number(urlSearchParams.get("size")) || 10;
-		const filterLicenseValue = Number(urlSearchParams.get("filter_licences"));
+		const searchValue = (queryParams.search as string) || "";
+		const pageValue = Number(queryParams.page) || 1;
+		const pageSizeValue = Number(queryParams.size) || DEFAULT_PAGE_SIZE;
 
 		if (searchValue !== search) setSearch(searchValue);
 		if (pageValue !== currentPage) setPage(pageValue);
 		if (pageSizeValue !== pageSizeValue) setPageSize(pageSizeValue);
-
-		const filtersValue = {
-			license: filterLicenseValue,
-		};
-
-		setFilters(filtersValue);
-	}, [location.search]);
-
-	useEffect(() => {
-		const urlSearchParams = new URLSearchParams(location.search);
-		const initialSearch = urlSearchParams.get("search") || "";
-		const initialPage = Number(urlSearchParams.get("page")) || 1;
-		const initialPageSize =
-			Number(urlSearchParams.get("size")) || DEFAULT_PAGE_SIZE;
-
-		setSearch(initialSearch);
-		setPage(initialPage);
-		setPageSize(initialPageSize);
+		if (queryParams.filters) {
+			const filtersValue = JSON.parse(queryParams.filters as string);
+			setFilters(filtersValue);
+		}
 	}, []);
 
 	return (

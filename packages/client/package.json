@@ -24,6 +24,7 @@
 		"gatsby-transformer-remark": "^4.6.0",
 		"gatsby-transformer-sharp": "^3.9.0",
 		"prop-types": "^15.7.2",
+		"query-string": "^7.0.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
@@ -46,6 +47,7 @@
 		"cross-env": "^7.0.3",
 		"cypress": "^8.0.0",
 		"eslint": "^7.31.0",
+		"eslint-plugin-cypress": "^2.12.1",
 		"eslint-plugin-react": "^7.24.0",
 		"gatsby-plugin-eslint": "^3.0.0",
 		"gatsby-plugin-ts-checker": "^1.1.0",
@@ -76,11 +78,11 @@
 		"develop": "gatsby develop",
 		"start": "yarn develop",
 		"serve": "gatsby serve",
-		"test": "jest",
+		"test:unit": "jest",
 		"cy:open": "cypress open",
-		"husky": "husky install",
+		"cy:run": "cypress run",
 		"test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-		"test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
+		"test:e2e:ci": "start-server-and-test 'yarn serve --port 8000' http://localhost:8000 cy:run"
 	},
 	"repository": {
 		"type": "git",

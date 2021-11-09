@@ -1,8 +1,23 @@
 ///<reference types="cypress"/>
 
 describe("explore data page tests", () => {
-	beforeEach(() => {
-		cy.visit("/");
+	beforeEach("match query and stub response", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { miniCncMachine, searchResults, getAllPosts } = data;
+			cy.intercept("POST", "/graphql", (req) => {
+				if (req.body.variables.id === "Q587") {
+					req.reply(miniCncMachine);
+					return;
+				} else if (req.body.variables.query === "ohloom") {
+					req.reply(searchResults);
+					return;
+				}
+				const { page } = req.body.variables;
+				req.reply(getAllPosts[`page${page}`]);
+			}).as("getData");
+			cy.visit("/");
+			cy.wait("@getData");
+		});
 	});
 
 	it("search box displays placeholder", () => {
@@ -17,24 +32,40 @@ describe("explore data page tests", () => {
 			.should("be.visible");
 	});
 
-	it("table displays search results", () => {
-		cy.intercept(
-			"GET",
-			"https://losh.ose-germany.de/w/api.php?action=query&list=search&srsearch=robi+haswbstatement%3AP1426%3Dhttps%3A%2F%2Fgithub.com%2FOPEN-NEXT%2FOKH-LOSH%2Fraw%2Fmaster%2FOKH-LOSH.ttl%23Module&format=json&srnamespace=120&srlimit=10&sroffset=0&origin=*",
-			{ fixture: "queryResponse" }
-		).as("query");
-		cy.intercept(
-			"GET",
-			"https://losh.ose-germany.de/w/api.php?action=wbgetentities&ids=Q513%7CQ599%7CQ608%7CQ601%7CQ535&format=json&origin=*",
-			{ fixture: "getEntitiesResponse" }
-		).as("getEntities");
-		cy.get("#search").should("be.visible").type("robi");
-		cy.get(".ant-input-search-button").should("be.visible").click();
-		cy.wait("@query");
-		cy.wait("@getEntities");
-		cy.get(".ant-table-tbody")
-			.find("tr")
-			.should("have.length", 5)
-			.should("be.visible");
+	it("displays search results in data table", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { items } = data.searchResults.data.searchItems;
+			const SEARCHTERM = "ohloom";
+			cy.get("#search").should("be.visible").type(SEARCHTERM);
+			cy.get(".ant-input-search-button").should("be.visible").click();
+			cy.wait("@getData");
+			cy.get(".ant-table-tbody")
+				.find("a.table-row")
+				.should("have.length", items.length)
+				.should("be.visible");
+		});
+	});
+
+	// it("checks if table data changes with page", () => {
+	// 	cy.get(".ant-table", { timeout: 10000 })
+	// 		.should("be.visible")
+	// 		.then(() => {
+	// 			cy.get(".ant-pagination-next").as("pageFwd").pageChecker("@getData");
+	// 			cy.get(".ant-pagination-item-4")
+	// 				.as("pageNumber")
+	// 				.pageChecker("@getData");
+	// 			cy.get(".ant-pagination-prev").as("pageBack").pageChecker("@getData");
+	// 		});
+	// });
+
+	it("accessess table entry's detail page", () => {
+		cy.fixture("test-fixtures").then((data) => {
+			const { id } = data.miniCncMachine.data.getItem;
+			cy.contains(".ant-table-cell", "Mini CNC machine(stub)")
+				.should("be.visible")
+				.click();
+			cy.wait("@getData");
+			cy.location("href").should("contain", id);
+		});
 	});
 });

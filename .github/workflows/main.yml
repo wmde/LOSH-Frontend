@@ -20,12 +20,12 @@ jobs:
       - name: Format
         run: yarn format
       - name: Unit test (client)
-        run: yarn client test
+        run: yarn client test:unit
       - name: Run build
         run: yarn client build
       - name: e2e test
         uses: cypress-io/github-action@v2
         with:
-          start: yarn client serve --port 8000
+          start: yarn client test:e2e:ci
           wait-on: http://localhost:8000
           project: packages/client

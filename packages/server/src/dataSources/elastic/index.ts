@@ -1,6 +1,6 @@
 import { Client } from "@elastic/elasticsearch";
 import { LICENSES } from "../../constants";
-import { SearchItemsArgs, LicenceValue } from "../../types";
+import { SearchItemsArgs, LicenseValue } from "../../types";
 import { ElasticSearchItemsResponse } from "./types";
 import { DataSource } from "apollo-datasource";
 
@@ -37,7 +37,7 @@ class ElasticDataSource extends DataSource {
     return { total, ids };
   }
 
-  private generateLicenseQuery = (license: LicenceValue) => {
+  private generateLicenseQuery = (license: LicenseValue) => {
     if (!license) {
       return [];
     }
@@ -58,7 +58,7 @@ class ElasticDataSource extends DataSource {
     license,
   }: {
     search: string;
-    license: LicenceValue;
+    license: LicenseValue;
   }) => {
     return {
       bool: {

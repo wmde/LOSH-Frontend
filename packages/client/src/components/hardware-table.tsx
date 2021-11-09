@@ -5,8 +5,8 @@ import { useContext } from "react";
 import { DEFAULT_PAGE_SIZE, QueryContext } from "../context/query-context";
 import { PaginationProps } from "antd/lib/pagination/Pagination";
 import { TablePaginationConfig } from "antd/lib/table/interface";
-import { HardwareData } from "../controller/types";
-import { Properties } from "../controller/constants";
+import { HardwareData } from "../types";
+import { Properties } from "../constants";
 import { Link } from "gatsby";
 import "./hardware-table.css";
 
