@@ -72,14 +72,14 @@ const Header = ({ headerLinks, pagePadding }: HeaderProps): JSX.Element => {
 		<AntdLayout.Header style={{ ...pagePadding }}>
 			<Row justify="space-between">
 				<Col>
-					<Link className="logo" to="/">
+					<a className="logo" href="/">
 						<OpenNextLogo />
 						<div className="logo__text">
 							<span>Library of </span>
 							<br></br>
 							<span>Open Source Hardware</span>
 						</div>
-					</Link>
+					</a>
 				</Col>
 				<Col className="menu-col">
 					{width > 1230 ? (
