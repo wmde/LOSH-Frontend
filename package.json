@@ -8,7 +8,7 @@
     "client": "yarn workspace client",
     "server": "yarn workspace server",
     "precommit": "lint-staged",
-    "format": "prettier --check \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
+    "format": "prettier --check \"**/*.{css,js,jsx,json,ts,tsx,yml}\"",
     "lint": "eslint packages",
     "lint:fix": "eslint packages --fix",
     "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
