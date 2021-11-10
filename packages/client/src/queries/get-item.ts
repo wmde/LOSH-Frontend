@@ -100,7 +100,17 @@ export const GET_ITEM = gql`
 				...DataValue
 			}
 			hasImage {
-				...DataValue
+				datavalue {
+					type
+					value
+					result {
+						id
+						name
+						fileURL {
+							...DataValue
+						}
+					}
+				}
 			}
 			spdxLicense {
 				...DataValue

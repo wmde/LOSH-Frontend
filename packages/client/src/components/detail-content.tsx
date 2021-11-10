@@ -3,7 +3,7 @@ import LeftOutlined from "@ant-design/icons/lib/icons/LeftOutlined";
 import { Button, Col, Row, Typography } from "antd";
 import { Link } from "gatsby";
 import React from "react";
-import { DataValue } from "../types";
+import { DataValueItem } from "../types";
 import DetailRowDownload from "./detail-rows/detail-row-download";
 import DetailRowLinkedFiles from "./detail-rows/detail-row-linked-files";
 import DetailRowOuterDimensions from "./detail-rows/detail-row-outer-dimensions";
@@ -20,12 +20,11 @@ import useWindowSize from "../hooks/useWindowSize";
 interface DetailContentProps {
 	pageData: any;
 }
-const renderImage = (property: DataValue | undefined, isNarrow: boolean) => {
-	if (
-		!property ||
-		property.datatype !== "wikibase-item" ||
-		!property.datavalue.result.fileURL
-	) {
+const renderImage = (
+	property: DataValueItem | undefined,
+	isNarrow: boolean
+) => {
+	if (!property || !property.datavalue.result?.fileURL) {
 		return;
 	}
 
