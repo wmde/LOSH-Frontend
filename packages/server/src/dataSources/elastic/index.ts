@@ -63,7 +63,7 @@ class ElasticDataSource extends DataSource {
     return {
       bool: {
         must: [
-          search && { match: { text: search } },
+          search && { match: { text: { query: search, fuzziness: "AUTO" } } },
           {
             match: {
               statement_keywords:
