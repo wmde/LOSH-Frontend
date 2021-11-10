@@ -19,7 +19,7 @@ const generateDownloadUrl = (repositoryUrl: string) => {
 };
 
 function DetailRowDownload({ repoUrl }: DetailRowDownload) {
-	if (!repoUrl) return null;
+	if (!repoUrl || repoUrl.includes("appropedia")) return null;
 
 	return (
 		<p>
