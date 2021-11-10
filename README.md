@@ -27,6 +27,7 @@ The LOSH frontend is a monorepo comprising of a client and server package. The c
 3. [Test](#test)
 4. [Deploy](#deploy)
 5. [Style Guide](#style-guide)
+6. [Architecture](#architecture)
 
 ## Develop
 
@@ -96,7 +97,7 @@ Run all client tests using Jest
 ### End to end
 
 Run `yarn client test:e2e` to run the e2e tests with Cypress locally.
-Or use `yarn client test:e2e:ci` to run them in a pipeline or in a headless browser locally.
+To run them headless/in a pipeline, use `yarn client test:e2e:ci`.
 
 ## Deploy
 
@@ -116,3 +117,9 @@ If the pre-commit hooks are not working correctly, run `yarn husky` to install t
 ### Guidelines
 
 All files must be linted and formatted before committing changes. All staged files will automatically be linted/formatted using a git pre-commit hook. If you are running into issues with failing builds at the format stage in the CI pipeline, please check that the pre-commit hook is running properly on your local machine.
+
+## Architecture
+
+The following is a diagram of how the data sources are combined to supply the client application. [Click here](https://swimlanes.io/#tZDLTsMwEEX3/oq7pJEogmUWSIhHqVQJ0ixgh5x0IBauA56xUP8e51XJUmBXL8dnztVcMWIpx+apfMSDb52Q2+HG140RqiV4UuotR5ZdLlGSjvMsU7fWkBOcX2Pl9VdTbHJs6TsQC84GaKHU+NVR91azmDofDSgC+YMap4lmBLbEwQonkhfzaSrNdIT8AOHdt/spQk3UnHVa+LnYadEqsR/ZZ+3jdjx+z+AWHQnDCKwrG+cO0hDqvoBEMHTyZ1bf4dUSKxKUxn1E1zpmxDL/bbNjUB2wvlvMd9H5eqh4jW/+/P5/qPQ0NycBvw==) to be able to edit and view the diagram on swimlanes.io
+
+[![LOSH Frontend Architecture](./swimlanes.png)](https://swimlanes.io/#tZDLTsMwEEX3/oq7pJEogmUWSIhHqVQJ0ixgh5x0IBauA56xUP8e51XJUmBXL8dnztVcMWIpx+apfMSDb52Q2+HG140RqiV4UuotR5ZdLlGSjvMsU7fWkBOcX2Pl9VdTbHJs6TsQC84GaKHU+NVR91azmDofDSgC+YMap4lmBLbEwQonkhfzaSrNdIT8AOHdt/spQk3UnHVa+LnYadEqsR/ZZ+3jdjx+z+AWHQnDCKwrG+cO0hDqvoBEMHTyZ1bf4dUSKxKUxn1E1zpmxDL/bbNjUB2wvlvMd9H5eqh4jW/+/P5/qPQ0NycBvw==)

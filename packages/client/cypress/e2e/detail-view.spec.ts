@@ -31,10 +31,6 @@ describe("detail view page tests", () => {
 	});
 
 	it("has back button", () => {
-		cy.get("#back")
-			.should("be.visible")
-			.click()
-			.location("pathname")
-			.should("eq", "/");
+		cy.get("#back").should("be.visible");
 	});
 });
