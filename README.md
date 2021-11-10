@@ -98,7 +98,6 @@ Run all client tests using Jest
 Run `yarn client test:e2e` to run the e2e tests with Cypress locally.
 Or use `yarn client test:e2e:ci` to run them in a pipeline or in a headless browser locally.
 
-
 ## Deploy
 
 After [Building](#build) the packages, the client bundle in `packages/client/public` can be hosted on any HTTP server (Apache, Nginx, Amazon S3, etc.)

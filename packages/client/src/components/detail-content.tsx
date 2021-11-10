@@ -54,7 +54,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 						onClick={() => window.history.back()}
 						id="back"
 						icon={<LeftOutlined />}
-						style={{ marginRight: "1rem" }}
+						style={{ marginRight: "1rem", marginBottom: "1rem" }}
 					>{`Back`}</Button>
 				</Col>
 				<Col>
@@ -68,17 +68,19 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 				wrap={false}
 				style={{
 					maxWidth: "960px",
-					marginTop: "2rem",
+					marginTop: "1rem",
 					flexDirection: isNarrow ? "column-reverse" : "row",
 				}}
 			>
 				<Col order={2} flex={2}>
-					{renderImage(pageData.hasImage, isNarrow)}
+					{!isNarrow && renderImage(pageData.hasImage, isNarrow)}
 				</Col>
 				<Col order={1} style={{ paddingRight: "1rem" }} flex={3}>
 					<Typography.Title level={2}>{pageData.name}</Typography.Title>
 
 					<DetailRowString value={pageData.function?.datavalue.value} />
+
+					{isNarrow && renderImage(pageData.hasImage, isNarrow)}
 
 					<a
 						href={pageData.repo?.datavalue.value}
@@ -90,12 +92,14 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 						</Button>
 					</a>
 
+					<DetailRowDownload repoUrl={pageData.repo?.datavalue.value} />
+
 					<DetailRowString
 						title="Version"
 						value={pageData.version?.datavalue.value}
 					/>
 
-					<DetailRowString
+					<DetailRowUrl
 						title="License"
 						value={pageData.spdxLicense?.datavalue.value}
 					/>
@@ -107,7 +111,6 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 						title="Organisation"
 						value={pageData.organisation?.datavalue.value}
 					/>
-					<DetailRowDownload repoUrl={pageData.repo?.datavalue.value} />
 					<DetailRowLinkedFiles data={pageData} />
 
 					<DetailRowReadinessLevel
