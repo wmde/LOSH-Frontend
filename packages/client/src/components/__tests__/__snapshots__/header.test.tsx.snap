@@ -13,9 +13,9 @@ exports[`Header renders correctly 1`] = `
     justify="space-between"
   >
     <Col>
-      <mockConstructor
+      <a
         className="logo"
-        to="/"
+        href="/"
       >
         <SvgComponent />
         <div
@@ -29,7 +29,7 @@ exports[`Header renders correctly 1`] = `
             Open Source Hardware
           </span>
         </div>
-      </mockConstructor>
+      </a>
     </Col>
     <Col
       className="menu-col"
