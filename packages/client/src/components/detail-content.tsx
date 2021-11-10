@@ -1,7 +1,6 @@
 import ArrowRightOutlined from "@ant-design/icons/lib/icons/ArrowRightOutlined";
 import LeftOutlined from "@ant-design/icons/lib/icons/LeftOutlined";
 import { Button, Col, Row, Typography } from "antd";
-import { Link } from "gatsby";
 import React from "react";
 import { DataValueItem } from "../types";
 import DetailRowDownload from "./detail-rows/detail-row-download";
@@ -51,13 +50,12 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 			<SEO title={pageData.name} />
 			<Row>
 				<Col>
-					<Link to={"/"}>
-						<Button
-							id="back"
-							icon={<LeftOutlined />}
-							style={{ marginRight: "1rem" }}
-						>{`Back`}</Button>
-					</Link>
+					<Button
+						onClick={() => window.history.back()}
+						id="back"
+						icon={<LeftOutlined />}
+						style={{ marginRight: "1rem" }}
+					>{`Back`}</Button>
 				</Col>
 				<Col>
 					<Typography.Title level={3} style={{ margin: 0 }}>
