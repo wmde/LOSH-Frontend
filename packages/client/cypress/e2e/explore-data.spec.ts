@@ -46,6 +46,7 @@ describe("explore data page tests", () => {
 		});
 	});
 
+	// TODO: Flaky test in pipeline
 	// it("checks if table data changes with page", () => {
 	// 	cy.get(".ant-table", { timeout: 10000 })
 	// 		.should("be.visible")
