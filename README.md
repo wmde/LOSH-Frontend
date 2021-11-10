@@ -22,13 +22,13 @@ The LOSH frontend is a monorepo comprising of a client and server package. The c
 
 # Table of Contents
 
-1. [Developing](#developing)
-2. [Building](#build)
-3. [Testing](#testing)
+1. [Develop](#develop)
+2. [Build](#build)
+3. [Test](#test)
 4. [Deploy](#deploy)
 5. [Style Guide](#style-guide)
 
-## Developing
+## Develop
 
 ### Get Access
 
@@ -97,6 +97,13 @@ Run all client tests using Jest
 
 Run `yarn client test:e2e` to run the e2e tests with Cypress locally.
 Or use `yarn client test:e2e:ci` to run them in a pipeline or in a headless browser locally.
+
+
+## Deploy
+
+After [Building](#build) the packages, the client bundle in `packages/client/public` can be hosted on any HTTP server (Apache, Nginx, Amazon S3, etc.)
+
+The server bundle found in `packages/server/dist` should be hosted on a node server and started using `node server.js`
 
 ## Style Guide
 
