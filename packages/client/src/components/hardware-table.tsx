@@ -22,6 +22,7 @@ const columns: ColumnsType<HardwareData> = [
 		key: Properties.VERSION,
 		dataIndex: Properties.VERSION,
 		render: (v, record) => record.version?.datavalue.value,
+		responsive: ["sm"],
 	},
 	{
 		title: "License",
@@ -32,6 +33,7 @@ const columns: ColumnsType<HardwareData> = [
 				"https://spdx.org/licenses/",
 				""
 			),
+		responsive: ["md"],
 	},
 	{
 		title: "Repo",
@@ -52,12 +54,14 @@ const columns: ColumnsType<HardwareData> = [
 						.replace("www.", "")}
 				</a>
 			),
+		responsive: ["sm"],
 	},
 	{
 		title: "Organisation",
 		key: Properties.ORGANISATION,
 		dataIndex: Properties.ORGANISATION,
 		render: (v, record) => record.organisation?.datavalue.value,
+		responsive: ["md"],
 	},
 ];
 
