@@ -54,11 +54,11 @@ exports[`Layout renders correctly 1`] = `
       Array [
         Object {
           "title": "Imprint",
-          "to": "https://opennext.eu/",
+          "to": "https://dsi.informationssicherheit.fraunhofer.de/en/impressum/losh.opennext.eu/full",
         },
         Object {
-          "title": "Legal Disclaimer",
-          "to": "https://opennext.eu/",
+          "title": "Data Protection Policy",
+          "to": "https://dsi.informationssicherheit.fraunhofer.de/en/dsi/losh.opennext.eu/full",
         },
         Object {
           "title": "Submit an issue",

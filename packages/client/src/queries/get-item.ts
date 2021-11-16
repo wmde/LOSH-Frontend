@@ -61,7 +61,10 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						originalURL {
+						identifier {
+							...DataValue
+						}
+						originalUrl {
 							...DataValue
 						}
 					}
@@ -74,7 +77,10 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						originalURL {
+						identifier {
+							...DataValue
+						}
+						originalUrl {
 							...DataValue
 						}
 					}
@@ -90,7 +96,10 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						originalURL {
+						identifier {
+							...DataValue
+						}
+						originalUrl {
 							...DataValue
 						}
 					}
@@ -109,6 +118,9 @@ export const GET_ITEM = gql`
 						fileURL {
 							...DataValue
 						}
+						originalUrl {
+							...DataValue
+						}
 					}
 				}
 			}
@@ -122,7 +134,10 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						originalURL {
+						identifier {
+							...DataValue
+						}
+						originalUrl {
 							...DataValue
 						}
 					}
@@ -135,7 +150,7 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						originalURL {
+						originalUrl {
 							...DataValue
 						}
 					}

@@ -24,7 +24,7 @@ export enum Properties {
 	REPO = "repo",
 	FUNCTION = "function",
 	PERMALINK = "permaURL",
-	ORIGINAL_URL = "originalURL",
+	ORIGINAL_URL = "originalUrl",
 	HAS_README = "hasReadme",
 	HAS_MANUFACTURING_INSTRUCTIONS = "hasManufacturingInstructions",
 	HAS_BOM = "hasBoM",

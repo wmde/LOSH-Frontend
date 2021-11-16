@@ -23,13 +23,20 @@ const renderImage = (
 	property: DataValueItem | undefined,
 	isNarrow: boolean
 ) => {
-	if (!property || !property.datavalue.result?.fileURL) {
+	if (!property) {
+		return;
+	}
+
+	const { result } = property.datavalue;
+	const url = result.fileURL || result.originalUrl;
+
+	if (!url) {
 		return;
 	}
 
 	return (
 		<img
-			src={property.datavalue.result.fileURL.datavalue.value}
+			src={url.datavalue.value}
 			width={"100%"}
 			style={{
 				marginBottom: "1rem",

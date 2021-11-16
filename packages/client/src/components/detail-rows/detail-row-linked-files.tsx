@@ -10,32 +10,43 @@ const generateLinkedFiles = (data: HardwareData) => {
 	const relatedUrls = [];
 
 	if (data.hasReadme) {
+		const url =
+			data.hasReadme.datavalue.result.originalUrl ||
+			data.hasReadme.datavalue.result.identifier;
 		relatedUrls.push({
 			title: data.hasReadme.datavalue.result.name,
-			value: data.hasReadme.datavalue.result.identifier?.datavalue.value,
+			value: url?.datavalue.value,
 		});
 	}
 
 	if (data.hasUserManual) {
+		const url =
+			data.hasUserManual.datavalue.result.originalUrl ||
+			data.hasUserManual.datavalue.result.identifier;
 		relatedUrls.push({
 			title: data.hasUserManual.datavalue.result.name,
-			value: data.hasUserManual.datavalue.result.identifier?.datavalue.value,
+			value: url?.datavalue.value,
 		});
 	}
 
 	if (data.hasManufacturingInstructions) {
+		const url =
+			data.hasManufacturingInstructions.datavalue.result.originalUrl ||
+			data.hasManufacturingInstructions.datavalue.result.identifier;
 		relatedUrls.push({
 			title: data.hasManufacturingInstructions.datavalue.result.name,
-			value:
-				data.hasManufacturingInstructions.datavalue.result.identifier?.datavalue
-					.value,
+			value: url?.datavalue.value,
 		});
 	}
 
 	if (data.hasManifestFile) {
+		const url =
+			data.hasManifestFile.datavalue.result.originalUrl ||
+			data.hasManifestFile.datavalue.result.identifier;
+
 		relatedUrls.push({
 			title: data.hasManifestFile.datavalue.result.name,
-			value: data.hasManifestFile.datavalue.result.identifier?.datavalue.value,
+			value: url?.datavalue.value,
 		});
 	}
 

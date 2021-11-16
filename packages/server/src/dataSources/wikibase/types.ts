@@ -122,7 +122,7 @@ export interface HardwareData {
   material?: DataValue;
   okhv?: DataValue;
   organisation?: DataValueString;
-  originalURL?: DataValue;
+  originalUrl?: DataValue;
   outerDimensionsMM?: DataValueString;
   permaURL?: DataValue;
   relatedTsDC?: DataValueURL;

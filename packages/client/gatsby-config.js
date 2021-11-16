@@ -28,12 +28,12 @@ module.exports = {
 		],
 		footerLinks: [
 			{
-				to: "https://opennext.eu/",
+				to: "https://dsi.informationssicherheit.fraunhofer.de/en/impressum/losh.opennext.eu/full",
 				title: "Imprint",
 			},
 			{
-				to: "https://opennext.eu/",
-				title: "Legal Disclaimer",
+				to: "https://dsi.informationssicherheit.fraunhofer.de/en/dsi/losh.opennext.eu/full",
+				title: "Data Protection Policy",
 			},
 			{
 				to: "https://github.com/wmde/LOSH-Frontend/issues/new/choose",

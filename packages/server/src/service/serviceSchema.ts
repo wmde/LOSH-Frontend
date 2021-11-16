@@ -62,7 +62,7 @@ export const ServiceTypeDefs = gql`
     repo: ItemResponseValue
     function: ItemResponseValue
     permaURL: ItemResponseValue
-    originalURL: ItemResponseValue
+    originalUrl: ItemResponseValue
     hasReadme: ItemResponseValue
     hasManufacturingInstructions: ItemResponseValue
     hasBoM: ItemResponseValue
