@@ -29,15 +29,15 @@ const menu = (
 
 const licenses = [
 	{
-		name: "Weak",
-		value: "weak",
-	},
-	{
-		name: "Strong",
+		name: "Strong Copyleft",
 		value: "strong",
 	},
 	{
-		name: "Non Copyleft",
+		name: "Weak Copyleft",
+		value: "weak",
+	},
+	{
+		name: "Permissive",
 		value: "non",
 	},
 ];

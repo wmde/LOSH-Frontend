@@ -12,19 +12,19 @@ exports[`Filter renders correctly 1`] = `
           icon={false}
           onClick={[Function]}
         >
-          Weak
+          Strong Copyleft
         </Unknown>
         <Unknown
           icon={false}
           onClick={[Function]}
         >
-          Strong
+          Weak Copyleft
         </Unknown>
         <Unknown
           icon={false}
           onClick={[Function]}
         >
-          Non Copyleft
+          Permissive
         </Unknown>
       </Menu>
     }
