@@ -4583,7 +4583,7 @@
 		"data": {
 			"getItem": {
 				"id": "Q438",
-				"name": "OHLOOM(stub)",
+				"name": "OHLOOM",
 				"identifier": {
 					"datavalue": {
 						"type": "string",
@@ -4696,14 +4696,15 @@
 						"result": {
 							"id": "Q430",
 							"name": "Readme of OHLOOM v1.0.0",
-							"originalURL": {
+							"identifier": {
 								"datavalue": {
 									"type": "string",
-									"value": "https://gitlab.com/OSEGermany/ohloom/-/raw/master/README.md",
+									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#Readme",
 									"__typename": "DataValue"
 								},
 								"__typename": "ItemResponseValue"
 							},
+							"originalUrl": null,
 							"__typename": "ItemResponse"
 						},
 						"__typename": "DataValue"
@@ -4717,7 +4718,15 @@
 						"result": {
 							"id": "Q418",
 							"name": "Manufacturing Instructions of OHLOOM v1.0.0",
-							"originalURL": null,
+							"identifier": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#ManufacturingInstructions",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"originalUrl": null,
 							"__typename": "ItemResponse"
 						},
 						"__typename": "DataValue"
@@ -4739,7 +4748,15 @@
 						"result": {
 							"id": "Q436",
 							"name": "User Manual of OHLOOM v1.0.0",
-							"originalURL": null,
+							"identifier": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#UserManual",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"originalUrl": null,
 							"__typename": "ItemResponse"
 						},
 						"__typename": "DataValue"
@@ -4758,6 +4775,20 @@
 					"datavalue": {
 						"type": "wikibase-entityid",
 						"value": "Q435",
+						"result": {
+							"id": "Q435",
+							"name": "Image of OHLOOM v1.0.0",
+							"fileURL": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/-/raw/834222370f34ad2a07d0e41d09eb54378573b8c3/Documentation/User_Guide/User_Guide.jpg",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"originalUrl": null,
+							"__typename": "ItemResponse"
+						},
 						"__typename": "DataValue"
 					},
 					"__typename": "ItemResponseValue"
@@ -4777,7 +4808,15 @@
 						"result": {
 							"id": "Q415",
 							"name": "Manifest File of OHLOOM v1.0.0",
-							"originalURL": null,
+							"identifier": {
+								"datavalue": {
+									"type": "string",
+									"value": "https://gitlab.com/OSEGermany/ohloom/1.0.0#ManifestFile",
+									"__typename": "DataValue"
+								},
+								"__typename": "ItemResponseValue"
+							},
+							"originalUrl": null,
 							"__typename": "ItemResponse"
 						},
 						"__typename": "DataValue"
@@ -4791,7 +4830,7 @@
 						"result": {
 							"id": "Q437",
 							"name": "Clamp Ring of OHLOOM v1.0.0",
-							"originalURL": null,
+							"originalUrl": null,
 							"__typename": "ItemResponse"
 						},
 						"__typename": "DataValue"
