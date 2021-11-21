@@ -31,3 +31,24 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
+.hardware-table__footer {
+	display: flex;
+	margin-top: 1rem;
+	font-family: "Source Code Pro", monospace, "Courier New";
+}
+
+.ant-pagination {
+	margin-right: 1rem;
+}
+
+.ant-pagination li button.ant-pagination-item-link,
+.ant-pagination li a {
+	background-color: white;
+}
+
+.ant-pagination
+	.ant-select:not(.ant-select-customize-input)
+	.ant-select-selector {
+	background-color: white;
+}

@@ -1,14 +1,16 @@
-import { Table } from "antd";
+import { Button, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import React from "react";
 import { useContext } from "react";
 import { DEFAULT_PAGE_SIZE, QueryContext } from "../context/query-context";
 import { PaginationProps } from "antd/lib/pagination/Pagination";
-import { TablePaginationConfig } from "antd/lib/table/interface";
 import { HardwareData } from "../types";
 import { Properties } from "../constants";
 import { Link } from "gatsby";
 import "./hardware-table.css";
+import DownloadOutlined from "@ant-design/icons/lib/icons/DownloadOutlined";
+import { Pagination } from "antd";
+import Papa from "papaparse";
 
 const columns: ColumnsType<HardwareData> = [
 	{
@@ -81,36 +83,73 @@ const HardwareTable = (): JSX.Element => {
 		total: totalHits,
 	};
 
-	const handleChange = (pagination: TablePaginationConfig) => {
-		if (currentPage !== pagination.current)
-			handlePageChange(pagination.current || 1);
-		if (pageSize !== pagination.pageSize)
-			handlePageSizeChange(pagination.pageSize || DEFAULT_PAGE_SIZE);
+	const handleChange = (page: number, pageSize?: number) => {
+		if (currentPage !== page) handlePageChange(page || 1);
+		if (pageSize !== pageSize)
+			handlePageSizeChange(pageSize || DEFAULT_PAGE_SIZE);
+	};
+
+	const downloadResultsAsCSV = () => {
+		const results = items.map((result) => ({
+			Name: result.name,
+			ID: result.id,
+			Version: result.version?.datavalue.value,
+			License: result.spdxLicense?.datavalue.value,
+			Repo: result.repo?.datavalue.value,
+			Organisation: result.organisation?.datavalue.value,
+		}));
+		const csv = Papa.unparse(results);
+		const csvData = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+		let csvURL = null;
+		// For IE support
+		if ((navigator as any).msSaveBlob) {
+			csvURL = (navigator as any).msSaveBlob(csvData, "download.csv");
+		} else {
+			csvURL = window.URL.createObjectURL(csvData);
+		}
+		const tempLink = document.createElement("a");
+		tempLink.href = csvURL as string;
+		tempLink.setAttribute(
+			"download",
+			`LOSHExploreData-${new Date().getTime()}.csv`
+		);
+		tempLink.click();
 	};
 
 	return (
-		<Table<HardwareData>
-			columns={columns}
-			dataSource={items}
-			size="middle"
-			style={{ overflowX: "scroll" }}
-			pagination={{ position: ["bottomLeft"], ...paginationState }}
-			components={{
-				body: {
-					row: (props: any) => {
-						return (
-							<Link
-								{...props}
-								className="table-row"
-								to={`/detail/${props["data-row-key"]}`}
-							/>
-						);
+		<>
+			<Table<HardwareData>
+				columns={columns}
+				dataSource={items}
+				size="middle"
+				pagination={false}
+				style={{ overflowX: "scroll" }}
+				components={{
+					body: {
+						row: (props: any) => {
+							return (
+								<Link
+									{...props}
+									className="table-row"
+									to={`/detail/${props["data-row-key"]}`}
+								/>
+							);
+						},
 					},
-				},
-			}}
-			rowKey={(r: HardwareData): string => r.id}
-			onChange={handleChange}
-		/>
+				}}
+				rowKey={(r: HardwareData): string => r.id}
+			/>
+			<div className="hardware-table__footer">
+				<Pagination onChange={handleChange} {...paginationState}></Pagination>
+				<Button
+					icon={<DownloadOutlined />}
+					onClick={downloadResultsAsCSV}
+					id="download-results-csv"
+				>
+					Download Results
+				</Button>
+			</div>
+		</>
 	);
 };
 
