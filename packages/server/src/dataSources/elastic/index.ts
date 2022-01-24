@@ -63,7 +63,7 @@ class ElasticDataSource extends DataSource {
     return {
       bool: {
         must: [
-          search && { match: { text: { query: search, fuzziness: "AUTO" } } },
+          search && this.generateCombinedTermSearch(search),
           {
             match: {
               statement_keywords:
@@ -79,6 +79,39 @@ class ElasticDataSource extends DataSource {
       },
     };
   };
+
+  private generateCombinedTermSearch(searchTerm: string) {
+    return {
+      bool: {
+        should: [
+          this.generateEntityTermsSearch(searchTerm),
+          this.generateFunctionalDescriptionValueSearch(searchTerm),
+        ],
+        minimum_should_match: 1,
+      },
+    };
+  }
+
+  private generateEntityTermsSearch(searchTerm: string) {
+    return { match: { text: { query: searchTerm, fuzziness: "AUTO" } } };
+  }
+
+  private generateFunctionalDescriptionValueSearch(searchTerm: string) {
+    // Escaping special chars per https://discuss.elastic.co/t/how-to-properly-escape-special-characters/6793
+    const escapedSearchTerm = searchTerm
+      .replace(/([!*+&|()[\]{}^~?:"/])/g, "\\$1")
+      .replace(/ /g, "\\ "); // also escape spaces to treat terms as a unit for this search
+
+    return {
+      query_string: {
+        query: `P109=*${escapedSearchTerm}*`,
+        fields: ["statement_keywords"],
+        // Ideally this functional description value should be indexed separately in Elasticsearch so that it can be
+        // queried more efficiently as mentioned in the description of #79.
+        analyze_wildcard: true,
+      },
+    };
+  }
 }
 
 export default ElasticDataSource;
