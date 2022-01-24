@@ -5,21 +5,14 @@ import compression from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import { schema } from "./schema";
-import env from "dotenv";
 import ElasticDataSource from "./dataSources/elastic";
 import WikibaseDataSource from "./dataSources/wikibase";
+import { ELASTIC_API_URL, PORT, WIKIBASE_API_URL } from "./config";
 
-env.config();
-
-const PORT = process.env.PORT || 3000;
 const app = express();
 app.use("*", (cors as any)());
 app.use(helmet());
 app.use(compression());
-
-const ELASTIC_API_URL = process.env.ELASTIC_API_URL || "http://localhost:9200";
-const WIKIBASE_API_URL =
-  process.env.WIKIBASE_API_URL || "https://losh.ose-germany.de";
 
 const dataSources = {
   elasticAPI: new ElasticDataSource(ELASTIC_API_URL),

@@ -3,6 +3,12 @@ import { LICENSES } from "../../constants";
 import { SearchItemsArgs, LicenseValue } from "../../types";
 import { ElasticSearchItemsResponse } from "./types";
 import { DataSource } from "apollo-datasource";
+import {
+  ELASTIC_INDEX,
+  FUNCTIONAL_DESCRIPTION_PROPERTY,
+  LICENSE_PROPERTY,
+  TYPE_PROPERTY,
+} from "../../config";
 
 class ElasticDataSource extends DataSource {
   elastic: Client;
@@ -21,7 +27,7 @@ class ElasticDataSource extends DataSource {
     const query = this.generateSearchQuery({ search, license });
 
     const { body } = await this.elastic.search({
-      index: "losh_01_content_first",
+      index: ELASTIC_INDEX,
       body: {
         from: (page - 1) * pageSize,
         size: pageSize,
@@ -43,7 +49,7 @@ class ElasticDataSource extends DataSource {
     }
 
     const values = LICENSES[license].map(
-      (l) => `P1452=https://spdx.org/licenses/${l}`
+      (l) => `${LICENSE_PROPERTY}=https://spdx.org/licenses/${l}`
     );
 
     return values.map((v) => ({
@@ -66,8 +72,7 @@ class ElasticDataSource extends DataSource {
           search && this.generateCombinedTermSearch(search),
           {
             match: {
-              statement_keywords:
-                "P1426=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module",
+              statement_keywords: `${TYPE_PROPERTY}=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module`,
             },
           },
           {
@@ -104,7 +109,7 @@ class ElasticDataSource extends DataSource {
 
     return {
       query_string: {
-        query: `P109=*${escapedSearchTerm}*`,
+        query: `${FUNCTIONAL_DESCRIPTION_PROPERTY}=*${escapedSearchTerm}*`,
         fields: ["statement_keywords"],
         // Ideally this functional description value should be indexed separately in Elasticsearch so that it can be
         // queried more efficiently as mentioned in the description of #79.
