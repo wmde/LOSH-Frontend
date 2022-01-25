@@ -35,6 +35,14 @@ const ServiceResolvers = {
         throw new ApolloError(error as any);
       }
     },
+
+    async organizations(
+      _: never,
+      _args: never,
+      { dataSources }: { dataSources: DataSources }
+    ): Promise<{ name: string }[]> {
+      return dataSources.queryService.getOrganizations();
+    },
   },
 };
 

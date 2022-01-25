@@ -33,6 +33,10 @@ export const ServiceTypeDefs = gql`
       license: String
     ): SearchResponse
     getItem(id: String): ItemResponse
+    organizations: [Organization]
+  }
+  type Organization {
+    name: String
   }
   type ItemResponse {
     id: String
