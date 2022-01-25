@@ -1,5 +1,6 @@
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
+import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { createServer } from "http";
 import compression from "compression";
 import cors from "cors";
@@ -30,6 +31,7 @@ const startServer = async () => {
   const server = new ApolloServer({
     schema,
     dataSources: () => dataSources,
+    plugins: [responseCachePlugin()],
   });
 
   await server.start();
