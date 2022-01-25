@@ -39,5 +39,18 @@ exports[`Filter renders correctly 1`] = `
       <DownOutlined />
     </Button>
   </Dropdown>
+  <Dropdown
+    overlay={<Menu />}
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button>
+      Organization 
+      <DownOutlined />
+    </Button>
+  </Dropdown>
 </Space>
 `;

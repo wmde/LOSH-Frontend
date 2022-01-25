@@ -2,6 +2,8 @@ import * as React from "react";
 import { Menu, Dropdown, Button, Space } from "antd";
 import { DownOutlined, CheckOutlined } from "@ant-design/icons";
 import "./filter.css";
+import { GET_ORGANIZATIONS } from "../queries/get-organizations";
+import { useQuery } from "@apollo/client";
 
 type MenuItems = Array<{
 	name: string;
@@ -75,6 +77,14 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 		onFilterChange(name, item.value);
 	};
 
+	const orgsQuery = useQuery(GET_ORGANIZATIONS);
+	const organizations =
+		orgsQuery.data &&
+		orgsQuery.data.organizations.map(({ name }: { name: string }) => ({
+			name,
+			value: name,
+		}));
+
 	return (
 		<Space wrap className="filter">
 			<Dropdown
@@ -83,6 +93,19 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			>
 				<Button>
 					License <DownOutlined />
+				</Button>
+			</Dropdown>
+			<Dropdown
+				overlay={menu(
+					orgsQuery.loading || orgsQuery.error ? [] : organizations,
+					handleClickItem,
+					"organization",
+					filters.organization
+				)}
+				trigger={["click"]}
+			>
+				<Button>
+					Organization <DownOutlined />
 				</Button>
 			</Dropdown>
 			{/* <Dropdown
