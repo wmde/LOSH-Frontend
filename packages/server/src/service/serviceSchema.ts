@@ -35,7 +35,7 @@ export const ServiceTypeDefs = gql`
     getItem(id: String): ItemResponse
     organizations: [Organization]
   }
-  type Organization {
+  type Organization @cacheControl(maxAge: 60) {
     name: String
   }
   type ItemResponse {
@@ -97,4 +97,15 @@ export const ServiceTypeDefs = gql`
     datatype: String
     datavalue: DataValue
   }
+
+  enum CacheControlScope {
+    PUBLIC
+    PRIVATE
+  }
+
+  directive @cacheControl(
+    maxAge: Int
+    scope: CacheControlScope
+    inheritMaxAge: Boolean
+  ) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
 `;
