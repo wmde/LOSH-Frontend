@@ -51,11 +51,12 @@ class ElasticDataSource extends DataSource {
 
     return {
       bool: {
-        should: LICENSES[license].map((l) => ({
-          match: {
-            statement_keywords: `${LICENSE_PROPERTY}=https://spdx.org/licenses/${l}`,
-          },
-        })),
+        should: LICENSES[license].map((l) =>
+          this.generateExactPropertyValueMatchQuery(
+            LICENSE_PROPERTY,
+            `https://spdx.org/licenses/${l}`
+          )
+        ),
       },
     };
   };
@@ -73,13 +74,16 @@ class ElasticDataSource extends DataSource {
       bool: {
         must: [
           search && this.generateCombinedTermSearch(search),
-          {
-            match: {
-              statement_keywords: `${TYPE_PROPERTY}=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module`,
-            },
-          },
+          this.generateExactPropertyValueMatchQuery(
+            TYPE_PROPERTY,
+            "https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module"
+          ),
           license && this.generateLicenseQuery(license),
-          organization && this.generateOrganizationQuery(organization),
+          organization &&
+            this.generateExactPropertyValueMatchQuery(
+              ORGANIZATION_PROPERTY,
+              organization
+            ),
         ].filter(Boolean),
       },
     };
@@ -118,10 +122,13 @@ class ElasticDataSource extends DataSource {
     };
   }
 
-  private generateOrganizationQuery(organization: string) {
+  private generateExactPropertyValueMatchQuery(
+    propertyId: string,
+    value: string
+  ) {
     return {
       match: {
-        statement_keywords: `${ORGANIZATION_PROPERTY}=${organization}`,
+        statement_keywords: `${propertyId}=${value}`,
       },
     };
   }
