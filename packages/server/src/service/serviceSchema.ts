@@ -35,9 +35,13 @@ export const ServiceTypeDefs = gql`
     ): SearchResponse
     getItem(id: String): ItemResponse
     organizations: [Organization]
+    repos: [Repo]
   }
   type Organization @cacheControl(maxAge: 60) {
     name: String
+  }
+  type Repo @cacheControl(maxAge: 60) {
+    host: String
   }
   type ItemResponse {
     id: String

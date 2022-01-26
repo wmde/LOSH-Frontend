@@ -1,5 +1,6 @@
 import { DataSource } from "apollo-datasource";
 import {
+  REPO_HOST_PROPERTY,
   ORGANIZATION_PROPERTY,
   SPARQL_PROPERTY_URI_PREFIX,
 } from "../../config";
@@ -20,6 +21,14 @@ export class QueryServiceDataSource extends DataSource {
     );
 
     return values.map((v) => ({ name: v }));
+  }
+
+  async getRepos(): Promise<{ host: string }[]> {
+    const values = await this.getValuesOfStatementsWithProperty(
+      REPO_HOST_PROPERTY
+    );
+
+    return values.map((v) => ({ host: v }));
   }
 
   private async getValuesOfStatementsWithProperty(
