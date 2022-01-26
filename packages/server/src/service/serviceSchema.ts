@@ -31,6 +31,7 @@ export const ServiceTypeDefs = gql`
       page: Int
       pageSize: Int
       license: String
+      organization: String
     ): SearchResponse
     getItem(id: String): ItemResponse
     organizations: [Organization]

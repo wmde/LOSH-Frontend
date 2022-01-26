@@ -1,6 +1,7 @@
 export interface SearchItemsArgs {
   query: string;
   license: LicenseValue;
+  organization: string;
   page: number;
   pageSize: number;
 }

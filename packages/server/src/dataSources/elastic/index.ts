@@ -7,6 +7,7 @@ import {
   ELASTIC_INDEX,
   FUNCTIONAL_DESCRIPTION_PROPERTY,
   LICENSE_PROPERTY,
+  ORGANIZATION_PROPERTY,
   TYPE_PROPERTY,
 } from "../../config";
 
@@ -21,11 +22,11 @@ class ElasticDataSource extends DataSource {
   public async searchItems({
     query: search,
     license,
+    organization,
     page,
     pageSize,
   }: SearchItemsArgs): Promise<ElasticSearchItemsResponse> {
-    const query = this.generateSearchQuery({ search, license });
-
+    const query = this.generateSearchQuery({ search, license, organization });
     const { body } = await this.elastic.search({
       index: ELASTIC_INDEX,
       body: {
@@ -48,23 +49,25 @@ class ElasticDataSource extends DataSource {
       return [];
     }
 
-    const values = LICENSES[license].map(
-      (l) => `${LICENSE_PROPERTY}=https://spdx.org/licenses/${l}`
-    );
-
-    return values.map((v) => ({
-      match: {
-        statement_keywords: v,
+    return {
+      bool: {
+        should: LICENSES[license].map((l) => ({
+          match: {
+            statement_keywords: `${LICENSE_PROPERTY}=https://spdx.org/licenses/${l}`,
+          },
+        })),
       },
-    }));
+    };
   };
 
   private generateSearchQuery = ({
     search,
     license,
+    organization,
   }: {
     search: string;
     license: LicenseValue;
+    organization: string;
   }) => {
     return {
       bool: {
@@ -75,11 +78,8 @@ class ElasticDataSource extends DataSource {
               statement_keywords: `${TYPE_PROPERTY}=https://github.com/OPEN-NEXT/OKH-LOSH/raw/master/OKH-LOSH.ttl#Module`,
             },
           },
-          {
-            bool: {
-              should: this.generateLicenseQuery(license),
-            },
-          },
+          license && this.generateLicenseQuery(license),
+          organization && this.generateOrganizationQuery(organization),
         ].filter(Boolean),
       },
     };
@@ -114,6 +114,14 @@ class ElasticDataSource extends DataSource {
         // Ideally this functional description value should be indexed separately in Elasticsearch so that it can be
         // queried more efficiently as mentioned in the description of #79.
         analyze_wildcard: true,
+      },
+    };
+  }
+
+  private generateOrganizationQuery(organization: string) {
+    return {
+      match: {
+        statement_keywords: `${ORGANIZATION_PROPERTY}=${organization}`,
       },
     };
   }
