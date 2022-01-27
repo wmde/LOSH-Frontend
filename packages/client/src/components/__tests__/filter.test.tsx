@@ -24,6 +24,19 @@ jest.mock("@ant-design/icons", () => {
 		CheckOutlined: (): null => null,
 	};
 });
+jest.mock("@apollo/client", () => {
+	// This should ideally just use Apollo's MockedProvider:
+	// https://www.apollographql.com/docs/react/development-testing/testing/
+	// Couldn't get it to work with Snapshots though.
+	return {
+		useQuery: () => ({
+			data: {
+				organizations: [],
+			},
+		}),
+		gql: (): null => null,
+	};
+});
 
 describe("Filter", () => {
 	it("renders correctly", () => {
