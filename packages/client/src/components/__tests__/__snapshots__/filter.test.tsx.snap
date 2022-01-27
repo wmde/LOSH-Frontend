@@ -12,6 +12,12 @@ exports[`Filter renders correctly 1`] = `
           icon={false}
           onClick={[Function]}
         >
+          Any license
+        </Unknown>
+        <Unknown
+          icon={false}
+          onClick={[Function]}
+        >
           Strong Copyleft
         </Unknown>
         <Unknown
@@ -53,6 +59,7 @@ exports[`Filter renders correctly 1`] = `
     </Button>
   </Dropdown>
   <Select
+    defaultValue="-1"
     filterOption={[Function]}
     onChange={[Function]}
     optionFilterProp="children"
@@ -63,6 +70,12 @@ exports[`Filter renders correctly 1`] = `
         "width": 240,
       }
     }
-  />
+  >
+    <Unknown
+      value="-1"
+    >
+      Any organization
+    </Unknown>
+  </Select>
 </Space>
 `;

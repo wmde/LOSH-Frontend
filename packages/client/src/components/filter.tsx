@@ -31,7 +31,13 @@ const menu = (
 	</Menu>
 );
 
+export const RESET_FILTER = "-1";
+
 const licenses = [
+	{
+		name: "Any license",
+		value: RESET_FILTER,
+	},
 	{
 		name: "Strong Copyleft",
 		value: "strong",
@@ -91,6 +97,9 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			name: host,
 			value: host,
 		}));
+	if (repoHosts && repoHosts.length) {
+		repoHosts.unshift({ name: "Any repo host", value: RESET_FILTER });
+	}
 
 	return (
 		<Space wrap className="filter">
@@ -116,6 +125,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 				</Button>
 			</Dropdown>
 			<Select
+				defaultValue={RESET_FILTER}
 				style={{ width: 240 }}
 				showSearch
 				placeholder="Organization"
@@ -125,6 +135,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 				}
 			>
+				<Option value={RESET_FILTER}>Any organization</Option>
 				{(organizations || []).map((org: string) => (
 					<Option key={org} value={org}>
 						{org}

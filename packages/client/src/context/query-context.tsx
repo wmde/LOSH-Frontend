@@ -7,6 +7,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useLazyQuery } from "@apollo/client";
 import { GET_ITEMS } from "../queries/get-items";
+import { RESET_FILTER } from "../components/filter";
 interface QueryContextState {
 	search: string;
 	items: HardwareData[];
@@ -101,6 +102,10 @@ export const QueryProvider: React.FC = ({ children }) => {
 	const handleFilterChange = (name: string, value: any) => {
 		const newFilters = { ...filters };
 		newFilters[name] = filters[name] === value ? "" : value;
+
+		if (value === RESET_FILTER) {
+			delete newFilters[name];
+		}
 		setFilters(newFilters);
 		setPage(1);
 		const params = generateSearchParams(search, 1, pageSize, newFilters);
