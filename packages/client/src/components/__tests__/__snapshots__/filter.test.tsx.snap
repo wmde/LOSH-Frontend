@@ -39,18 +39,17 @@ exports[`Filter renders correctly 1`] = `
       <DownOutlined />
     </Button>
   </Dropdown>
-  <Dropdown
-    overlay={<Menu />}
-    trigger={
-      Array [
-        "click",
-      ]
+  <Select
+    filterOption={[Function]}
+    onChange={[Function]}
+    optionFilterProp="children"
+    placeholder="Organization"
+    showSearch={true}
+    style={
+      Object {
+        "width": 240,
+      }
     }
-  >
-    <Button>
-      Organization 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
+  />
 </Space>
 `;

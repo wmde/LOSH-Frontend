@@ -6,3 +6,7 @@
 	color: black;
 	border-color: black;
 }
+
+.filter .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+	background-color: #fff; /* for some reason it's a weird grey by default */
+}

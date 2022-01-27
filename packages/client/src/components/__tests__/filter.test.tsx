@@ -15,6 +15,7 @@ jest.mock("antd", () => {
 		Typography: {
 			Text: (): null => null,
 		},
+		Select: (): null => null,
 	};
 });
 jest.mock("@ant-design/icons", () => {
