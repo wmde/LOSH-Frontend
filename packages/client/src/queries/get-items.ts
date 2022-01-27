@@ -8,12 +8,19 @@ export const GET_ITEMS = gql`
 		}
 	}
 
-	query ($query: String, $page: Int, $pageSize: Int, $licenseFilter: String) {
+	query (
+		$query: String
+		$page: Int
+		$pageSize: Int
+		$licenseFilter: String
+		$organizationFilter: String
+	) {
 		searchItems(
 			query: $query
 			page: $page
 			pageSize: $pageSize
 			license: $licenseFilter
+			organization: $organizationFilter
 		) {
 			total
 			items {
