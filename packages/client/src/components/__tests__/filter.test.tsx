@@ -33,6 +33,7 @@ jest.mock("@apollo/client", () => {
 		useQuery: () => ({
 			data: {
 				organizations: [],
+				repos: [],
 			},
 		}),
 		gql: (): null => null,

@@ -4,6 +4,7 @@ import { DownOutlined, CheckOutlined } from "@ant-design/icons";
 import "./filter.css";
 import { GET_ORGANIZATIONS } from "../queries/get-organizations";
 import { useQuery } from "@apollo/client";
+import { GET_REPOS } from "../queries/get-repos";
 const { Option } = Select;
 
 type MenuItems = Array<{
@@ -83,6 +84,14 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 		orgsQuery.data &&
 		orgsQuery.data.organizations.map(({ name }: { name: string }) => name);
 
+	const reposQuery = useQuery(GET_REPOS);
+	const repoHosts =
+		reposQuery.data &&
+		reposQuery.data.repos.map(({ host }: { host: string }) => ({
+			name: host,
+			value: host,
+		}));
+
 	return (
 		<Space wrap className="filter">
 			<Dropdown
@@ -91,6 +100,19 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			>
 				<Button>
 					License <DownOutlined />
+				</Button>
+			</Dropdown>
+			<Dropdown
+				overlay={menu(
+					reposQuery.loading || reposQuery.error ? [] : repoHosts,
+					handleClickItem,
+					"repoHost",
+					filters.repoHost
+				)}
+				trigger={["click"]}
+			>
+				<Button>
+					Repo Host <DownOutlined />
 				</Button>
 			</Dropdown>
 			<Select
