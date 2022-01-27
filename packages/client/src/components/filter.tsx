@@ -81,10 +81,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 	const orgsQuery = useQuery(GET_ORGANIZATIONS);
 	const organizations =
 		orgsQuery.data &&
-		orgsQuery.data.organizations.map(({ name }: { name: string }) => ({
-			name,
-			value: name,
-		}));
+		orgsQuery.data.organizations.map(({ name }: { name: string }) => name);
 
 	return (
 		<Space wrap className="filter">
@@ -106,9 +103,9 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 				}
 			>
-				{(organizations || []).map((org: { name: string; value: string }) => (
-					<Option key={org.value} value={org.value}>
-						{org.name}
+				{(organizations || []).map((org: string) => (
+					<Option key={org} value={org}>
+						{org}
 					</Option>
 				))}
 			</Select>
