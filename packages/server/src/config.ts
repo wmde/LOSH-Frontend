@@ -17,6 +17,8 @@ export const TYPE_PROPERTY = process.env.TYPE_PROPERTY || "P1426";
 
 export const ORGANIZATION_PROPERTY = process.env.ORGANIZATION_PROPERTY || "P49";
 
+export const REPO_HOST_PROPERTY = process.env.REPO_HOST_PROPERTY || "P112";
+
 export const PORT = process.env.PORT || 3000;
 
 export const ELASTIC_INDEX =

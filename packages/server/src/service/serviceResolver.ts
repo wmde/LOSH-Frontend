@@ -43,6 +43,14 @@ const ServiceResolvers = {
     ): Promise<{ name: string }[]> {
       return dataSources.queryService.getOrganizations();
     },
+
+    async repos(
+      _: never,
+      _args: never,
+      { dataSources }: { dataSources: DataSources }
+    ): Promise<{ host: string }[]> {
+      return dataSources.queryService.getRepos();
+    },
   },
 };
 

@@ -1,5 +1,6 @@
 import { DataSource } from "apollo-datasource";
 import {
+  REPO_HOST_PROPERTY,
   ORGANIZATION_PROPERTY,
   SPARQL_PROPERTY_URI_PREFIX,
 } from "../../config";
@@ -15,11 +16,29 @@ export class QueryServiceDataSource extends DataSource {
   }
 
   async getOrganizations(): Promise<{ name: string }[]> {
+    const values = await this.getValuesOfStatementsWithProperty(
+      ORGANIZATION_PROPERTY
+    );
+
+    return values.map((v) => ({ name: v }));
+  }
+
+  async getRepos(): Promise<{ host: string }[]> {
+    const values = await this.getValuesOfStatementsWithProperty(
+      REPO_HOST_PROPERTY
+    );
+
+    return values.map((v) => ({ host: v }));
+  }
+
+  private async getValuesOfStatementsWithProperty(
+    propertyId: string
+  ): Promise<string[]> {
     const query = `
-      SELECT DISTINCT ?org
+      SELECT DISTINCT ?result
       WHERE
       {
-        ?item <${SPARQL_PROPERTY_URI_PREFIX}${ORGANIZATION_PROPERTY}> ?org .
+        ?item <${SPARQL_PROPERTY_URI_PREFIX}${propertyId}> ?result .
       }`;
 
     const { data } = await axios.get<any>(
@@ -27,8 +46,8 @@ export class QueryServiceDataSource extends DataSource {
       { headers: { Accept: "application/sparql-results+json" } }
     );
 
-    return data.results.bindings.map(({ org }: { org: { value: string } }) => {
-      return { name: org.value };
-    });
+    return data.results.bindings.map(
+      ({ result }: { result: { value: string } }) => result.value
+    );
   }
 }
