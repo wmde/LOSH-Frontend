@@ -123,7 +123,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 
 		if (searchValue !== search) setSearch(searchValue);
 		if (pageValue !== currentPage) setPage(pageValue);
-		if (pageSizeValue !== pageSizeValue) setPageSize(pageSizeValue);
+		if (pageSizeValue !== pageSize) setPageSize(pageSizeValue);
 		if (queryParams.filters) {
 			const filtersValue = JSON.parse(queryParams.filters as string);
 			setFilters(filtersValue);
