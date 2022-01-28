@@ -21,6 +21,7 @@ export const SearchBox: React.FC = () => {
 			<Input.Search
 				id="search"
 				placeholder="input search text"
+				allowClear={true}
 				onSearch={handleSearchChange}
 				onChange={(e) => setCurrentValue(e.target.value)}
 				value={currentValue}
