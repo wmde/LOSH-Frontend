@@ -57,7 +57,7 @@ export const ServiceTypeDefs = gql`
     lastSeen: ItemResponseValue
     okhv: ItemResponseValue
     test: ItemResponseValue
-    fileURL: ItemResponseValue
+    fileUrl: ItemResponseValue
     image: ItemResponseValue
     source: ItemResponseValue
     relatedTsDC: ItemResponseValue
