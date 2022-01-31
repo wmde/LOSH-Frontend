@@ -9,7 +9,7 @@ export enum Properties {
 	LAST_SEEN = "lastSeen",
 	OKHV = "okhv",
 	TEST = "test",
-	FILE_URL = "fileURL",
+	FILE_URL = "fileUrl",
 	IMAGE = "image",
 	SOURCE = "source",
 	RELATED_TSDC = "relatedTsDC",

@@ -28,7 +28,7 @@ const renderImage = (
 	}
 
 	const { result } = property.datavalue;
-	const url = result.fileURL || result.originalUrl;
+	const url = result.fileUrl || result.originalUrl;
 
 	if (!url) {
 		return;

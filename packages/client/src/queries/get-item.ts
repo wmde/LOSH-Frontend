@@ -115,7 +115,7 @@ export const GET_ITEM = gql`
 					result {
 						id
 						name
-						fileURL {
+						fileUrl {
 							...DataValue
 						}
 						originalUrl {
