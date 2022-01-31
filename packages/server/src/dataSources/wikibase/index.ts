@@ -44,9 +44,7 @@ export default class WikibaseDataSource extends HTTPDataSource {
       .then((res: any) => this.parseData(res.data.entities[itemId]))
       .then(async (item) => {
         const promises = Object.entries(item)
-          .filter(([key, value]) => {
-            if (value.datatype === "wikibase-item") return [key, value];
-          })
+          .filter(([_, value]) => value && value.datatype === "wikibase-item")
           .map(async ([key, value]: [string, DataValueItem]) => {
             const id = value.datavalue.value;
             const itemUrl = this.wbk.getEntities([id]);
