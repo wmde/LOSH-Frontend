@@ -20,7 +20,9 @@ const generateLinkedFiles = (data: HardwareData) => {
 			data[propertyName]?.datavalue.result.identifier;
 		if (url) {
 			relatedUrls.push({
-				title: data[propertyName].datavalue.result.name,
+				title:
+					data[propertyName].datavalue.result.name ||
+					data[propertyName].datavalue.result.id,
 				value: url?.datavalue.value,
 			});
 		}
