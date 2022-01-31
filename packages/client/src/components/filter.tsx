@@ -125,7 +125,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 				</Button>
 			</Dropdown>
 			<Select
-				defaultValue={RESET_FILTER}
+				allowClear
 				style={{ width: 240 }}
 				showSearch
 				placeholder="Organization"
@@ -135,7 +135,6 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 				}
 			>
-				<Option value={RESET_FILTER}>Any organization</Option>
 				{(organizations || []).map((org: string) => (
 					<Option key={org} value={org}>
 						{org}

@@ -59,7 +59,7 @@ exports[`Filter renders correctly 1`] = `
     </Button>
   </Dropdown>
   <Select
-    defaultValue="-1"
+    allowClear={true}
     filterOption={[Function]}
     onChange={[Function]}
     optionFilterProp="children"
@@ -70,12 +70,6 @@ exports[`Filter renders correctly 1`] = `
         "width": 240,
       }
     }
-  >
-    <Unknown
-      value="-1"
-    >
-      Any organization
-    </Unknown>
-  </Select>
+  />
 </Space>
 `;
