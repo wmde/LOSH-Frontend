@@ -54,6 +54,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 			pageSize,
 			licenseFilter: filters.license,
 			organizationFilter: filters.organization,
+			repoHostFilter: filters.repoHost,
 		};
 
 		getItems({ variables });

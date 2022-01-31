@@ -8,6 +8,7 @@ import {
   FUNCTIONAL_DESCRIPTION_PROPERTY,
   LICENSE_PROPERTY,
   ORGANIZATION_PROPERTY,
+  REPO_HOST_PROPERTY,
   TYPE_PROPERTY,
 } from "../../config";
 
@@ -23,10 +24,16 @@ class ElasticDataSource extends DataSource {
     query: search,
     license,
     organization,
+    repoHost,
     page,
     pageSize,
   }: SearchItemsArgs): Promise<ElasticSearchItemsResponse> {
-    const query = this.generateSearchQuery({ search, license, organization });
+    const query = this.generateSearchQuery({
+      search,
+      license,
+      organization,
+      repoHost,
+    });
     const { body } = await this.elastic.search({
       index: ELASTIC_INDEX,
       body: {
@@ -65,10 +72,12 @@ class ElasticDataSource extends DataSource {
     search,
     license,
     organization,
+    repoHost,
   }: {
     search: string;
     license: LicenseValue;
     organization: string;
+    repoHost: string;
   }) => {
     return {
       bool: {
@@ -83,6 +92,11 @@ class ElasticDataSource extends DataSource {
             this.generateExactPropertyValueMatchQuery(
               ORGANIZATION_PROPERTY,
               organization
+            ),
+          repoHost &&
+            this.generateExactPropertyValueMatchQuery(
+              REPO_HOST_PROPERTY,
+              repoHost
             ),
         ].filter(Boolean),
       },

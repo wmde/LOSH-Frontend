@@ -14,6 +14,7 @@ export const GET_ITEMS = gql`
 		$pageSize: Int
 		$licenseFilter: String
 		$organizationFilter: String
+		$repoHostFilter: String
 	) {
 		searchItems(
 			query: $query
@@ -21,6 +22,7 @@ export const GET_ITEMS = gql`
 			pageSize: $pageSize
 			license: $licenseFilter
 			organization: $organizationFilter
+			repoHost: $repoHostFilter
 		) {
 			total
 			items {
