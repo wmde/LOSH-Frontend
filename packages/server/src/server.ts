@@ -30,11 +30,14 @@ const startServer = async () => {
   await server.start();
   server.applyMiddleware({ app, path: "/graphql" });
   const httpServer = createServer(app);
-  httpServer.listen({ port: PORT }, (): void =>
+  httpServer.listen({ port: PORT }, (): void => {
+    console.log(`Elastic API URL: ${ELASTIC_API_URL}`);
+    console.log(`Wikibase API URL: ${WIKIBASE_API_URL}`);
+    console.log(`Query Service URL: ${QUERY_SERVICE_URL}`);
     console.log(
       `🚀GraphQL-Server is running on http://localhost:${PORT}/graphql`
-    )
-  );
+    );
+  });
 };
 
 startServer();

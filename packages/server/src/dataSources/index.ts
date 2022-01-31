@@ -7,9 +7,6 @@ export const dataSources = (
   WIKIBASE_API_URL: string,
   QUERY_SERVICE_URL: string
 ) => {
-  console.log(`Elastic API URL: ${ELASTIC_API_URL}`);
-  console.log(`Wikibase API URL: ${WIKIBASE_API_URL}`);
-  console.log(`Query Service URL: ${QUERY_SERVICE_URL}`);
   return {
     elasticAPI: new ElasticDataSource(ELASTIC_API_URL),
     wikibaseAPI: new WikibaseDataSource(WIKIBASE_API_URL),
