@@ -83,10 +83,10 @@ const HardwareTable = (): JSX.Element => {
 		total: totalHits,
 	};
 
-	const handleChange = (page: number, pageSize?: number) => {
+	const handleChange = (page: number, newPageSize?: number) => {
 		if (currentPage !== page) handlePageChange(page || 1);
-		if (pageSize !== pageSize)
-			handlePageSizeChange(pageSize || DEFAULT_PAGE_SIZE);
+		if (newPageSize !== pageSize)
+			handlePageSizeChange(newPageSize || DEFAULT_PAGE_SIZE);
 	};
 
 	const downloadResultsAsCSV = () => {
