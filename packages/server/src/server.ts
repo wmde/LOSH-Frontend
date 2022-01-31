@@ -20,10 +20,15 @@ app.use(helmet());
 app.use(compression());
 
 const startServer = async () => {
+  // initialize dataSources here so that they don't get created on every request
+  const sources = dataSources(
+    ELASTIC_API_URL,
+    WIKIBASE_API_URL,
+    QUERY_SERVICE_URL
+  );
   const server = new ApolloServer({
     schema,
-    dataSources: () =>
-      dataSources(ELASTIC_API_URL, WIKIBASE_API_URL, QUERY_SERVICE_URL),
+    dataSources: () => sources,
     plugins: [responseCachePlugin()],
   });
 
