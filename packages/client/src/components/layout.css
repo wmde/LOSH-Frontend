@@ -17,7 +17,11 @@ h5:not(:first-child) {
 	margin-top: 1em;
 }
 
-.ant-dropdown-menu {
+.ant-dropdown-menu,
+.ant-select-item-option-content,
+.ant-select-selection-placeholder,
+.ant-select-selection-search-input,
+.ant-select-selection-item {
 	font-family: "Source Code Pro", monospace, "Courier New";
 }
 
