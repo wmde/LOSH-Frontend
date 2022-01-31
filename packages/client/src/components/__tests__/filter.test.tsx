@@ -6,6 +6,8 @@ const renderer = ShallowRenderer.createRenderer();
 jest.mock("antd", () => {
 	const Menu = (): null => null;
 	Menu.Item = (): null => null;
+	const Select = (): null => null;
+	Select.Option = (): null => null;
 	return {
 		Menu,
 		Dropdown: (): null => null,
@@ -15,7 +17,7 @@ jest.mock("antd", () => {
 		Typography: {
 			Text: (): null => null,
 		},
-		Select: (): null => null,
+		Select,
 	};
 });
 jest.mock("@ant-design/icons", () => {
