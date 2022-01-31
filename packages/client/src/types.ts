@@ -104,7 +104,7 @@ export interface HardwareData {
 	documentationReadinessLevel?: DataValueString;
 	export?: DataValue;
 	fileFormat?: DataValue;
-	fileURL?: DataValueString;
+	fileUrl?: DataValueString;
 	function?: DataValueString;
 	hasBoM?: DataValue;
 	hasComponent?: DataValueItem;
