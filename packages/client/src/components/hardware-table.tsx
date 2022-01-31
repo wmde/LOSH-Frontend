@@ -25,6 +25,7 @@ const columns: ColumnsType<HardwareData> = [
 		dataIndex: Properties.VERSION,
 		render: (v, record) => record.version?.datavalue.value,
 		responsive: ["lg"],
+		ellipsis: true,
 	},
 	{
 		title: "License",
