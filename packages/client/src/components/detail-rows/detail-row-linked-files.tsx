@@ -7,48 +7,24 @@ interface DetailRowLinkedFilesProps {
 }
 
 const generateLinkedFiles = (data: HardwareData) => {
-	const relatedUrls = [];
+	const relatedUrls: { title: string; value: string }[] = [];
 
-	if (data.hasReadme) {
-		const url =
-			data.hasReadme.datavalue.result.originalUrl ||
-			data.hasReadme.datavalue.result.identifier;
-		relatedUrls.push({
-			title: data.hasReadme.datavalue.result.name,
-			value: url?.datavalue.value,
-		});
-	}
-
-	if (data.hasUserManual) {
-		const url =
-			data.hasUserManual.datavalue.result.originalUrl ||
-			data.hasUserManual.datavalue.result.identifier;
-		relatedUrls.push({
-			title: data.hasUserManual.datavalue.result.name,
-			value: url?.datavalue.value,
-		});
-	}
-
-	if (data.hasManufacturingInstructions) {
-		const url =
-			data.hasManufacturingInstructions.datavalue.result.originalUrl ||
-			data.hasManufacturingInstructions.datavalue.result.identifier;
-		relatedUrls.push({
-			title: data.hasManufacturingInstructions.datavalue.result.name,
-			value: url?.datavalue.value,
-		});
-	}
-
-	if (data.hasManifestFile) {
-		const url =
-			data.hasManifestFile.datavalue.result.originalUrl ||
-			data.hasManifestFile.datavalue.result.identifier;
-
-		relatedUrls.push({
-			title: data.hasManifestFile.datavalue.result.name,
-			value: url?.datavalue.value,
-		});
-	}
+	[
+		"hasReadme",
+		"hasUserManual",
+		"hasManufacturingInstructions",
+		"hasManifestFile",
+	].forEach((propertyName) => {
+		if (data[propertyName]) {
+			const url =
+				data[propertyName].datavalue.result.originalUrl ||
+				data[propertyName].datavalue.result.identifier;
+			relatedUrls.push({
+				title: data[propertyName].datavalue.result.name,
+				value: url?.datavalue.value,
+			});
+		}
+	});
 
 	return relatedUrls;
 };
