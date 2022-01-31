@@ -15,10 +15,10 @@ const generateLinkedFiles = (data: HardwareData) => {
 		"hasManufacturingInstructions",
 		"hasManifestFile",
 	].forEach((propertyName) => {
-		if (data[propertyName]) {
-			const url =
-				data[propertyName].datavalue.result.originalUrl ||
-				data[propertyName].datavalue.result.identifier;
+		const url =
+			data[propertyName]?.datavalue.result.originalUrl ||
+			data[propertyName]?.datavalue.result.identifier;
+		if (url) {
 			relatedUrls.push({
 				title: data[propertyName].datavalue.result.name,
 				value: url?.datavalue.value,
