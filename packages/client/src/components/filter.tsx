@@ -129,6 +129,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 				style={{ width: 240 }}
 				showSearch
 				placeholder="Organization"
+				value={filters.organization}
 				optionFilterProp="children"
 				onChange={(val) => onFilterChange("organization", val)}
 				filterOption={(input, option) =>
