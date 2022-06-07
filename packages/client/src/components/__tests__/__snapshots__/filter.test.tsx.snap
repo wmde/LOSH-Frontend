@@ -20,7 +20,7 @@ exports[`Filter renders correctly 1`] = `
             icon={false}
             onClick={[Function]}
           >
-            Any license
+            Any License
           </Unknown>
           <Unknown
             icon={false}
@@ -51,7 +51,7 @@ exports[`Filter renders correctly 1`] = `
       <Button
         id="license"
       >
-        License 
+        Any License 
         <DownOutlined />
       </Button>
     </Dropdown>
@@ -75,7 +75,7 @@ exports[`Filter renders correctly 1`] = `
       <Button
         id="repositoryHost"
       >
-        Repo Host 
+        Any Repository Host 
         <DownOutlined />
       </Button>
     </Dropdown>
@@ -94,7 +94,7 @@ exports[`Filter renders correctly 1`] = `
       id="organization"
       onChange={[Function]}
       optionFilterProp="children"
-      placeholder="Organization"
+      placeholder="Any Organization"
       showSearch={true}
       style={
         Object {

@@ -35,7 +35,7 @@ export const RESET_FILTER = "-1";
 
 const licenses = [
 	{
-		name: "Any license",
+		name: "Any License",
 		value: RESET_FILTER,
 	},
 	{
@@ -98,7 +98,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			value: host,
 		}));
 	if (repoHosts && repoHosts.length) {
-		repoHosts.unshift({ name: "Any repo host", value: RESET_FILTER });
+		repoHosts.unshift({ name: "Any Repository Host", value: RESET_FILTER });
 	}
 
 	return (
@@ -110,7 +110,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					trigger={["click"]}
 				>
 					<Button id="license">
-						License <DownOutlined />
+						Any License <DownOutlined />
 					</Button>
 				</Dropdown>
 			</div>
@@ -126,7 +126,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					trigger={["click"]}
 				>
 					<Button id="repositoryHost">
-						Repo Host <DownOutlined />
+						Any Repository Host <DownOutlined />
 					</Button>
 				</Dropdown>
 			</div>
@@ -136,7 +136,7 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 					allowClear
 					style={{ width: 240 }}
 					showSearch
-					placeholder="Organization"
+					placeholder="Any Organization"
 					value={filters.organization}
 					optionFilterProp="children"
 					onChange={(val) => onFilterChange("organization", val)}
