@@ -17,16 +17,18 @@ export const SearchBox: React.FC = () => {
 
 	return (
 		<Row className="search-box">
-			<label htmlFor="search">Search</label>
-			<Input.Search
-				id="search"
-				placeholder="input search text"
-				allowClear
-				onSearch={handleSearchChange}
-				onChange={(e) => setCurrentValue(e.target.value)}
-				value={currentValue}
-				style={{ maxWidth: 400 }}
-			/>
+			<div>
+				<label htmlFor="search">Search</label>
+				<Input.Search
+					id="search"
+					placeholder="input search text"
+					allowClear
+					onSearch={handleSearchChange}
+					onChange={(e) => setCurrentValue(e.target.value)}
+					value={currentValue}
+					style={{ maxWidth: 400 }}
+				/>
+			</div>
 		</Row>
 	);
 };
