@@ -103,45 +103,55 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 
 	return (
 		<Space wrap className="filter">
-			<Dropdown
-				overlay={menu(licenses, handleClickItem, "license", filters.license)}
-				trigger={["click"]}
-			>
-				<Button>
-					License <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Dropdown
-				overlay={menu(
-					reposQuery.loading || reposQuery.error ? [] : repoHosts,
-					handleClickItem,
-					"repoHost",
-					filters.repoHost
-				)}
-				trigger={["click"]}
-			>
-				<Button>
-					Repo Host <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Select
-				allowClear
-				style={{ width: 240 }}
-				showSearch
-				placeholder="Organization"
-				value={filters.organization}
-				optionFilterProp="children"
-				onChange={(val) => onFilterChange("organization", val)}
-				filterOption={(input, option) =>
-					option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-				}
-			>
-				{(organizations || []).map((org: string) => (
-					<Option key={org} value={org}>
-						{org}
-					</Option>
-				))}
-			</Select>
+			<div className="filter-element">
+				<label htmlFor="license">License</label>
+				<Dropdown
+					overlay={menu(licenses, handleClickItem, "license", filters.license)}
+					trigger={["click"]}
+				>
+					<Button id="license">
+						License <DownOutlined />
+					</Button>
+				</Dropdown>
+			</div>
+			<div className="filter-element">
+				<label htmlFor="repositoryHost">Repository Host</label>
+				<Dropdown
+					overlay={menu(
+						reposQuery.loading || reposQuery.error ? [] : repoHosts,
+						handleClickItem,
+						"repoHost",
+						filters.repoHost
+					)}
+					trigger={["click"]}
+				>
+					<Button id="repositoryHost">
+						Repo Host <DownOutlined />
+					</Button>
+				</Dropdown>
+			</div>
+			<div className="filter-element">
+				<label htmlFor="organization">Organization</label>
+				<Select
+					allowClear
+					style={{ width: 240 }}
+					showSearch
+					placeholder="Organization"
+					value={filters.organization}
+					optionFilterProp="children"
+					onChange={(val) => onFilterChange("organization", val)}
+					filterOption={(input, option) =>
+						option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+					}
+					id="organization"
+				>
+					{(organizations || []).map((org: string) => (
+						<Option key={org} value={org}>
+							{org}
+						</Option>
+					))}
+				</Select>
+			</div>
 			{/* <Dropdown
 				overlay={menu(
 					dataSources,

@@ -5,71 +5,103 @@ exports[`Filter renders correctly 1`] = `
   className="filter"
   wrap={true}
 >
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Any license
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Strong Copyleft
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Weak Copyleft
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Permissive
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
+  <div
+    className="filter-element"
   >
-    <Button>
-      License 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={<Menu />}
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Repo Host 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Select
-    allowClear={true}
-    filterOption={[Function]}
-    onChange={[Function]}
-    optionFilterProp="children"
-    placeholder="Organization"
-    showSearch={true}
-    style={
-      Object {
-        "width": 240,
+    <label
+      htmlFor="license"
+    >
+      License
+    </label>
+    <Dropdown
+      overlay={
+        <Menu>
+          <Unknown
+            icon={false}
+            onClick={[Function]}
+          >
+            Any license
+          </Unknown>
+          <Unknown
+            icon={false}
+            onClick={[Function]}
+          >
+            Strong Copyleft
+          </Unknown>
+          <Unknown
+            icon={false}
+            onClick={[Function]}
+          >
+            Weak Copyleft
+          </Unknown>
+          <Unknown
+            icon={false}
+            onClick={[Function]}
+          >
+            Permissive
+          </Unknown>
+        </Menu>
       }
-    }
-  />
+      trigger={
+        Array [
+          "click",
+        ]
+      }
+    >
+      <Button
+        id="license"
+      >
+        License 
+        <DownOutlined />
+      </Button>
+    </Dropdown>
+  </div>
+  <div
+    className="filter-element"
+  >
+    <label
+      htmlFor="repositoryHost"
+    >
+      Repository Host
+    </label>
+    <Dropdown
+      overlay={<Menu />}
+      trigger={
+        Array [
+          "click",
+        ]
+      }
+    >
+      <Button
+        id="repositoryHost"
+      >
+        Repo Host 
+        <DownOutlined />
+      </Button>
+    </Dropdown>
+  </div>
+  <div
+    className="filter-element"
+  >
+    <label
+      htmlFor="organization"
+    >
+      Organization
+    </label>
+    <Select
+      allowClear={true}
+      filterOption={[Function]}
+      id="organization"
+      onChange={[Function]}
+      optionFilterProp="children"
+      placeholder="Organization"
+      showSearch={true}
+      style={
+        Object {
+          "width": 240,
+        }
+      }
+    />
+  </div>
 </Space>
 `;
