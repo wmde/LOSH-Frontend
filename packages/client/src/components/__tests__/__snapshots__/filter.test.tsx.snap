@@ -73,9 +73,9 @@ exports[`Filter renders correctly 1`] = `
       Organization
     </label>
     <Select
-      allowClear={true}
       filterOption={[Function]}
       id="organization"
+      mode="tags"
       onChange={[Function]}
       optionFilterProp="children"
       placeholder="Any Organization"
