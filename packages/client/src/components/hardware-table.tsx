@@ -76,6 +76,7 @@ const HardwareTable = (): JSX.Element => {
 		currentPage,
 		pageSize,
 		totalHits,
+		loadingData,
 	} = useContext(QueryContext);
 
 	const paginationState: PaginationProps = {
@@ -124,6 +125,7 @@ const HardwareTable = (): JSX.Element => {
 				dataSource={items}
 				size="middle"
 				pagination={false}
+				loading={loadingData}
 				style={{ overflowX: "scroll" }}
 				components={{
 					body: {

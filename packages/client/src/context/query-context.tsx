@@ -15,6 +15,7 @@ interface QueryContextState {
 	currentPage: number;
 	pageSize: number;
 	totalHits: number;
+	loadingData: boolean;
 	handleSearchChange: (value: string) => void;
 	handlePageChange: (value: number) => void;
 	handlePageSizeChange: (value: number) => void;
@@ -30,6 +31,7 @@ export const QueryContext = React.createContext<QueryContextState>({
 	currentPage: 1,
 	pageSize: DEFAULT_PAGE_SIZE,
 	totalHits: 0,
+	loadingData: false,
 	handleSearchChange: () => undefined,
 	handlePageChange: () => undefined,
 	handlePageSizeChange: () => undefined,
@@ -139,6 +141,7 @@ export const QueryProvider: React.FC = ({ children }) => {
 				currentPage,
 				pageSize,
 				totalHits: data?.searchItems.total || 0,
+				loadingData: loading,
 				handleSearchChange,
 				handlePageChange,
 				handlePageSizeChange,
