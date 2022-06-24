@@ -24,7 +24,11 @@ function DetailRowDownload({ repoUrl }: DetailRowDownload) {
 	return (
 		<p>
 			<a href={generateDownloadUrl(repoUrl)} target="_blank" rel="noreferrer">
-				<Button icon={<DownloadOutlined />} id="downloadBtn">
+				<Button
+					icon={<DownloadOutlined />}
+					id="downloadBtn"
+					className="detail-button"
+				>
 					Download Bundle
 				</Button>
 			</a>
