@@ -13,48 +13,37 @@ exports[`Filter renders correctly 1`] = `
     >
       License
     </label>
-    <Dropdown
-      overlay={
-        <Menu>
-          <Unknown
-            icon={false}
-            onClick={[Function]}
-          >
-            Any License
-          </Unknown>
-          <Unknown
-            icon={false}
-            onClick={[Function]}
-          >
-            Strong Copyleft
-          </Unknown>
-          <Unknown
-            icon={false}
-            onClick={[Function]}
-          >
-            Weak Copyleft
-          </Unknown>
-          <Unknown
-            icon={false}
-            onClick={[Function]}
-          >
-            Permissive
-          </Unknown>
-        </Menu>
-      }
-      trigger={
-        Array [
-          "click",
-        ]
+    <Select
+      id="license"
+      onChange={[Function]}
+      placeholder="Any License"
+      style={
+        Object {
+          "width": 170,
+        }
       }
     >
-      <Button
-        id="license"
+      <Unknown
+        value="-1"
       >
-        Any License 
-        <DownOutlined />
-      </Button>
-    </Dropdown>
+        Any License
+      </Unknown>
+      <Unknown
+        value="strong"
+      >
+        Strong Copyleft
+      </Unknown>
+      <Unknown
+        value="weak"
+      >
+        Weak Copyleft
+      </Unknown>
+      <Unknown
+        value="non"
+      >
+        Permissive
+      </Unknown>
+    </Select>
   </div>
   <div
     className="filter-element"
@@ -64,21 +53,16 @@ exports[`Filter renders correctly 1`] = `
     >
       Repository Host
     </label>
-    <Dropdown
-      overlay={<Menu />}
-      trigger={
-        Array [
-          "click",
-        ]
+    <Select
+      id="repositoryHost"
+      onChange={[Function]}
+      placeholder="Any Repository Host"
+      style={
+        Object {
+          "width": 210,
+        }
       }
-    >
-      <Button
-        id="repositoryHost"
-      >
-        Any Repository Host 
-        <DownOutlined />
-      </Button>
-    </Dropdown>
+    />
   </div>
   <div
     className="filter-element"

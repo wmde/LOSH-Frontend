@@ -81,10 +81,6 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
-	const handleClickItem = (name: string, item: any) => {
-		onFilterChange(name, item.value);
-	};
-
 	const orgsQuery = useQuery(GET_ORGANIZATIONS);
 	const organizations =
 		orgsQuery.data &&
@@ -105,30 +101,37 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 		<Space wrap className="filter">
 			<div className="filter-element">
 				<label htmlFor="license">License</label>
-				<Dropdown
-					overlay={menu(licenses, handleClickItem, "license", filters.license)}
-					trigger={["click"]}
+				<Select
+					style={{ width: 170 }}
+					placeholder="Any License"
+					value={filters.license}
+					onChange={(val) => onFilterChange("license", val)}
+					id="license"
 				>
-					<Button id="license">
-						Any License <DownOutlined />
-					</Button>
-				</Dropdown>
+					{(licenses || []).map((element: Record<string, string>) => (
+						<Option key={element.name} value={element.value}>
+							{element.name}
+						</Option>
+					))}
+				</Select>
 			</div>
 			<div className="filter-element">
 				<label htmlFor="repositoryHost">Repository Host</label>
-				<Dropdown
-					overlay={menu(
-						reposQuery.loading || reposQuery.error ? [] : repoHosts,
-						handleClickItem,
-						"repoHost",
-						filters.repoHost
-					)}
-					trigger={["click"]}
+				<Select
+					style={{ width: 210 }}
+					placeholder="Any Repository Host"
+					value={filters.repoHost}
+					onChange={(val) => onFilterChange("repoHost", val)}
+					id="repositoryHost"
 				>
-					<Button id="repositoryHost">
-						Any Repository Host <DownOutlined />
-					</Button>
-				</Dropdown>
+					{(reposQuery.loading || reposQuery.error ? [] : repoHosts).map(
+						(element: Record<string, string>) => (
+							<Option key={element.name} value={element.value}>
+								{element.name}
+							</Option>
+						)
+					)}
+				</Select>
 			</div>
 			<div className="filter-element">
 				<label htmlFor="organization">Organization</label>
