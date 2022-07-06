@@ -138,13 +138,18 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			<div className="filter-element">
 				<label htmlFor="organization">Organization</label>
 				<Select
-					allowClear
+					mode="tags"
 					style={{ width: 240 }}
 					showSearch
 					placeholder="Any Organization"
 					value={filters.organization}
 					optionFilterProp="children"
-					onChange={(val) => onFilterChange("organization", val)}
+					onChange={(val) => {
+						if (Array.isArray(val)) {
+							val = val.pop();
+						}
+						onFilterChange("organization", val);
+					}}
 					filterOption={(input, option) =>
 						option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 					}
