@@ -35,7 +35,7 @@ export const RESET_FILTER = "-1";
 
 const licenses = [
 	{
-		name: "Any license",
+		name: "Any License",
 		value: RESET_FILTER,
 	},
 	{
@@ -81,14 +81,12 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
-	const handleClickItem = (name: string, item: any) => {
-		onFilterChange(name, item.value);
-	};
-
 	const orgsQuery = useQuery(GET_ORGANIZATIONS);
 	const organizations =
 		orgsQuery.data &&
-		orgsQuery.data.organizations.map(({ name }: { name: string }) => name);
+		orgsQuery.data.organizations
+			.map(({ name }: { name: string }) => name)
+			.sort();
 
 	const reposQuery = useQuery(GET_REPOS);
 	const repoHosts =
@@ -98,50 +96,67 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 			value: host,
 		}));
 	if (repoHosts && repoHosts.length) {
-		repoHosts.unshift({ name: "Any repo host", value: RESET_FILTER });
+		repoHosts.unshift({ name: "Any Repository Host", value: RESET_FILTER });
 	}
 
 	return (
 		<Space wrap className="filter">
-			<Dropdown
-				overlay={menu(licenses, handleClickItem, "license", filters.license)}
-				trigger={["click"]}
-			>
-				<Button>
-					License <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Dropdown
-				overlay={menu(
-					reposQuery.loading || reposQuery.error ? [] : repoHosts,
-					handleClickItem,
-					"repoHost",
-					filters.repoHost
-				)}
-				trigger={["click"]}
-			>
-				<Button>
-					Repo Host <DownOutlined />
-				</Button>
-			</Dropdown>
-			<Select
-				allowClear
-				style={{ width: 240 }}
-				showSearch
-				placeholder="Organization"
-				value={filters.organization}
-				optionFilterProp="children"
-				onChange={(val) => onFilterChange("organization", val)}
-				filterOption={(input, option) =>
-					option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-				}
-			>
-				{(organizations || []).map((org: string) => (
-					<Option key={org} value={org}>
-						{org}
-					</Option>
-				))}
-			</Select>
+			<div className="filter-element">
+				<label htmlFor="license">License</label>
+				<Select
+					style={{ width: 170 }}
+					placeholder="Any License"
+					value={filters.license}
+					onChange={(val) => onFilterChange("license", val)}
+					id="license"
+				>
+					{(licenses || []).map((element: Record<string, string>) => (
+						<Option key={element.name} value={element.value}>
+							{element.name}
+						</Option>
+					))}
+				</Select>
+			</div>
+			<div className="filter-element">
+				<label htmlFor="repositoryHost">Repository Host</label>
+				<Select
+					style={{ width: 210 }}
+					placeholder="Any Repository Host"
+					value={filters.repoHost}
+					onChange={(val) => onFilterChange("repoHost", val)}
+					id="repositoryHost"
+				>
+					{(reposQuery.loading || reposQuery.error ? [] : repoHosts).map(
+						(element: Record<string, string>) => (
+							<Option key={element.name} value={element.value}>
+								{element.name}
+							</Option>
+						)
+					)}
+				</Select>
+			</div>
+			<div className="filter-element">
+				<label htmlFor="organization">Organization</label>
+				<Select
+					allowClear
+					style={{ width: 240 }}
+					showSearch
+					placeholder="Any Organization"
+					value={filters.organization}
+					optionFilterProp="children"
+					onChange={(val) => onFilterChange("organization", val)}
+					filterOption={(input, option) =>
+						option!.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+					}
+					id="organization"
+				>
+					{(organizations || []).map((org: string) => (
+						<Option key={org} value={org}>
+							{org}
+						</Option>
+					))}
+				</Select>
+			</div>
 			{/* <Dropdown
 				overlay={menu(
 					dataSources,

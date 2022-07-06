@@ -5,71 +5,87 @@ exports[`Filter renders correctly 1`] = `
   className="filter"
   wrap={true}
 >
-  <Dropdown
-    overlay={
-      <Menu>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Any license
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Strong Copyleft
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Weak Copyleft
-        </Unknown>
-        <Unknown
-          icon={false}
-          onClick={[Function]}
-        >
-          Permissive
-        </Unknown>
-      </Menu>
-    }
-    trigger={
-      Array [
-        "click",
-      ]
-    }
+  <div
+    className="filter-element"
   >
-    <Button>
-      License 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Dropdown
-    overlay={<Menu />}
-    trigger={
-      Array [
-        "click",
-      ]
-    }
-  >
-    <Button>
-      Repo Host 
-      <DownOutlined />
-    </Button>
-  </Dropdown>
-  <Select
-    allowClear={true}
-    filterOption={[Function]}
-    onChange={[Function]}
-    optionFilterProp="children"
-    placeholder="Organization"
-    showSearch={true}
-    style={
-      Object {
-        "width": 240,
+    <label
+      htmlFor="license"
+    >
+      License
+    </label>
+    <Select
+      id="license"
+      onChange={[Function]}
+      placeholder="Any License"
+      style={
+        Object {
+          "width": 170,
+        }
       }
-    }
-  />
+    >
+      <Unknown
+        value="-1"
+      >
+        Any License
+      </Unknown>
+      <Unknown
+        value="strong"
+      >
+        Strong Copyleft
+      </Unknown>
+      <Unknown
+        value="weak"
+      >
+        Weak Copyleft
+      </Unknown>
+      <Unknown
+        value="non"
+      >
+        Permissive
+      </Unknown>
+    </Select>
+  </div>
+  <div
+    className="filter-element"
+  >
+    <label
+      htmlFor="repositoryHost"
+    >
+      Repository Host
+    </label>
+    <Select
+      id="repositoryHost"
+      onChange={[Function]}
+      placeholder="Any Repository Host"
+      style={
+        Object {
+          "width": 210,
+        }
+      }
+    />
+  </div>
+  <div
+    className="filter-element"
+  >
+    <label
+      htmlFor="organization"
+    >
+      Organization
+    </label>
+    <Select
+      allowClear={true}
+      filterOption={[Function]}
+      id="organization"
+      onChange={[Function]}
+      optionFilterProp="children"
+      placeholder="Any Organization"
+      showSearch={true}
+      style={
+        Object {
+          "width": 240,
+        }
+      }
+    />
+  </div>
 </Space>
 `;

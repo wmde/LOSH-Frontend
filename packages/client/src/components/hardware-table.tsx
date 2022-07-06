@@ -11,6 +11,7 @@ import "./hardware-table.css";
 import DownloadOutlined from "@ant-design/icons/lib/icons/DownloadOutlined";
 import { Pagination } from "antd";
 import Papa from "papaparse";
+import { presentVersion } from "./present-version";
 
 const columns: ColumnsType<HardwareData> = [
 	{
@@ -23,7 +24,8 @@ const columns: ColumnsType<HardwareData> = [
 		title: "Version",
 		key: Properties.VERSION,
 		dataIndex: Properties.VERSION,
-		render: (v, record) => record.version?.datavalue.value,
+		render: (v, record) =>
+			presentVersion(record.version?.datavalue.value || ""),
 		responsive: ["lg"],
 		ellipsis: true,
 	},
@@ -39,7 +41,7 @@ const columns: ColumnsType<HardwareData> = [
 		responsive: ["lg"],
 	},
 	{
-		title: "Repo",
+		title: "Repository",
 		key: Properties.REPO,
 		dataIndex: Properties.REPO,
 		ellipsis: true,
@@ -76,6 +78,7 @@ const HardwareTable = (): JSX.Element => {
 		currentPage,
 		pageSize,
 		totalHits,
+		loadingData,
 	} = useContext(QueryContext);
 
 	const paginationState: PaginationProps = {
@@ -94,9 +97,9 @@ const HardwareTable = (): JSX.Element => {
 		const results = items.map((result) => ({
 			Name: result.name,
 			ID: result.id,
-			Version: result.version?.datavalue.value,
+			Version: presentVersion(result.version?.datavalue.value || ""),
 			License: result.spdxLicense?.datavalue.value,
-			Repo: result.repo?.datavalue.value,
+			Repository: result.repo?.datavalue.value,
 			Organisation: result.organisation?.datavalue.value,
 		}));
 		const csv = Papa.unparse(results);
@@ -124,6 +127,7 @@ const HardwareTable = (): JSX.Element => {
 				dataSource={items}
 				size="middle"
 				pagination={false}
+				loading={loadingData}
 				style={{ overflowX: "scroll" }}
 				components={{
 					body: {
