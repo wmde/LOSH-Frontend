@@ -95,7 +95,11 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<Button style={{ marginBottom: "1rem" }} id="repoBtn">
+						<Button
+							style={{ marginBottom: "1rem" }}
+							id="repoBtn"
+							className="detail-button"
+						>
 							To {pageData.name} repository <ArrowRightOutlined />
 						</Button>
 					</a>
