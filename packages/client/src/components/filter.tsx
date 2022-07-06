@@ -88,7 +88,9 @@ const Filter: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
 	const orgsQuery = useQuery(GET_ORGANIZATIONS);
 	const organizations =
 		orgsQuery.data &&
-		orgsQuery.data.organizations.map(({ name }: { name: string }) => name);
+		orgsQuery.data.organizations
+			.map(({ name }: { name: string }) => name)
+			.sort();
 
 	const reposQuery = useQuery(GET_REPOS);
 	const repoHosts =
