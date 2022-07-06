@@ -39,7 +39,7 @@ const columns: ColumnsType<HardwareData> = [
 		responsive: ["lg"],
 	},
 	{
-		title: "Repo",
+		title: "Repository",
 		key: Properties.REPO,
 		dataIndex: Properties.REPO,
 		ellipsis: true,
@@ -96,7 +96,7 @@ const HardwareTable = (): JSX.Element => {
 			ID: result.id,
 			Version: result.version?.datavalue.value,
 			License: result.spdxLicense?.datavalue.value,
-			Repo: result.repo?.datavalue.value,
+			Repository: result.repo?.datavalue.value,
 			Organisation: result.organisation?.datavalue.value,
 		}));
 		const csv = Papa.unparse(results);

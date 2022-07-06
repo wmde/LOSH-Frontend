@@ -3,7 +3,7 @@
 	align-items: center;
 }
 .search-box label {
-	margin-right: 1rem;
+	display: block;
 	font-weight: bold;
 	font-family: "Source Code Pro";
 }

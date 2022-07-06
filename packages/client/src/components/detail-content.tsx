@@ -95,7 +95,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 						rel="noreferrer"
 					>
 						<Button style={{ marginBottom: "1rem" }} id="repoBtn">
-							To {pageData.name} repo <ArrowRightOutlined />
+							To {pageData.name} repository <ArrowRightOutlined />
 						</Button>
 					</a>
 
