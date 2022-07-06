@@ -15,6 +15,7 @@ import SEO from "./seo";
 import "./detail-content.css";
 import Layout from "./layout";
 import useWindowSize from "../hooks/useWindowSize";
+import { presentVersion } from "./present-version";
 
 interface DetailContentProps {
 	pageData: any;
@@ -103,7 +104,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ pageData }) => {
 
 					<DetailRowString
 						title="Version"
-						value={pageData.version?.datavalue.value}
+						value={presentVersion(pageData.version?.datavalue.value || "")}
 					/>
 
 					<DetailRowUrl
