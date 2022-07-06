@@ -16,3 +16,8 @@
 	font-weight: bold;
 	font-family: "Source Code Pro";
 }
+
+.filter .ant-select-selection-placeholder,
+.filter .ant-select-arrow {
+	color: rgba(0, 0, 0, 0.85);
+}
