@@ -116,7 +116,7 @@ class ElasticDataSource extends DataSource {
   }
 
   private generateEntityTermsSearch(searchTerm: string) {
-    return { match: { text: { query: searchTerm, fuzziness: "AUTO" } } };
+    return { match: { text: { query: searchTerm } } };
   }
 
   private generateFunctionalDescriptionValueSearch(searchTerm: string) {
